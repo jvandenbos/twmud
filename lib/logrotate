@@ -1,0 +1,8 @@
+#!/usr/bin/tcsh
+cd  /home2/tw/tw/lib/
+tar -cf players.d.tar players.d
+savelog  -c 10 players.d.tar >>& logrotate.log
+
+cd /home2/tw/tw
+
+tar czf lib.tar.gz lib/

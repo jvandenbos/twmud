@@ -1,0 +1,105 @@
+Temujin[333]: I think the crashes in dream are caused by not beig defined as indoors or outdoors and geyser
+Harrier[303]: fix FIND file
+Mallune[3005]: something about having a random maxxing bhnd and stone fisting..if you remove the eq you still have maxxed bhnd?
+Matal[3494]: mkick still needs to have the mob specified.
+Lotik[8123]: Neither track nor scry works properly when one is polymorphed.
+Solonacae[3005]: I hypno'd the black knight in camelot, and when I grouped him he started to attack me
+Solonacae[2633]: group astral will only bring 2 players to the astral plane, lizzi was just telling me about it
+Ix[32325]: Failing Trip is too risky... like 3 rounds solo 5 rounds assisting
+Harrier[300]: dunbar blade in scotland is over level 125
+Harrier[300]: hand of a dead scotsman in scotland is over level 125 maybe
+Elrin[3006]: A diamond studded coronet has an affect of UNDEFINED By 20.
+Mallune[303]: rations dont cure hunger
+Mallune[303]: charmies get hit by afx
+Tarn[3267]: room says split in trail but no split
+Bayne[3013]: when a druid uses a potion of mana spell, it makes the druid cast the spell, so you don't get much mana back, only about half what you should
+Nightshade[29763]: broken door in ghenna, shoebox can't be opened
+Nightshade[9600]: revenants in xanth kept splitting, resulting in unlimited mobs
+Payens[2919]: you can't use the scry skill as found on the rainbow bracelet when you are poly'd
+Whight[16048]: Goblin Chief wooden door in Malavaria goblin lair is bugged, says improper key when the key is the right one.
+Moiraine[5569]: exit north from 5569 goes into my office
+Lionheart[18567]: reflection aura should reflect damage throught the group, and should reflect casted offensive spells back to the caster. (Including dispel magic)
+Lionheart[18578]: your bash at Uncle Nephew Joey Bill sends her sprawling! (Wrong gender?)
+Bioc[3835]: obj #3866 is type 12 (OTHER).  ZON file thinks its a container and trying to put 2 items in it.  Fix: change to obj type 15 (container)
+Bioc[18]: DM's won't dm stats to racial max, they stop at 18.
+Bioc[7618]: Group Astral - group astral only works for two members of a party.  it doesn't actually astral the entire group.
+Harrier[300]: fix 333 exit down to 3005
+Moiraine[3014]: helpfile says you need a shield to bash - shield is not required
+Moiraine[5600]: north exits to nowhere
+Moiraine[5729]: exit s to mortals house, room 271
+Lotik[3005]: The Keyword on the potion for moveshield is green, while the name is purple. Same deal for manashield. Keyword clear, name purple.
+Lotik[3005]: The keyword for the fly potion is grey, while the name is "clear white"
+Lotik[758]: There are also two dark green vials.. Hero's feast and Poisongasbreath. Dunno if that was a mistake or not.
+Lotik[3005]: The Druid potion for Poisonshield has a keyword of black, and a name of Purple.
+Razzelir[2622]: call lightning does not show up at level 15 like helpfile states
+Harrier[2362]: barb leader not working
+Paks[18506]: i currently have 25 hero points, but am not on the list... the last 4 on the list have 24.. yes, i have saved.
+Zro[3005]: write
+Tarn[35012]: need exit north
+Tarnus[21023]: ***** fix berserk to remove points from move not mana
+Jaedin[2250]: Ogre Warrior Boots are missing the TAKE flag
+Shaft[331]: Cyrathen, speech triggers intended to function as ors are instead treated as complete requirements
+Snowcone[25111]: diamond key wont open throne in paladin realms
+Moiraine[29765]: broken door in thi8s room... can't open shoebox
+Malkier[2629]: blackjack doesn't score right, I had ace of clubs, three of hearts, and seven of diamonds, and lost to a ten of spades, and queen of spades, I had 21, the
+Malkier[3045]: room 3045, the west exit needs to be changed, it connects to the dark shop east of tower square, and levee is in poor alley west of tower
+Malkier[21041]: the display cases in orshingal don't seem to be popping right
+Mairead[8043]: The Shewaw boatman tells you 'That's 1,842,797 coins please.  Why thank you!' (I only paid 1000)
+Ix[3060]: If you are invisable, but do not have detect-inivis, you cannot see yourself.
+Ix[3005]: the bardic flute doesn't work as an instrument.
+Mirian[3005]: raider
+Geneb[7760]: Someone forgot to make this door a door.
+Nightshade[35111]: east end of the path of money shows exit to the east, but there's no door
+Toric[3069]: dying by poison causes me to loop. poison in veins, -1, -2, or -3 hit points. then back to 1 hp. then poisoned again. cannot get up, cannot die.
+Toric[3070]: on the upside, when I fled, I was not dead.
+Toric[35111]: east end of the path of money has exits listed as e, w. cannot go east.
+Toric[3005]: the N placeholder in name command is not working as advertised.
+Toric[3005]: bag of plentiful bread is broken
+Toric[2627]: item "'a string of prayer beads' beads prayer necklace string" is listed as a container.
+Toric[3081]: bag of holding is broken
+Toric[11014]: most often, i see the text for hitting a mobile with a spell immediately followed by the text for missing. wth?
+Toric[3051]: from northwest end of concourse, one can go north to bridge, exits are n, s. but north don't work.
+Toric[35012]: backpack should not be a worn about body item
+Toric[3054]: the help file for lineeditor has two see also's that don't work.\
+Toric[3020]: value command does not take into account damaged goods. value at full price, sell at damaged price.
+Ruffio[3008]: Receptionist says you have 54 items no matter how many over the limit you are.
+Fenrir[6109]: I think the xp gained and hp cured for cure serious may be broken. check it out with my mage-cleric.
+Toric[2626]: the weight of liquid containers goes up higher every time you refill them. a new barrel full weighs 65. one i filled several times was up to 78
+Toric[8189]: cannot target second door in lizard man pyramid. open door, already open. no 2.door here.
+Toric[30704]: zone white citadel. forest entrance is screwed up. never ending path in, quick path out.
+Solaar[1000]: Mobs that spawn to follow another mob should not be set as wanderers.
+Solaar[9833]: Why do builders always try to take advantage of the system? Underspire is dark so golems won't attack when they're thrown/fired upon.
+Solaar[1800]: Fireshield won't kill a mob (fireshield hit a rabbit for 500hp damage and didn't kill it)
+Jason[25545]: Enchant Weapon is enchanting a 1hnd higher then it should for a given level ranger.
+Solaar[16062]: Door without a key vnun 16003 for rooms 16062->16064
+Thunder[16737]: key problem
+Jason[24773]: mobs in Deadhame aren't evil
+Solaar[6870]: animals in frozen tundra are humanoid
+Kalis[25635]: key to this door doesn't load
+Solaar[3005]: Ask Tholin to map out Sanctuary, there seems to be some exit errors in the wld file
+Solaar[6899]: Every time a drink container is filled, the weight of it goes up.
+Solaar[6899]: Golden Sword of Phoenix doesn't have a wield flag
+Solaar[6899]: some shopkeepers in sanc may buy items off players without giving players the gold
+Solaar[13650]: key missing - In room 13650, the key that stat room specifies for the door does not exist.
+Gaius[6832]: in read_player
+Kalim[9601]: psionist Illusionary isn't working
+Solaar[1000]: members of watch, urchins, and other new mobs aren't letting players shift into them
+Toric[9805]: Hunter
+Kalim[13685]: add fly to human-bodyguard-warrior
+Ainee[3005]: gwaihir
+Bioc[6871]: add an echo for when petrify is successfully cast
+Solaar[3005]: alignment shifts - have to kill mobs 1 at time?  AOE cancels out shifts in alignment
+Solaar[2625]: Ice Haven shops aren't working
+Solaar[3005]: fix bhd limiters
+Solaar[3005]: Hypnosis is WAAAAY too powerful
+Esper[18193]: kappiyan the druid guildguard in Mordilnia allows you to enter the guild, but won't let you leave. He's blocking the south exit in the room instead of the
+Esper[2633]: all of the items in birdies have a positive ARMOR effect number, this means that your armor gets worse.
+Minibot[5301]: hmmm
+Osha[3208]: I cast paralyze on a mob, it was successful, and the very next line, the mob attacks and hits me.
+Osha[2619]: while on a mount, you cannot go up
+Issus[2910]: wimpy mobs can flee after being tripped
+Issus[2145]: frost giant doors are buggy.. impossible to open, absurd to pick.. :P
+Issus[25541]: killed a mob, but got no exp. Hadn't grouped myself, but got exp earlier today when I wasn't grouped either??
+Keldar[3005]: the entire game crashes when I type sample corpse on the elven corpse from the sticky spiderweb Spider Cave in Troglodyte caves. 
+BelArk[9856]: eye
+Bruno[13754]: Spooky Forest room with 3 exits Exits: north, east, south., but East is not usable.

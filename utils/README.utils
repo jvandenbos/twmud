@@ -1,0 +1,6 @@
+Make sure the db.a is up-to-date --> /src/make db.a
+Type make in this directory
+Type make install to move new executables to /bin directory
+Remove all files but: *.c, *.sh, *.h files
+
+Need to remake utils, when we alter the player version number.

@@ -1,0 +1,6944 @@
+"FILE_VERSION" "FILE_INFO" "VERSION"
+
+ * Please use this topic to list major revisions such as reformatting,        *
+ * adding/removing help topics. Increment the version number by .01 for each  *
+ * saved revision.                                                            *
+
+ Version 1.05 02/02/04
+ 
+ Last edited by:
+ 	Bruno (browna8@ocps.net)
+
+ *** All topics should end with a blank line followed by a pound symbol.    ***
+ *** All Keywords should be surrounded by double quotes.                    ***
+
+ Major Revisions:
+  1.04
+    Additions:
+      Updated EQUIPMENT.
+    Deletions:
+    Formatting:
+      Alphabetized
+  1.05
+    Fixed errors associated with 1.04 
+
+#
+"AC" "ARMOR CLASS"
+
+  Your AC represents your armor class and determines how successful an opponent 
+will be in hitting you.
+
+  AC is roughly defined as follows:
+
+      20 A naked person.
+       0 A fashionably dressed person (eg: plate mail, shield, etc).
+     -50 An armored tank.
+    -100 An impenetrable fortress!
+
+See also: AC_APPLY, AC_AFFECT, ARMOR, ATTRIBUTES, EQUIPMENT
+
+#
+"AC_AFFECT" "ARMOR"
+ 
+  AC-AFFECT or ARMOR changes your ac by the affected value no matter where it
+is worn. Negative values have a positive affect on your AC. Positive values 
+have a negative affect.
+ 
+See also: AC, AC_APPLY
+
+#
+"AC_APPLY"
+
+  AC-APPLY affects your AC differently based on where you wear the item. Each 
+body location has a different multiplier. Body is 3, head is 2, arms are 1, 
+etc. Some locations like wrist are 0. An example. suppose you have a piece of 
+equipment with ac-apply 10 that can be worn on body, head or wrist. Worn on 
+your body would give you a benefit of 30 ac. Worn on your head would give you 
+a benefit of 20 ac. Worn on your wrist would give you no benefit whatsoever. 
+AC-APPLY of an object also attributes somewhat to how difficult that object is
+to scrap.
+
+See also: AC, AC_AFFECT, ARMOR
+
+#
+"ACTIONS" "FEELINGS" "SOCIAL" "SOCIALS"
+
+  Commands mainly for social interaction
+
+  They are:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+         accuse     |  dance     |  hum      |  sad     |  twiddle    
+         ack        |  daydream  |  ignore   |  salute  |  violin
+         agree      |  die       |  insult   |  scratch |  wait
+	 anvil      |  dig       |  jump     |  scream  |  wave    
+	 apologize  |  disagree  |  kiss     |  shake   |  whine   
+	 applaud    |  doh       |  lag      |  shit    |  whistle
+	 bark       |  duck      |  laugh    |  shiver  |  wiggle 
+	 beep       |  duh       |  lean     |  shrug   |  wink    
+	 beg        |  ejaculate |  lick     |  sigh    |  wipe 
+	 believe    |  faint     |  love     |  sing    |  wonder    
+	 bite       |  fart      |  massage  |  sit     |  worship   
+	 bleed      |  flash     |  moan     |  slap    |  yeehaw   
+	 blush      |  flex      |  mock     |  slurp   |  yodel    
+	 boggle     |  flip      |  mosh     |  smirk   |  yuck    
+	 bored      |  flirt     |  nerve    |  smile   |  zerbert
+	 bounce     |  flipoff   |  nod      |  smoke   
+	 bow        |  fondle    |  nudge    |  snap     
+	 bullshit   |  french    |  nuzzle   |  snarl   
+	 burp       |  frown     |  ouch     |  sneer    
+	 bum        |  froth     |  pant     |  sneeze
+	 cackle     |  fume      |  party    |  snicker   
+	 caress     |  gasp      |  pat      |  sniff   
+	 catcall    |  gibber    |  peer     |  snore      
+	 cheer      |  glare     |  piss     |  snuggle
+	 chuckle    |  gloat     |  point    |  spank  
+	 clap       |  grin      |  poke     |  spit    
+	 clueless   |  grimace   |  ponder   |  squeeze  
+	 cool       |  groan     |  pose     |  stare   
+	 comb       |  grope     |  pout     |  startle
+	 comfort    |  grovel    |  puke     |  steam  
+	 compose    |  growl     |  purr     |  strip   
+	 cough      |  grumble   |  putz     |  strut  
+	 cringe     |  grunt     |  puzzle   |  suck   
+	 cross      |  guffaw    |  quack    |  sulk   
+	 crumple    |  hate      |  recoil   |  tap     
+	 cry        |  hiccup    |  rkick    |  tackle  
+	 cuddle     |  hop       |  rock     |  tango  
+	 curse      |  howl      |  roll     |  tickle  
+	 curtsey    |  hug       |  ruffle   |  thank 
+
+  All of these social commands DO work, if you notice any typo's or errors 
+please notify your nearest God ASAP!
+
+See also: BUG, PAGE, TYPO, WRITE
+
+#
+"ACID BLAST"
+
+Type:   mage
+Level:  11
+Mana:   15
+Syntax: cas 'acid blast' <victim>
+Damage: levelD12 (Pure Class: levelD14)
+Spell Melee: 1-4
+Saving: Spell
+Save Affect: 1/4th Damage
+
+  Acid blast showers the victim with a powerful blast of burning acid. The 
+advantage of acid blast over other attack spells is that very few creatures are
+immune to acid.
+
+*note* There is a greater chance of scrapping the equipment of a victim with 
+       this spell.
+
+See also: ACID RAIN, EQUIPMENT, REPAIR
+
+#
+"ACID RAIN"
+
+Type:   mage
+Level:  41
+Mana:   30
+Syntax: cas 'acid rain'
+Damage: levelD11 (Pure Class: levelD13)
+Saving: Breath
+Save Affect: 1/2 Damage
+
+  Acid rain produces a torrential downpour of acid, hitting everyone in the 
+room who is not grouped with the caster.
+
+*note* There is a greater chance of scrapping the equipment of a victim with 
+       this spell.
+
+See also: ACID BLAST, AREAAFFECT, EQUIPMENT, REPAIR
+
+#
+"ACID WARD"
+
+Class:  mage
+Level:  41
+Mana:   10+10/hr
+Syntax: cas 'acid wa' <target>
+
+  The mage is able to generate wards of protection from various types of 
+spells. The acid ward offers resistance to such acid based spells as 
+'acid blast' and 'acid rain'.
+
+*note* By casting the ward spell again on a target, you will increase the
+       resistance of the spell to immunity, but at an expensive cost.
+
+See also: COLD WARD, ELECTRIC WARD, ENERGY WARD, FIRE WARD, IMMUNITIES, 
+          RESISTANCES
+
+#
+"ACIDSHIELD"
+
+Class:    druid/ranger
+Level:    109/90
+Mana:     20+10/hr
+Syntax:   cas 'acidsh'
+
+  When protected by this powerful spell, the benefactor inflicts damage on an 
+attacker as his acidshield burns the attacker during combat.  This also has the
+chance of scrapping equipment and items.
+
+See Also: COLDSHIELD, ELECTRICSHIELD, ENERGYSHIELD, FIRESHIELD, MANASHIELD, 
+          POISONSHIELD, VAMPSHIELD
+
+#
+"ADRENALIZE"
+
+Class:  psionist
+Level:  22
+Mana:   15+4/hr
+Syntax: adren <target>
+
+  The Psionist uses his mind to excite the recipients mind in such a way that 
+adrenaline is realeased into the their system. The rush of adrenalin puts the 
+target in a frenzy causing them to fight fiercly.
+
+See also: STRENGTH, TODAM, TOHIT
+
+#
+"ADVANCE"
+
+Level:  Immortals Only!
+Syntax: advance <player> <amt to advance>
+
+  To advance a player to a level higher than his present. Default is to advance
+him one level. A level 0 player (Man/Woman) is always only advanced by one 
+level.
+
+#
+"AFFECTS"
+
+  This command will show you what spell and skill affects are affecting your 
+body at the current time.
+
+See also: ATTRIBUE, LEECH, SCORE
+
+#
+"AFK"
+
+  The afk command will set you as being Away From the Keyboard. What this means
+is that you will get the (afk) tag on the who list, and when someone trys to 
+tell/whisper/ask to you, the message will be sent, but the sender will also be 
+notified that you are away from the keyboard and may not receive the message.
+
+  To return to the keyboard, you can type afk again or enter any other command.
+
+  When you go afk, you will still be dealt with as if you are playing, and 
+idle. Therefore, don't stay away too long, or you may be pulled into the void.
+
+#
+"AGE"
+
+   The age of your char plays an important role in gameplay. Age determines how
+much mana and movement you will recover on tick and how hard you will hit! 
+Generally the older your char is the faster he/she will regain mana/movement 
+but will not hit as hard (Spellcasters should look for age increasing items!).
+
+See also: MANA, MOVEMENT, SCORE
+
+#
+"AGGRESSIVE"
+ 
+  This command toggles your aggressivity towards aggressive monsters. Be 
+careful this is a dangerous command if you dont know what area you are going 
+into!
+
+See also: FLAGS
+
+#
+"ALIAS" "UNALIAS"
+ 
+  These commands are for creating/removing aliases.  You can have a maximum of 
+20, and they are stored WHEN YOU RENT.
+
+For example:
+  alias km kill monster
+  alias gc get all corpse
+ 
+  For then on, when you type km it will execute the command kill monster, and 
+gc will execute the command get all corpse... kind of like macros. Be careful
+however, as some command shortcuts may no longer work due to aliases using the
+same lettering (ie. "gc" is the abreviation used to talk on a clan channel, if 
+you created an alias using the same letters, "gc", then you would now have to 
+use "gco" to communicate on the clan channel.).
+ 
+  To remove an alias just type unalias (alias).
+
+For example:
+  unalias km
+  unalias gc
+will get rid of the two aliases listed above, making room for more (since you 
+can only have a maximum of 20).
+ 
+  To get a plain listing of your aliases, just type
+alias(enter/return).
+
+#
+"ALIGNMENT"
+ 
+  When doing the SCORE command, if your alignment is negative, this means you 
+are evil, and positive alignment means you are good. Neutral alignment is any 
+alignment between -350 and +350. Some objects in the game are aligned one way 
+or another meaning you can not use them if you are of the improper alignment.
+
+See also: ATTRIBUTES, SCORE
+
+#
+"ANIMATE DEAD"
+
+Type:   cleric
+Level:  11
+Mana:   10
+Syntax: cas 'animate' <corpse name>
+
+  While researching resurrection techniques, a sect of clerics discovered that
+while it was not always possible to bring back the souls of the once living, it
+was possible to animate the bodies left behind. Upon doing so, the gods shunned
+the sect, and any who followed in their ways for committing such an unholy act.
+
+  Cleric guild masters still teach their followers this technique, if only so 
+that they will not stumble upon it in the same way as the sect. Through the 
+years they have also found that those who were more evil in nature created more
+powerful zombies. 
+
+See also: GROUP, ORDER, POSSESSION
+
+#
+"ANSUM"
+
+Type:     druid
+Level:    5
+Mana:     25
+Syntax:   cas 'ansum' <optional name>
+
+  This spell creates monsters of the appropriate level to serve as followers. 
+The type of follower summoned is determined by the level of the caster. The 
+follower will remain loyal for as long as the caster maintains the spell's mana
+consumption (see LEECH).
+
+*note* If an optional name is specified, the caster will summon that named 
+       servant rather than one proportinal to his level.
+
+Servants available are (by level):
+  fox(5), owl(10), stag(15),cougar(20), bear(25), treant(30), stone giant(50)
+
+*note* The caster exerts great mental effort to keep his servants loyal, this 
+       is reflected in the mana they consume while following the caster.
+
+See also: GROUP, LEECH, ORDER
+
+#
+"APPRAISE"
+
+Type  : All
+Level : 1
+Mana  : 10
+Syntax: appraise <item>
+
+  Appraise will attempt to learn something about the object. What is learned
+depends upon your class. How accurate depends on your skill level, and wisdom.
+Some items are not comprehendable for one reason or another. Perhaps you need 
+to become more experinced to comprehend it. Perhaps the item just is so far out
+of your area of expertise, you can't understand it at all. This is an extremely
+time consuming ordeal and is by no means completely accurate.
+
+#
+"ARCHERY"
+
+Class:  ranger
+Level:  10
+Syntax: fire <victim>
+
+  As masters of the hunt, rangers have become very proficient in the skill of 
+archery. With a bow and a supply of arrows, the ranger can inflict mortal 
+wounds from varied distances. But beware, no creature enjoys being showered 
+with lethal missiles and will charge the source.
+
+See also: NOTCH, THROW
+
+#
+"AREA AFFECT" "AREAAFFECT"
+
+  Area affects are weapons/spells/skills that will affect EVERYONE in the room 
+you are in when you utilize them. Offensive area affects are prohibited in 
+certain rooms.
+
+See also: CAST, RULES, SPELLS
+
+#
+"ASK" "SAY" "SHOUT" "TELL" "WHISPER"
+
+  If you consider communicating with other beings, you might be understood 
+better if you start your sentences with either say, tell, whisper or shout.
+
+For Example:
+  say I'm a jerk
+  tell unclesam You're dead meat - sucker!
+
+  You can use ' as a shorthand for say. ie: ' hello there.
+
+#
+"ASSIST"
+
+  If you type "assist <player>" you will begin fighting the same person the 
+<player> is.
+
+  ASSIST is similar to RESCUE except the <player> continues fighting. It is 
+better than KILL in many cases because you do not have to choose between 
+1.golem and 2.golem (or 1.lamia that just entered the room). Even though 
+monsters of the same type assist each other in combat, ASSIST is better because
+you will eliminate one aggressor much faster.
+
+See also: KILL, HRESCUE, RESCUE, RULES
+
+#
+"ASTRAL WALK"
+
+Type:   mage
+Level:  28
+Mana:   100
+Syntax: cas 'astral'
+ 
+  This spell enables you to transport yourself to the astral plane. From there,
+you can access many remote locations as if they were nearby.
+
+See also: RULES
+
+#
+"AT"
+Type: To perform an action in a remote room without being in the room.
+Level: Immortals Only!
+Syntax: At {char|mob} <action>
+
+#
+"ATTACKS"
+
+  Below is a list of the amount of attacks per class. These reflect the amount of
+training that the class recieves.
+
+  10 attacks/round = Warrior
+   8 attacks/round = Bard, Knight, Ranger, Thief
+   7 attacks/round = Monk
+   5 attack/round  = Cleric, Druid, Psionist, Shifter
+   1 attack/round  = Mage
+
+  All multiple attacks must be practiced. Each round there is a percentage chance
+of making a successful melee attempt. This percentage is based off of a couple
+factors including how learned in each given melee skill you are. There are other
+skills that can increase the amount of attacks attempted per round. These skills
+are Dual Wield, Haste, and Limb. There are some other skills that may produce
+more attacks and/or more damage. Those skills are Polymorph, Shift, and Tree.
+
+See also: MELEE1, MELEE2, MELEE3, MELEE4, MELEE5, MELEE6, MELEE7,
+          MELEE8, MELEE9, MELEE10, DAMAGE, DAMAGEMESSAGE, 
+          DUAL WIELD, HASTE, LIMB
+
+#
+"ATTRIBUTES"
+
+  This command shows various information about your character such as, Armor 
+class, Stats, Hit and Damage, etc... You see more and more information as your
+levels increase. You should be able to see your stats at level 18.
+
+See also: ALIGNMENT, ARMOR CLASS, CONSTITUTION, DAMAGE, DM, DEXTERITY, 
+          IMMUNITIES, INTELLIGENCE, LEVELS, RESISTANCES, SAVING THROWS, 
+          STRSTAT, TOHIT, WISDOM
+
+#
+"AUCTION"
+  This command is used to buy and sell items to other players on the mud.
+
+SYNTAX:
+  auction <item name> <min bid>   To start an auction.
+  auction                         To see what item is being sold.
+  auction bid <amount>            To bid on an item being auctioned.
+  auction help                    For help, including deafening auction
+
+#
+"AURA"
+
+Class:     Paladin
+Level:
+Syntax:    aura, aura <type> toggles on/off
+
+  With the recent change of the paladin gods, and other world events taking
+place an effort, lead by the high paladin guildmaster Calimshana, went underway
+to re-affirm the paladin's place in society with their gods. After weeks of 
+nonstop devout prayer and good services, paladins were blessed with the ability
+to create auras of pure energy around themselves with a small amount of prayer
+and effort. Through extensive research and prayer, a few different types of 
+auras have been developed. More are currently being researched and developed 
+for later use. Here is a quick description of each:
+
+  Fire Aura -       Causes the temperature around the paladin to raise, and
+                    may cause some items to combust.
+  Ice Aura -        Causes the temperature around the paladin to fall sharply.
+  Acid Aura -       Causes the air around the paladin to dissolve skin and
+                    some fabrics.
+  Decompose Aura -  The paladin takes all the dead matter in the room, and
+                    converts it directly into his/her health.
+  Protection Aura - ???
+  Reflection Aura - ???
+  Lightning Aura -  Causes the air around the paladin to burst with 
+                    electricity.
+  Nova Aura -       ???
+
+* note* Many of these auras are aggressive. Make sure you turn them off when 
+        you no longer need them.
+
+See also: AREAAFFECT
+
+#
+"AUTH" "AUTHORIZE"
+
+Type:   Command for admitting players into game.
+Level:  Immortals ONLY!!!
+Syntax: auth Newbie yes         (lets Newbie in game)
+        auth Newbie no          (denies them from the game)
+        auth Newbie message     (message to Newbie)
+Special Syntax for 56+
+        auth all yes		(turns off authorization)
+	auth all no		(denies all future requests)
+	auth all ask		(turns on authorization)
+
+#
+"AUTOEXIT"
+ 
+   This command will toggle whether or not you automatically see
+visible exit directions (north, down, etc.) displayed when you go into
+a room.  This can be a handy command for exploring.  Also, if you are
+using COLOR, the exits will be displayed in ANSI color to highlight
+them.
+
+See also; FLAGS
+
+#
+"AUTOGOLD"
+
+   This command will toggle whether or not you will automatically
+loot coins from corpses that you kill.
+
+NOTE: This will loot coins only all other items will be left on corpse.
+
+See also: AUTOLOOT, AUTOSPLIT, FLAGS
+
+#
+"AUTOLOOT"
+
+   This command will toggle whether or not you will automatically 
+loot corpses that you kill.
+
+See also: AUTOGOLD, AUTOSPLIT, FLAGS
+
+#
+"AUTOSPLIT"
+   
+   This command will toggle whether or not you will automatically
+split gold with other players in your group when you loot corpses.
+
+See also: AUTOGOLD, AUTOLOOT, FLAGS
+
+#
+"AWE"
+Class:  psionist
+Level:  80
+Mana:   20
+Syntax: awe
+
+    Psionist with the ability to manipulate minds use this ability. To
+manipulate the opponent into thinking they are way to weak to beat such
+a strong opponent.  Thus they no longer want to fight you.
+
+#
+"BACKSTAB"
+
+Type:   thief
+Level:  5
+Move:   10
+Syntax: ba <victim>
+
+   Is a way to sneak up on a person, and attempt to place your deadly
+"piercing" weapon in his back, at exactly the point where it does most
+damage. A successful backstab gives a damage multiplier, depending on
+the level of the thief
+.
+   The chance of successfully backstabbing a person depends on how
+well you have practiced backstab at your guild, as well as your
+dexterity.
+
+*note* Any attempt to backstab an opponent will incur his full wrath
+       result in his undivided attention.
+
+See also: CIRCLE
+
+#
+"BANK"
+
+   Banks are located in Midgaard, New Thalos and other towns; you may
+deposit, withdraw, and check your balance at ANY bank. You can
+only carry a max. of 2 million coins at you at once so it would be
+best to deposit surplus funds -> sorry with todays economy we can not
+offer you interest on your deposits :)
+
+See also: CLAN, CLAN_BANK
+
+#
+"BARD" "BARDS"
+
+A Bard is someone who is basically a fighter with specialized spell
+abilities which can give strength and courage to those who fight 
+with them and can bedazzle and confuse those who fight against them.
+They are minor Druids with abilities drawn from this class. They are based
+upon Verbal and Emotional spells and their natural abilities come from
+skills to observe and the respect others hold for them. 
+
+The Bard was a person who went into battle beside the Monarch, used their
+voice for songs of inspiration for companions and to instill fear in the
+enemies. The Bard is an entertainer and a historian. They traveled greatly
+and had to be able to survive the wilds alone which gives reason for
+Druidic training.
+
+NOTE: Bards must hold an instrument of appropiate level to be able to
+      sing their spells.
+
+See also: PRACTICE, GAIN, RESTRICTIONS, DM, RULES, ATTRIBUTES, SONGS,
+          SING, ATTACKS
+
+#
+"BASH"
+
+Type:   warrior/knight
+Level:  2/3
+Move:   10
+Syntax: bash <victim>
+
+   The success of a bash depends upon how well you are learned. To
+bash someone is to attempt to 'knock' that person over. If you succeed
+you will cause the victim to fall on their rear.  The victim will be
+unable cast or perform any other special skills until they stand up.
+
+   You need to be wearing a shield in order to bash.
+
+See Also : TRIP
+
+#
+"BEFRIEND"
+
+Class:  druid/ranger
+Level:  2/10
+Mana:   15
+Syntax: bef <target>
+
+   Knowing the ways of animals, Druids and Rangers can often befriend
+animals and make them pets. Befriended animals are loyal to the death.
+Only animals of equal or lesser level can be befriended. Even if the
+ranger is of a higher level, that does not guarantee success. Some
+animals do not like to be taken out on adventures and they will bite
+if provoked.
+
+#
+"BERSERK"
+
+Type:   warrior/monk
+Level:  6/50
+Mana:   10
+Move:   10
+Syntax: ber
+
+   Practicing this skills enables you to BERSERK while in combat.
+Doing this will make it where you do MUCH greater damage to the
+monster you are fighting because of your great adrenaline rush.
+However, you can not flee while in the BERSERK mode of combat.
+
+See also: MANA
+
+#
+"BIND"
+
+Class:    shapeshifter
+Level:    20
+Mana:     5
+Syntax:   bind <victim>
+Duration: type "bind" again to release
+
+   Shapeshifters may immobilize a creature by wrapping and twisting
+themselves around the victim. The bound victim can only struggle to
+throw the shifter off, and has no ability to defend himself from
+other attacks.
+
+*note* While the shifter is binding the victim he cannot do any
+       damage himself, other than by contracting.
+
+See also: CONTRACT
+
+#
+"BLAST" "MINDBLAST"
+
+Class:  psionist
+Level:  30
+Mana:   25
+Syntax: blast <victim>
+Damage: levelD9
+
+   Mindblast is the strongest offensive skill of the Psionist. His ability
+to project devastating psychic power enables him to literally blow an
+opponents head apart.
+   Mindblast can cause lesser opponents to become disoriented in combt, making
+them far less able to defend themselves.
+
+#
+"BLESS"
+
+Type:     cleric/knight
+Level:    13/14
+Mana:     2+1/hr
+Syntax:   cast 'bless' <target>
+Duration: level hours (min of 10)
+
+   Bless on a victim will improve the targets saving throws by an
+amount proportional to the level of the caster.
+
+See also: SAVING THROWS, CURSE
+
+#
+"BLESSING"
+
+Class:  knight
+Level:  30
+Mana :  level
+Syntax: bless <target>
+
+   The holy nature of the knight is truly apparent in this skill. The
+knight calls upon the good will of the gods (what little there is)
+for aid. The knight may bestow this blessing on a person of his
+choice, provided that that person is not evil in nature. As an added
+note the more pure and powerful the knight is the more power is
+bestowed by the blessing. This is truly the one of the most powerful
+skills that a knight has.
+
+See also: ALIGNMENT
+
+#
+"BLIND FIGHTING"
+Class:  warrior/thief/knight/bard/ranger
+Level:  75/75/80/85/80
+Syntax: Automatic if player blinded/gouged
+
+    Lessens the affect of blinding and gouged eyes.  Though it does
+not cure it.
+
+#
+"BLINDNESS"
+
+Type:     cleric
+Level:    4
+Mana:     10+1/hr
+Syntax:   cast 'blind' <victim>
+Duration: level hours (min of 10)
+Saving:   Spell
+Save Affect: Unaffected
+
+   Blindness will affect the vision of a victim failing its saving throw.
+A blinded victim will have their hitroll reduced by a value proportional 
+to the level of the caster.
+
+See Also: CURE BLIND, TOHIT
+
+#
+"BLUR"
+
+Class:    bard
+Level:    7
+Mana:     10
+Syntax:   sing 'blur'
+Duration: mana dependant
+
+   Bards can confuse their enemies with song that has the effect of making
+the bard appear to be in several places at once, confusing any attackers.
+
+*note* The strength of the illusion is proportional to the level of
+       the bard. 
+
+**note: Bards must hold an instrument of appropiate level to be able to
+        sing their spells.
+
+See Also: SONGS, SING
+
+#
+"BRAINSTORM"
+
+Class:  psionist
+Level:  40
+Mana:   50
+Syntax: brainstorm
+Damage: levelD9
+
+   Brainstorm releases a devastating psychic shockwave causing extremely
+painful mind tremors in the heads of everyone who is not grouped with
+the psionist.
+
+See also: AREAAFFECT
+
+#
+"BREATH"
+
+   The breath command allows you to use a breath weapon on another
+monster.  The only way to get a breath weapon is to either be a
+monster with such an ability (dragons usually have one) or quaff a
+potion of fire/ice/acid/gas/lightning breath.
+
+  If you are already fighting, breath without any arguments will
+breath on the monster you are fighting.  If you are NOT fighting you
+must supply the name of a target to breath on.
+
+  Breath weapons are terrifying and most opponents will flee before
+you get a chance to breath on them.  However, you may blast bystanders
+with the same breath.
+
+  This means breath weapons are not terribly accurate.  You will
+always hit the monster you target and will usually hit his group,
+followers and his leader.  You will also probably blast anyone
+currently hitting on you.  You also have a small chance (less than
+half) of hitting each bystander (someone not covered above).  They
+will not appreciate this and will probably decide to beat the snot out
+of you.
+
+  When quaffed breath potions modify you so that you can breath ONE
+time.  If you do not breath in 2-3 rounds the potion will explode
+inside you causing half of its normal damage.  These potions also
+reduce your CON for the duration of the spell.  You therefore cannot
+quaff more breath weapon levels than you have constitution.  You also
+cannot quaff more breath weapon levels than you have levels.
+
+  The damage of a breath weapon is a function of its level, your
+level, and your hitpoints.  If your level is equal to the breath
+weapon's level it will do your hitpoints worth of damage to the
+target.  If your level is double the level of the breath weapon it
+will only do half your hitpoints of damage.  Monsters natural breath
+weapons exceed the CON restriction and even a 50th level monster can
+do full damage.  Since most huge monsters have huge hitpoints, this
+can be a LOT of damage.  Do not ever fight a titanium dragon.
+
+See also: KILL, QUAFF, AREAAFFECT, RULES
+
+#
+"BREW"
+
+Type:   druid
+Level:  12
+Mana:   20
+Syntax: brew <type | help>
+
+  Bubble, Bubble, toil and trouble, fire burn and cauldron bubble.
+Brewing is the art of mixing reagents together to make various useful
+potions. Beware of trying to mix reagents if you do not know what you
+are doing, it has been known to go terribly wrong.
+
+  Some of the reagents are well known, others are shrouded in mystery
+and riddles.
+
+See also: REAGENTS
+
+#
+"BRIEF"
+
+  Toggle "brief mode". When in brief mode, you do not see the descriptions of 
+the room you are in; only the name of the room, and the people and objects in 
+there. Unless you are very familiar with the area in which you travel, however,
+it is not advisable to use this command. Frequently, you will find small, but 
+vital hints in the descriptions of the rooms: An extra peek at your 
+surroundings could mean the difference between life and death!
+
+See also: COMPACT, FLAGS
+
+#
+"BUG" "IDEA" "TYPO"
+
+  For making useful suggestions to the maintainers of the game.
+
+ie: bug the entire game crashes when I type 'put bag in bag'
+    idea make a restaurant in Midgaard
+    typo 'sence' should be spelled 'sense'
+
+Also, please feel free to log bugs on the bug tracking site:
+http://tw2.game-host.org/mantis/
+
+See also: PAGE, WRITE
+
+#
+"BURNING HANDS"
+
+Type:   mage
+Level:  10
+Mana:   15
+Syntax: cas 'burn' <victim>
+Damage: levelD6 (Pure Class: levelD8)
+Spell Melee: 1-6
+Saving: Spell
+Save Affect: Unaffected
+
+   Burning hands is an attack where by the caster attempts to scorch the
+victim with the summoned flames eminating from his hands.
+
+See also: FIRE WIND, FIREBALL, FLAMESTRIKE, LAVA STORM
+
+#
+"BUY" "SELL" "LIST"
+
+   Commands for the shops - very useful too !
+
+See also: BANK, IDENTIFY, PAWN, VALUE
+
+#
+"CALL LIGHTNING"
+
+Type:   druid
+Level:  40
+Mana:   15
+Syntax: cas 'call' <victim>
+Damage: levelD22
+Spell Melee: 1-4
+Saving: Spell
+Save Affect: Unaffected
+
+   Perhaps the most powerful spell in druids arsenal. Call lightning
+harnesses the strength of one of natures most powerful and violent
+forces, directing all its fury at a single victim.
+
+*note* This spell may only be performed outdoors and during appropriate
+       weather conditions.
+
+See also: CONTROL WEATHER, EARTHQUAKE, GEYSER, SUNRAY, WIND STORM
+
+#
+"CALM"
+
+Type:   druid/ranger
+Level:  1/3
+Mana:   15
+Syntax: cas 'calm' <victim>
+Saving: Spell
+Saving Affect: Unaffected
+
+   This spell allows the caster a chance to calm an aggressive monster.
+However, this spell will fail to calm those creatures which are hostile
+to everything.
+
+#
+"CAMOUFLAGE"
+
+Type:     druid/ranger
+Level:    13/18
+Mana:     10+1/hr
+Syntax:   cas 'camou'
+ 
+   With this spell in affect, the caster will blend into the background
+foliage, able to move undetected. If the caster enters a non wilderness
+area however, his camouflage will be lost.
+
+*note* This spell may only be performed in wilderness areas.
+
+See also: SNEAK
+
+#
+"CANIBALIZE"
+
+Class:  psionist
+Level:  17
+Mana:   0
+Syntax: can <mana amt desired>
+
+   This Skill allows the Psionist to draw upon what little pysical
+reserves he has to augment his mental skills. In a time of need it
+could be either your savior or your death.
+
+#
+"CARESS" "CUDDLE" "HUG" "KISS" "LOVE" "NIBBLE" "SHAKE" "SMILE" "SNUGGLE"
+
+   Whenever you feel affectionate. ie: hug shawn
+                                       cuddle judy
+See also: SOCIALS
+
+#
+"CARET" "^"
+
+Syntax: ^<old_text>^<new_text>
+
+  Use this if you made a typo in the last line you typed.  Similar to the
+unix usage of the caret.
+
+#
+"CASINO"
+ 
+The Midgaard Casino commands for Blackjack are as follows:
+sit - to sit down at the blackjack table.
+bet <amount> - to bet an amount of gold (ie: bet 100).
+hit - to draw another card.
+stay - to not draw another card.
+peek - to take a peek at your cards.
+stand - to leave the casino table.
+
+   The Midgaard Casino has a bank limit at each reboot, once that bank
+is broken (ie. no more money), I can no longer cover your bets in
+blackjack.
+ 
+   The Midgaard Casino has a minimum bet of 1000, and a maximum bet of
+10000 for each game of blackjack.
+ 
+   Thank you for your support,
+   the ghostly casino dealer
+
+See also: BANK
+
+#
+"CAST"
+
+   For "magical" people. If you want to throw a spell at someone or
+something.  ie: cast 'burning hands' <victim>
+
+*note* The name of the spell must be enclosed by "'"s.
+
+For help on each individual spell try for example:
+  > help cure light
+  > help fireball
+  > help energy drain
+
+See also: AREAAFFECT, MANA, RULES, SPELLS
+
+#
+"CHAIN ELECTROCUTION"
+
+Type:   mage
+Level:  31
+Mana:   45
+Syntax: cas 'chain'
+Damage: levelD11 (Pure Class: levelD13)
+Saving: Breath
+Save Affect: 1/2 Damage
+
+
+   Chain electrocution unleashes violent waves of electricity, hitting
+everyone in the room not grouped with the caster.
+
+See also: AREAAFFECT, ELECTRIC FIRE, ELECTROCUTE, SHOCKING GRASP
+
+#
+"CHAMELEON SKIN"
+
+Class:    shapeshifter
+Level:    10
+Mana:     5+5/hr
+Syntax:   cham
+Duration: type "cham" to return to normal
+
+   Shapeshifters can take on the properties of chameleons and meld into
+the surroundings, becoming virtually undetectable. 
+
+*note* A shifter will become detectable if he becomes involved in a
+       fight.
+
+#
+"CHANNELS" "LOG" "RPRUMOR" "RUMOR" "SHOUT" "SWEAR" "THINK" "TRIVIA"
+
+  Most mass communications are now done by way of channels.  What this
+means to you the player is that you have more say in what
+communications you'll hear from other players.  At present there are 7
+implemented channels, more may be coming later:
+
+   think     God channel we use to talk about you mere mortals behind
+             your back.
+   log       God channel for special messages from the system.
+   rumor     If you want to shoot the bull, this is where to do it.
+   rprumor   Same as rumor, only this channel should be used for 
+             "in character" chat, as when questing.
+   shout     You know what this is.
+   swear     If you can't say something nice, say it here.
+   trivia    Gods will sometimes ask trivial questions to test the knowledge
+             of their mortals. Use this channel to respond.
+
+- To toggle whether or not you hear a channel just type the name of
+  the channel.
+- To use the channel type the name of the channel followed by your
+  message.
+- To get a list of all channels and whether or not your listening to each
+  of them, type "channels"
+- To find out who's listening to a give channel, type the channel name
+  followed by who, for ex, "rumor who"
+- To disable or enable all mortal channels at the same time, you can
+  use the "deafen" command.
+
+#
+"CHARGE ELEMENTS"
+
+Class:  monk
+Level:  31
+Mana:   5
+Syntax: charge [on|off|rep]
+
+This ability allows the monks to absorb certain elemental spells.
+Once absorbed, these spells may be released using the monks, well
+trained kick (mkick).
+
+Currently only a few elemental spells can be absorbed. The master
+monks are continuing to experiment in this area and, if successful,
+may be able to teach their students how to absorb other spells.
+
+#
+"CHECKIN" "OFFER" "RENT"
+
+   For use in the receptions of inns. The command 'offer' will make
+the innkeeper tell you the cost of storing your carried items for one
+day.  'rent' will store the items and make you leave the game. The
+next time you enter, you will start out in the reception where you
+left. The inn will store your items as long as you have the gold to
+pay the rent.  'checkin' will store your items, charge you a bit more
+money and wave the daily rent charges.  Characters that have been
+rented with check-in are also safe from purges for longer.
+
+See also: INN, PURGE
+
+#
+"CHILL TOUCH"
+
+Type:   mage
+Level:  1
+Mana:   15
+Syntax: cas 'chill' <victim>
+Damage: levelD3 (Pure Class: levelD5)
+Spell Melee: 1-7
+Saving: Spell
+Save Affect: Unaffected
+
+   Chill touch is an attack where by the caster attempts to freeze the
+victim.
+
+*note* All cold spells have a chance of weakening the victim due to the
+       freezing affects of the spell.
+
+See also: FROST CLOUD, ICE STORM, WEAKNESS
+
+#
+"CHOMP"
+Type: To remove a mob, object, or char from the game.
+Level: Immortals Only!
+Syntax: Chomp {mob|obj|char}
+*NOTE: Chomping characters forces them into auto rent....it does not drop
+       link like c-socket.
+
+#
+"CIRCLE"
+
+Type:   thief
+Level:  26
+Move:   10
+Syntax: circle
+
+  This skill allows a thief a chance of circling around an opponent
+while engaged in combat and get a chance at another backstab.  Any
+attempt to circle an opponent will incur his full wrath and result in
+his undivided attention.
+
+  This skill may only be used on an opponent who is not currently
+attacking you. Your chance of success is proportional to the number
+of opponents your victim is fighting (distracting his attention while
+you circle around), as well as your dexterity.
+
+See also: ATTRIBUTES, BACKSTAB, DEXTERITY
+
+#
+"CLASS" "CLASSES"
+
+The available classes in Thieves World are as follows:
+Warrior, Thief, Mage, Cleric, Paladin (Knight), Druid, Psionic, Ranger,
+Shifter, Monk, and Bard.
+
+*NOTE* Some races are limited to certain classes.
+
+See Also: BARD, CLERIC, DRUID, MAGE, MONK, MULTI-CLASS, PALADIN, PSIONIC, 
+RACES, RANGER, SHIFTER, THIEF, WARRIOR
+
+#
+"CLONE"
+
+Type:   mage
+Level:  35
+Mana:   20
+Syntax: cas 'clone' <object>
+
+  Clone allows the caster to create an exact duplicate of any object.
+As of yet, the magic involved in cloning an object is far from
+perfect, so any attemps have a substantial chance of failure.  A
+successful casting of clone will result in an exact duplicate of the
+original object, while a failure will result in its destruction.
+
+  This spell is so rigorous that only individuals in the peak of
+health may cast it.  Even then, it will permanently reduce the casters
+stamina every time it is cast.
+
+#
+"CLOSE" "LOCK" "OPEN" "UNLOCK"
+
+Syntax: (example):
+ > open portal
+or
+ > open portal south
+   (if there is more than one to choose from)
+
+#
+"CLS"
+ 
+This command clears your screen.
+
+#
+"COCOON"
+
+Class:    shapeshifter
+Level:    15
+Mana:     0
+Syntax:   cocoon
+Duration: type "return" to return to normal state
+
+   The shapeshifter can enter a hibernative state in which physical
+recovery is very rapid. While in this state, the shifter can do
+very little but wait and regenerate.
+
+#
+"COLD WARD"
+
+Class:  mage
+Level:  19
+Mana:   10+10/hr
+Syntax: cas 'cold wa' <target>
+
+   The mage is able to generate wards of protection from various types
+of spells. The cold ward offers resistance to such cold based spells as
+'chill touch' and 'ice storm'.
+
+*note* By casting the ward spell again on a target, you will increase the
+       resistance of the spell to immunity, but at an expensive cost.
+
+See also: ACID WARD, ELECTRIC WARD, ENERGY WARD, FIRE WARD, IMMUNITIES, 
+          RESISTANCES
+
+#
+"COLDSHIELD"
+
+Class:    mage/druid/bard
+Level:    87/58/75
+Mana:     20+10/hr
+Syntax:   cas 'coldsh'
+
+   When protected by this powerful spell, the benefactor inflicts
+damage on an attacker as his coldshield freezes the attacker during
+combat.
+
+See Also: ACIDSHIELD, ELECTRICSHIELD, ENERGYSHIELD, FIRESHIELD, MANASHIELD, 
+          POISONSHIELD, VAMPSHIELD
+
+#
+"COLOR"
+
+   This command enables ANSI color for prompts, tells, and other
+various things.  As well as being pretty, it is also useful (it is
+hardly to miss a tell when it is being transmitted in green, and it is
+easier to see your hitpoints in your prompt when they are being
+displayed in red).  You must be in VT100 or ANSI mode to toggle this
+feature.
+
+See also: FLAGS
+
+#
+"COMBUST" "SPONTANEOUS COMBUSTION"
+
+Class:  psionist
+Level:  20
+Mana:   20
+Syntax: combust <victim>
+Damage: levelD7
+
+   With power of the mind, the psionist is able to cause his victim
+to spontaneously combust, literally causing the victim to erupt in 
+flames.
+   The pain caused by this skill is often so severe that it can cause the
+victim to become disorientated and unable to act for a period of time.
+
+#
+"COMMANDS"
+
+   A mechanical listing (the code already exists) of the known verbs.
+
+See Also: HELP, HELPTOPICS
+
+#
+"COMPACT"
+   If you have a small display you might want to use this command. It
+turns off (or on) the extra newline after output to your screen.
+
+See also: BRIEF, FLAGS
+
+#
+"CONJURE ELEMENTAL" "ELEMENTALS"
+
+Type:   mage/druid
+Level:  12/24
+Mana:   20
+Syntax: cas 'conjure' <fire | water | earth | air>
+
+A material component is necessary to successfully perform this spell:
+
+  red stone       - fire  elementals
+  pale blue stone - water elementals
+  grey stone      - earth elementals
+  clear stone     - air   elementals
+
+Each elemental has its own unique abilities, strengths, and of course
+weaknesses. The hit points of the elemmental are proportional to the
+level of the caster.
+
+*note* You must be "hold"ing the stone of the desired elemental that
+       you wish to conjure. the elemental will remain loyal for as
+       long as the caster maintains the spell's mana consumption (see LEECH).
+
+See also: GROUP, LEECH, ORDER
+
+#
+"CONSIDER"
+
+Syntax: con <monster>
+
+   This command will compare your Level with the <monsters> level.  It
+also compares your average combat damage to the monster's average
+combat damage, your hitpoints to the monster's hitpoints, and it also
+tells you if the mobile has any special procedure (ie. casts spells,
+breaths fire, etc.)
+
+ie: con fido
+
+#
+"CONSTITUTION"
+
+   Constitution is the attribute of the player that mainly deals with
+how many hit points a person may get while gaining and how much hit
+points/mana/movement a player will recover on a tick.
+
+See also: GAIN, HP, MANA, MOVEMENT
+
+#
+"CONSTRICT"
+
+Class:  psionist
+Level:  1
+Mana:   10
+Syntax: constrict <victim>
+Damage: levelD3
+
+   With focused psychic power, the psionist can constrict a victims
+throat, cutting off their air and strangling them.
+   Lesser Opponents may be weakned by the resultant loss of oxygen.
+
+#
+"CONTINUAL LIGHT"
+
+Type:   mage
+Level:  20
+Mana:   100
+Syntax: cast 'continual l' <object>
+<reversible>
+
+   This spell makes a non magical object magical and causes it to glow so 
+fiercely that it illuminates the entire room when brought to bear.  This
+effect cancels out the reverse, Continual Darkness.
+
+See Also: CONTINUAL DARKNESS, CREATE LIGHT, MOONBEAM
+
+#
+"CONTINUAL DARKNESS"
+
+Type:   mage
+Level:  20
+Mana:   100
+Syntax: cast 'continual d' <object>
+<reversible>
+
+   This spell makes a non magical object magical and causes it to absorb any 
+illumination when brought to bear.  This effect cancels out the reverse, 
+Continual Light.
+
+See Also: CONTINUAL LIGHT, CREATE LIGHT, MOONBEAM
+
+#
+"CONTRACT"
+
+Class:  shapeshifter
+Level:  25
+Mana:   5
+Damage: levelD10
+Syntax: contract
+
+   While binding a creature, shifters can contract and literally
+crush the life out of their victim. This type of attack is similar
+to the constriction method employed by certain reptilian hunters
+in the wild.
+
+See also: BIND
+
+#
+"CONTROL WEATHER"
+
+Type:   druid
+Level:  25
+Mana:   20
+Syntax: cas 'control' <better | worse>
+
+   This spell will change the course of the current weather patterns to
+that which is specified by the caster. ie: cast 'control' worse
+
+See also: CALL LIGHTNING, SUNRAY
+
+#
+"CREATE FOOD"
+
+Type:   cleric/monk
+Level:  8/3
+Mana:   5
+Syntax: cas 'create fo'
+
+   This spell instantly creates an edible magic mushroom. The mushroom
+will be filling for a certain number of hours which is proportional to
+the level of the caster.
+
+See also: CREATE WATER, GOODBERRY
+
+#
+"CREATE LIGHT"
+
+Type:   mage/cleric/bard
+Level:  6/6/4
+Mana:   5
+Syntax: cast 'create light'
+
+   This spell instantly creates a glowing light source.
+
+See Also: MINOR CREATION, MOONBEAM
+
+#
+"CREATE WATER"
+
+Type:   cleric/druid/monk
+Level:  7/8/4
+Mana:   5
+Syntax: cas 'create wa'
+
+   This spell instantly creates a barrel of crystal clear waters, the
+best to be found anywhere.
+
+See also: CREATE FOOD, GOODBERRY
+
+#
+"CREEPING DOOM"
+
+Type:   druid
+Level:  50
+Mana:   40
+Syntax: cas 'creep'
+Damage: levelD22
+Saving: Breath
+Saving Affect: 1/2 damage
+
+   Druids may call upon the insect world for aid in battle. These
+voracious eaters can cause serious harm to everyone and everything in
+their path. Luckily the druid's allies are protected from harm. High
+level druids have been known to summon so many insects that their
+enemies flesh is literally cleaned off their bones.
+
+*note* This spell may only be performed in wilderness areas.
+
+See also: AREA AFFECT, CALL LIGHTNING, EARTHQUAKE, GEYSER, WIND STORM
+
+#
+"CSOCKET"
+
+Type:   Used to cut the links of players and kick them off the game
+Level:  Immortals Only!
+Syntax: cscoket <number of player>
+
+   This command is used in conjunction with the Users command.  Type
+users and in the left hand side of the user's name is a number. That
+number is the players socket. To cut the players link type csocket
+<socket number>.
+
+See also: CHOMP, FORCE, LINK, PURGE, USERS
+
+#
+"CURE BLIND"
+
+Type:   cleric/knight
+Level:  4/14
+Mana:   5
+Syntax: cas 'cure bl' <target>
+
+   This spell will cure a person affected by the "blindness" spell, it
+cannot remove blindness caused as an affect by equipped items.
+
+See also: BLINDNESS
+
+#
+"CURE CRITIC"
+
+Type:   cleric/knight
+Level:  20/25
+Mana:   25
+Syntax: cas 'cure cr' <target>
+
+   A cleric heals for LevelD3 because of better training than the knight
+   which gets only 50 hitpoints of healing power with this spell.
+
+See Also: CURE LIGHT, CURE SERIOUS, EMPATHIC HEAL, GROUP CURE LIGHT, 
+          GROUP HEAL, HEAL, HP, LAY HANDS
+          
+
+#
+"CURE LIGHT"
+
+Type:   cleric/knight/monk
+Level:  1/10/5
+Mana:   5
+Syntax: cas 'cure li' <target>
+
+   A cleric heals for LevelD1 because of better training than the knight,
+   which get only 3D4 hitpoints of healing power with this spell.
+
+See Also: CURE CRITIC, CURE SERIOUS, EMPATHIC HEAL, GROUP CURE LIGHT, 
+          GROUP HEAL, HEAL, HP, LAY HANDS
+
+#
+"CURE SERIOUS"
+
+Type:   cleric/knight
+Level:  10/20
+Mana:   13
+Syntax: cas 'cure se' <target>
+
+ A cleric heals for LevelD2 (min of 25 points) because of better training than
+ the knight, which gets only 25 hitpoints of healing power with this spell.
+
+See Also: CURE LIGHT, CURE CRITIC, EMPATHIC HEAL, GROUP CURE LIGHT, GROUP HEAL,
+          HEAL, HP, LAY HANDS
+         
+
+#
+"CURSE"
+
+Type:     cleric
+Level:    14
+Mana:     10+1/hr
+Syntax:   cas 'curse' <victim>
+Duration: level hours (min of 10)
+Saving:   Spell
+Save Affect: Unaffected
+
+   Curse on a victim will reduce the victims saving throws by an
+amount proportional to the level of the caster.
+
+See also: BLESS, REMOVE_CURSE, SAVING THROWS 
+
+#
+"DESPAIR"
+
+Class:  bard
+Level:  33
+Mana:   15+1/hr
+Syntax: sing 'despair' <target>
+Saving: Petrification/Polymorph
+Saving Affect: Unaffected
+
+   With this song, the Bard uses his talent to make the song's recipient
+loose heart, thus making him a less effective fighter.
+
+   *note: There is a chance that failing this spell may cause the intended
+          victim to become enraged and attack.
+
+   **note: Bards must hold an instrument of appropiate level to be able to
+           sing their spells.
+
+See also: SING, SONGS, STRENGTH, TODAM, TOHIT
+
+#
+"DISTRACT"
+
+Thief Skill
+Level: 15
+
+   syntax:  distract <victim> <direction>
+
+   The victim of this skill will be distracted, perhaps by a sudden movement,
+an unexpected noise, or what have you, and leave in the appointed direction
+to investigate.  Those who are most skillful at causing such a deception are
+the most intelligent and agile of individuals, although the wiser the victim,
+the better chance he will notice the deception, and attack!
+
+#
+"FRIENDS"
+
+Class:    bard
+Level:    18
+Mana:     15+(1/10 per lvl of victem)/hr.
+Syntax:   sing 'friends' <victim>
+Duration: mana dependant
+
+   The singer has a chance of persuading the victim to become a follower. 
+If successful, the new follower will remain loyal as long as the caster
+can pay the mana.
+
+*note* Use caution, if the song fails, the victim will likely be
+       enraged and attack.
+
+**note: Bards must hold an instrument of appropiate level to be able to
+        sing their spells.
+
+See also: GROUP, HYPNOSIS, ORDER, SING, SONGS
+
+#
+"GILLS"
+
+Shifter Skill
+Level: 30
+    
+    Those of the shifter profession who have mastered this technique
+are able to control their respiratory system through the growth of
+gills from their body, thus allowing them to breathe underwater.
+
+#
+"GOLD"
+
+ Gold is the currency that is used within Thieve's World.
+ In order to view how much currency you have on yourself,
+ you may type "GOLD" or "SCORE".
+
+ See also: SCORE
+
+#
+"GROUP HEAL"
+
+Class:  pure-cleric
+Level:  69
+Mana:   75
+Syntax: cast 'group heal'
+
+   This powerful heal spell will repair a groups damage up to LevelD4.  
+   The magnitude of this heal also has the bonus affects of removing 
+   poison and blindness from the target.
+       
+   Healing the undead is found to have a painful affect on the
+   'healed' victim.
+
+#
+"INSPIRE"
+
+Class:  bard
+Level:  25
+Mana:   15+4/hr
+Syntax: sing 'inspir' <target>
+
+   With this song, the Bard uses his talent to inspire the song's recipient
+into a fighting frenzy.
+
+*note*: Bards must hold an instrument of appropiate level to be able to
+        sing their spells.
+
+See also: STRENGTH, TOHIT, TODAM, SONGS, SING
+
+#
+"LOSE"
+
+Syntax: lose <target/all>
+
+   The lose command makes another player stop following them.
+   If "lose all" is used, everyone that is following the player will stop
+following them.
+
+#
+"LULLABYE"
+
+Class:    bard
+Level:    12
+Mana:     20
+Syntax:   sing 'lullabye' <victim>
+Duration: 3 hours 
+Saving:   Spell
+Saving Affect: Unaffected
+
+       If failing saving throw versus spell, the victim will fall asleep.
+       A person who is affected by sleep can only be awakened if attacked.
+
+*note* Use caution, if the song fails, the victim will likely be
+       enraged and attack.
+
+**note: Bards must hold an instrument of appropiate level to be able to
+        sing their spells.
+
+See also: SAVING THROWS, SONGS, SING
+
+#
+"PURGE" "PURGES"
+Type: To remove Mob(s) and/or Object(s) from a room.
+Level: Immortals Only!
+Syntax: Purge {mob|obj}(to remove a single obj. or mob from a room)
+        Purge without a target will remove all mobs and objects from a room.
+
+#
+"SILENCE"
+
+Class:    bard
+Level:    45
+Mana:     30
+Syntax:   sing 'silence' <victim>
+Duration: mana dependent
+Saving:   Spell
+Savign Affect: Unaffected
+
+        Bards can sing a song of silence, causeing the victim to become
+        mute. The effected creature will not be able to speak or cast
+        spells.
+   
+   *note: There is a chance that failing this spell may cause the intended
+          victim to become enraged and attack.
+
+   **note: Bards must hold an instrument of appropiate level to be able to
+           sing their spells.
+
+See also: SONGS, SPELLS, SING
+
+#
+"SLOW"
+
+Class:  bard
+Level:  38
+Mana:   15+1/hr
+Syntax: sing 'slow' <target>
+Saving: Petrification/Polymorph
+Saving Affect: Unaffected
+
+   With this song, the Bard uses his talent to make the victim more 
+laxadaiscal, thus reducing ther number of attacks.
+
+   *note: There is a chance that failing this spell may cause the intended
+          victim to become enraged and attack.
+
+   **note: Bards must hold an instrument of appropiate level to be able to
+           sing their spells.
+
+See also: STRENGTH, TOHIT, TODAM, SONGS, SING
+
+#
+"SUGGESTION"
+
+Class:  bard
+Level:  40
+Mana:   20
+Syntax: suggest <target> <action>
+
+	This allows a bard to attempt to suggest some action to his intended
+target, hopefully making them perform it. 
+
+Allowable actions:
+   north, east, south, west, up, down, enter, exits, kiss, say, shout, tell,
+   bounce, smile, dance, kill, cackle, laugh, giggle, shake, puke, growl,
+   scream, insult, comfort, nod, sigh, sulk, emote, stand, sit, rest, sleep,
+   wake, hug, cry, guard, whisper, cast, ask, follow, poke, accuse, grin,
+   bow, open, close, lock, unlock, leave, applaud, blush, burp, chuckle,
+   clap, cough, curtesy, fart, flip, fondle, frown, gasp, glare, groan,
+   grope, hiccup, lick, love, moan, nibble, pout, purr, ruffle, shiver, shrug,
+   slap, smirk, snap, sneeze, snicker, sniff, snore, spit, squeeze, stare,
+   strut, thank, twiddle, wave, whistle, wiggle, wink, yawn, flee, backstab,
+   pick, steal, bash, rescue, kick, french, massage, tickle, pat, curse,
+   use, pray, beg, kill, cringe, daydream, fume, grovel, hit, nudge, peer
+   point, wonder, snarl, prank, steam, worship, yodel, quaff, recite, pose,
+   highfive, title, breath, disarm, bonk, fill, quickdraw, dispel, vis,
+   berserk, flirt, disagree, duck, duh, flash, flex, flipoff, froth, gibber,
+   gloat, grimace, grumble, grunt, guffaw, hop, hum, howl, bum, ignore,
+   scratch, jump, rkick, mock, pant, suck, putz, puzzle, recoil, roll, 
+   tongue, spank, startle, tackle, tap, taunt, whine, yuck, compose, piss,
+   shit, rock, raise, drool, ponder, bleed, beep, apologize, ack, bite,
+   boggle, bored, cheer, caress, die, punch, gtell, push, fire, form, 
+   throw, run, aggressive, anvil, bullshit, slurp, strip, sad, hunt, 
+   thrust, ration, stun, befriend, retreat, trip, circle, blast, layhands,
+   warcry, bless, hrescue, mount, dismount, ride, doorbash, salute, heiney,
+   counsel, yabba, rumor, combust, thought, constrict, bind, contract,
+   plate, brainstorm, feint, limb, palm, agree, hate, cross, wait, lean,
+   bark, quack, faint, nerve, cool, lag, violin, believe, sneer, dig, smoke,
+   party, catcall, yeehaw, ouch, clueless, mosh, temple, rub, holler, wings,
+   gills.
+
+   *note: There is a chance that failing, may cause the intended victim
+          to become enraged and attack.
+
+   **note: Bards must hold an instrument of appropiate level to be able to
+           sing their spells.
+
+See also: STRENGTH, TOHIT, TODAM, SONGS, SING
+
+#
+"SWITCH" "SWITCHES"
+Type: To switch into existing mobs within the game.
+Level: Immortals Only!
+Syntax: Switch <mob>
+
+#
+"SYSTEM"
+Type: To broadcast a message to all players.
+Level: Immortals Only!
+Syntax: System <message>
+
+#
+"TERROR"
+
+Class:    bard
+Level:    30
+Mana:     20
+Syntax:   sing 'terror' <victem>
+Saving:   Petrification
+Save Affect:  Unaffected
+     
+    Singing this spell for a creature has a chance of causing it to be
+    afraid of you, fleeing from the area in stark terror.
+
+*note* This spell has no affect on the undead.
+
+**note Use caution, if the song fails, the victim will likely be
+       enraged and attack.
+
+***note: Bards must hold an instrument of appropiate level to be able to
+         sing their spells.
+
+See Also: TURN, SONGS, SING
+
+#
+"TRANSFER"
+
+Type:   Moves player/mobiles
+Level:  Immortals Only!
+Syntax: use as directed below
+
+   This wizard command moves a character into the same room with the
+wizard.  You can also transfer monsters with this command, but be
+careful when using this command near aggressive monsters.  Getting a
+player killed is NOT good form.
+
+  trans Wa                 (you better have a good reason)
+  trans 4.lamia            (this monster is aggressive, watch it)
+  at 2 trans PlayerKiller  (send this person to Hell)
+                            there is no way to walk out of Hell)
+
+#
+"WINGS"
+
+Shifter Skill
+Level: 25
+
+    The shifter class has developed to such an extent that they are
+now able to form wings out of the molecules of their bodies.
+This allows them the ability of flight, and a corresponding
+lower movement rate.
+
+#
+"INVISIBLE"
+Type:To be totally invisible to those below your level or below a certain
+     level.
+Level: Immortals Only!
+Syntax: Invis (to be invisible to all below your level)
+        Invis <level> (to set your invisibility to a certain level)
+
+#
+"REIMB" "REIMBURSEMENT"
+Type: To equip a character with temporary reimbursement equipment.
+Level: Immortals Only!
+Syntax: Reimb <char>
+
+#
+"SCATTER"
+Type: To scatter mobs or objects around the mud for quests.
+	note: does not send to rooms flaged: DEATH, NO_MOB, 
+	NO_TRAVEL_OUT, NO_TRAVEL_IN, IMMORT_RM, GOD_RM, NO_RECALL
+Level: Immortals Only!
+Syntax: scatter <mob/obj>
+
+#
+"SNOOP"
+Type: To keep an eye on trouble players by observing what they see.
+Level: Immortals Only!
+Syntax: Snoop <char>
+*Note: To discontinue snooping a character, snoop yourself.
+
+#
+"VIEWFILE"
+Type: To view the bug, typo, idea, and motd files.
+Level: Immortals Only!
+Syntax: viewfile [bug | typo | idea | motd | wizreport ]
+
+#
+"PLAYER"
+Type: To view a player's score and attributes.
+Level: Immortals Only!
+Syntax: player [ list | score | attr | inv | eq | cont | all ] <character> 
+
+#
+"REROLL"
+Type: To reroll a player's ability scores.
+Level: Immortals Only!
+Syntax: Reroll <char>
+
+#
+"SLAY"
+Type: To kill a mob with a single blow.
+Level: Immortals Only!
+Syntax: Slay <mob>
+
+#
+"LOAD"
+Type: To load a mob or item into the game.
+Level: Immortals Only!
+Syntax: Load {o|m} {name|VNUM}
+*Note: You must specify whether it is an object or a mob before giving
+       the name or VNUM of the mob or object.
+
+SEE ALSO: SHOW
+
+#
+"NOHASSLE"
+Type: To keep aggressive mobs from attacking you.
+Level: Immortals Only!
+Syntax: Nohassle
+
+#
+"WIZLOCK"
+Type: To lock the game from all players connecting, or to lock the game
+      a certain site connecting.
+Level: Immortals Only!
+Syntax: Wizlock {all|add <host>|rem <host>|list}
+
+We also have wildcards for locking out entire domains!
+
+#
+"HOME"
+Type: To set a room your designated entry spot to the game.
+Level: Immortals Only!
+Syntax: Home <room #>
+
+#
+"ZONEHELP"
+
+Type:   all
+Syntax: zonehelp [L<level> | <name> | <number>]
+
+This will give you various information about different areas you can visit.
+With no arguments it presents you with a terse listing of all areas.
+Also available are area listings appropriate for certain levels, and
+detailed descriptions.
+
+EXAMPLES:
+
+zonehelp       -- complete list
+zonehelp L30   -- lists all areas appropriate for level 30 charactes
+zonehelp 40    -- detailed description of area 40
+zonehelp xanth -- detailed description of Xanth
+
+#
+"LASTON"
+
+Type:   all
+Syntax: laston <player>
+
+Informs you when a player was last connected to the mud.
+
+#
+"EDITOR" "LINEEDITOR"
+
+When entering a message, a simple editor is provided for manipulating
+the lines of the text within your message.  All editor commands are
+accessed through dot commands starting in the first column.  A dot
+command is a single period '.' followed by the command name.  Some of
+the commands take optional arguments.
+
+COMMAND SUMMARY:
+.l [<line1> [<line2>]]  -- List
+.v [<line1> [<line2>]]  -- View
+.p [<line1> [<line2>]]  -- Page
+.d [<line1> [<line2>]]  -- Delete
+.i [<line>] [<text>]    -- Insert
+.r [<line>] [<text>]    -- Replace
+.h [<topic>]            -- Help
+.? [<topic>]            -- Help
+.s                      -- Save
+.m                      -- Memory
+
+DETAILED DESCRIPTION:
+01]                    -- The Prompt:
+
+Before the ']' character, the prompt displays what line is currently
+being entered.
+
+.l [<line1> [<line2>]] --  List message with line numbers prepended
+List displays each line of your message with their related line
+number.  The display is sent through the page system.
+
+    - No arguments, lists the entire message  .l
+    - One argument, lists that line           .l 4
+    - Two arguments, lists that line range    .l 5 16
+
+The view command is provided for previewing your message without the
+line numbers and without the page system.
+
+    - No arguments, views the entire message  .v
+    - One argument, views the specified line  .v 4
+    - Two arguments, views that line range    .v 5 16
+
+.p [<line1> [<line2>]]  -- Page through message without line numbers
+
+The page command is provided for previewing your message without the
+line numbers but with the page system.
+
+    - No arguments, pages the entire message  .p
+    - One argument, pages the specified line  .p 4
+    - Two arguments, pages that line range    .p 5 16
+
+.d [<line1> [<line2>]]  -- Delete line(s)
+
+The delete command is used to remove lines of text from your message.
+
+    - No arguments, deletes the last line    .d
+    - One argument, deletes that line        .d 4
+    - Two arguments, deletes the line range  .d 5 16
+
+.i [<line>] [<text>]    -- Insert a line
+
+The insert command can be used to insert the line of text '<text>'
+before a specified line number.
+
+    - <line> specifies what line to insert before.  If not specified,
+      the last line will be used.    
+    - <text> is the line of text you with to insert.  If not specified,
+      a blank line will be inserted.
+
+  .i 3 This line will be inserted before line 3.
+  .i This line will be inserted before the last line in the message.
+
+.r [<line>] [<text>]    -- Replace a line
+
+The replace command replaces a specified line with the given text.
+
+    - <line> specifies what line to replace.  If not specified,
+      the last line will be used.
+    - <text> denoted the new text to replace with.  If not specified,
+      a blank line will be used as the replacement.
+
+  .r 3 This line will take the place of line 3.
+  .r And this line will replace the last line in the buffer.
+
+.h [<topic>]            -- Access help system
+.? [<topic>]            -- Same as '.h'
+
+Help gains access to the online help system.
+
+    - No arguments, the default help screen will be displayed.  .h
+    - One argument, the topic <topic> will be displayed.        .h steal
+  
+.s                      -- Save your message
+
+The save command completes your editing session.  This is the same as
+entering the terminating character in the first column.
+
+.m                      -- Memory Available
+
+This command displays the total memory allotted, used, and remaining.
+Each memory unit represents a single character.  Newlines count as two
+characters, and the terminating character counts as zero.
+
+See also: BOARDS, WRITE, MESSAGES
+
+#
+"SAMPLE"
+
+Type:   Shifter skill
+Level:  30
+Mana:   100
+Syntax: sample <corpse>
+
+Recently, Master Shapeshifter Gornn spent some time with the renowned
+Ranger Cyric to study their skill of rationing.  Adapting this very tricky
+and involved skill to his methods, Gornn was able to develop the ability to
+store the necessary "genetic" information for shifting into round wafers.
+
+This skill allows the shifter to take a light sample of a corpse to keep.
+Later on, the shifter can opt to shift into a sample instead of a corpse,
+and thereby giving shifters the versatility that they have long been looking
+for.  Shifters must thank Gornn for this precious gift.
+
+Due to the intense concentration of this skill, it takes lots of time for
+the shifter to complete this skill, even when failing.
+
+#
+"LIMB"
+
+Type:	Shifter
+Level:	35
+Mana:	30(10)
+Syntax: Limb
+
+This skill allows the shifter to grow an extra limb, thereby gaining an extra 
+attack.  At 50th level, Shifters get the possibility of growing two additional
+arms for a total of 2 extra attacks.
+
+#
+"LEVEL" "LEVELS" 
+
+  This is the amount of experience points you need in order to gain your
+next level. It is based upon you defeating 20 monsters of your equivalent
+level. It is true for ALL levels.
+
+  There are currently 125 mortal levels.
+
+#
+"TELEPORTER" "1REDIT"
+
+Type:   Command for room editing -- see help edit for info.
+Level:  Immortals ONLY!!!
+Syntax: edit tele <time> <room> <FLAGS> [<countdown>]
+FLAGS = 
+1    LOOK       (do a look when you get teleported
+2    COUNT      (this is a countdown room)
+4    RANDOM     (after first teleport, room teleports at rnd times)
+8    SPIN       (Not implemented yet)
+*** NOTE ***
+        If you are going to set COUNT flag, leave <time> = 0
+        COUNT, RANDOM and SPIN are more or less mutually exclusive.
+EXAMPLES:
+        edit tele 30 1000 1
+           teleport fires every 30 ticks, teleport to 1000, and look
+        edit tele  0 1000 3 30
+           30 ticks after entering room, teleported to 1000, and look.
+        edit tele  0 1000 2 30
+           30 ticks after entering room, teleported to 1000, and NO look
+                random time range = 10 to 100 ticks (.75 to. 75)
+
+See also: EDIT, ROOMSECTOR, ROOMFLAGS, RSAVE, RLOAD, INSTAZONE
+
+#
+"ZONES" "ZONE" "AREAS"
+
+	Information on areas in the game can be gleaned from the
+'zone' command.
+
+SYNTAX:		zone	 --->gives a listing of all the zones
+	
+		zone <#>
+		  or		--->a more complete description of each
+		zone <keyword>      individual zone.
+
+#
+"SONGS"
+
+   Songs are the exclusive domain of the bard, it is through the use of his
+voice, and musical talent that the bard is able to weave his spells.  The 
+help files for each of the bard's songs in this game contain the pertinent
+information needed to understand the song and its usage.  In addition, the
+"practice" command will list all the songs/spells/skills of an individual
+class if provided with a class name as an argument.
+
+See also: MANA, AREAAFFECT, SING, RULES, PRACTICE, SPELLS
+
+#
+"SPELLS"
+
+   All help files for each spell in this game contain the pertinent
+information needed to understand the spell and its usage.  If you
+would like a global overview of all spells and the classes that may
+cast them, type "all" or "allspell".  This will give you a complete
+list of all the current game spells and skills. In addition, the
+"practice" command will list all the spells/skills of an individual
+class if provided with a class name as an argument.
+
+See also: MANA, AREAAFFECT, CAST, RULES, PRACTICE
+
+#
+"ROOMSECTOR"
+
+Type:   Command for room editing -- see help edit for info.
+Level:  Immortals ONLY!!!
+Syntax: edit fs <roomflags> <ROOMSECTOR>
+
+These are the current ROOMSECTOR flags:
+
+0 = indoors     6 = water (swimmable)
+1 = city        7 = river (non-swimmable)
+2 = fields      8 = air
+3 = forest      9 = water
+4 = hills       10= desert
+5 = mountains
+
+  Sector flags determine how much moveent it will take a pc from
+walking through the room and also determine whether certain spells
+ie... tree, waterbreath,fly are viable pc alternatives.
+
+See also: REDIT, ROOMTELEPORT, ROOMFLAGS, RSAVE, RLOAD, INSTAZONE
+
+#
+"RACES"
+
+Type:   GENERAL INFORMATION
+
+   Current races for characters include:
+       
+	Human		Elf		Forest Elf
+	Drow		Half-Elf	Dwarf
+	Hobbit		Gnome		Doppleganger
+	Hill Giant	Half-Orc	Orc
+	Pixie		Avian		Canis
+	Felis		Reptile		Goblin
+	Minotaur	Cyclops		Skexie
+	Storm Giant	Frost Giant	Fire Giant
+	Cloud Giant	Storm Giant
+
+See also: GAIN, LEVELS, RESTRICTIONS, ATTRIBUTES, RULES, GUARDIANS
+
+#
+"PICK" "LOCKS"
+
+Type:   thief
+Level:  3
+Mana:   10
+Syntax: pick <object>
+
+   Through concentration and skill, the thief may be able to pick
+open locked doors and objects.
+
+*note* Not all locks can be picked.
+
+See also : OPEN, CLOSE, LOCK, UNLOCK
+
+#
+"SNEAK"
+
+Type:   thief/monk
+Level:  12/70
+Syntax: sneak
+
+   Used for sneaking (moving between rooms unnoticed).  When you type
+sneak, it is difficult to know if you actually succeeded in sneaking.
+If successful you continue to sneak for a time. While sneaking, many
+monsters that otherwise attack characters may not notice you, allowing
+easy passage to places other characters would find difficult to get to
+without battle.
+*NOTE- Mobiles are capable of seeing you 'sneaking' at times, dependent upon a
+number of factors including your proficiency and your relation in ability to
+the mobile.  This skill is designed for MOVEMENT from place to place, for
+long stays in rooms undetected thieves should use HIDE.
+See also:  HIDE, CAMOUFLAGE
+
+#
+"HIDE"
+
+Type:   thief/monk
+Level:  1/40
+Syntax: hide
+
+  When you type hide you might be able to hide in a room.  If hidden,
+you can only be seen by the 'sense life' spell. Even if seen your
+identity remains hidden.  This skill works only if stationary, though
+there are a limited number of commands you may perform and still stay
+hidden.
+
+See also:  SNEAK, SENSE LIFE, FAERIE FOG
+
+#
+"LOOK"
+
+Type:   GENERAL INFORMATION
+Syntax: look at/in/direction  character, mob, or item/container/[udnesw]
+
+  Use this command to study your surroundings.
+
+Examples:
+look                                      
+look AT the angel
+look IN the bag
+look to the south   (or just: look south)
+
+*Note* if you LOOK AT CORPSE you will not see its inventory.  To see
+what is inside a container (e.i. Corpse) use LOOK IN <OBJECT>.
+
+See also: EXAMINE, READ
+
+#
+"DRINK" "EAT" "SIP" "TASTE"
+
+If you are hungry or thirsty. Examples:
+    eat hamburger
+    drink beer
+    eat bread
+    eat sausage
+
+  Taste is a very useful command - by typing taste <food item> you
+will be to distinguish poisoned food from good food! This works with
+liquids also by using the "sip" command ie: sip <liquid>
+
+*note* If you are poisoned by eating or drinking something you
+       will regain mana/movement/hps very slowly!
+
+See also: POISON
+
+#
+"WHO"
+
+   WHO GODS will give you a list of all currently active (and visible)
+gods.  Please consult this list before shouting "Is there a god on?"
+
+   WHO (ARGUMENT) will give you a list of all currently active (and
+visible) players whose name matches your argument.
+
+ie: who B (to look for all people online whose name starts with B).
+
+#
+"WHOZONE"
+
+   This command lists all the players in the current zone and also
+tells you their location.  If you are a god (not bloody likely) it
+will also tell you their room number.
+
+  WHOZONE GODS lists all players in the current zone that are
+immortal.
+ 
+  WHOZONE (ARGUMENT) lists all players in the current zone whose name
+matches your argument.
+
+#
+"GIVE"
+
+   If you feel benevolent, you may give some stuff to someone in who
+is in need ie: give bread beggar.
+
+See also: TAKE, PUT, DROP
+
+#
+"SAVE"
+
+   Save your persona. This includes experience points, strength, gold,
+etc.  It also saves your equipment, up to the first 50 items.
+
+See also: REIMB
+
+#
+"STRING"
+
+   For changing the text-strings associated with objects and
+characters. The format is:
+
+string <type> <name> <field> [<string> | <keyword>]
+
+Type is either 'obj' or 'char'.
+Field is one of the following(the names may be abbreviated):
+Name                  The keyword for look,kill,give, etc..
+Short                 (for inventory lists (objs) and actions (chars))
+Long                  (for when obj/character is seen in room)
+Title                 (for players)
+Description           (For look at. For objs, must be followed by a keyword)
+Delete-description    (only for objs. Must be followed by keyword)
+
+   Where a string is expected as the last argument, a newline will
+make you enter a string mode, and the game will prompt you for new
+lines to the string until you exceed the maximum length for the string
+or you end a line with a '@'.
+
+   To find out the keyword of item place it on the ground and stat
+room.
+
+See also: REIMB
+
+#
+"INVENTORY"
+
+   If you are uncertain about what you are carrying, or simply want to
+check that no thieves have pilfered from your backpack.
+
+See also: EQUIPMENT, RESTRICTIONS, REPAIR, LEVELS, IDENTIFY, REIMB
+
+#
+"EQUIPMENT"
+
+  By typing Eq you can see what you are actually wearing and using and what 
+condition it is in. Equipment can be damaged in battle via spellcasting or 
+simple wear and tear so you should use the command regularly to see when you 
+need to repair it! There are up to 18 different "slots" (locations) to wear 
+equipment on your body. Equipment attributes can react differently depending on
+the slot the equipment is placed in. Empty slots will display "Nothing" next to
+the slot.
+
+Slot locations:
+  [ 0] <used as light>
+  [ 1] <worn on finger>
+  [ 2] <worn on finger>
+  [ 3] <worn around neck>
+  [ 4] <worn around neck>
+  [ 5] <worn on body>
+  [ 6] <worn on head>
+  [ 7] <worn on legs>
+  [ 8] <worn on feet>
+  [ 9] <worn on hands>
+  [10] <worn on arms>
+  [11] <worn as shield>
+  [12] <worn about body>
+  [13] <worn about waist>
+  [14] <worn on wrist>
+  [15] <worn on wrist>
+  [16] <wielded>
+  [17] <held>
+  [18] <loaded>
+
+*Note* Not all locations can be used by all classes.
+
+*** LIMITED EQUIPMENT ***
+   Expensive equipment ie: over 19,999 coins is considered limited.
+This means that it is rare and that there won't be too many of this
+item in the game. So take care of your equipment accordingly!
+
+
+
+See also: INVENTORY, REPAIR, RESTRICTIONS, LEVELS, IDENTIFY, REIMB
+
+#
+"WEAR"
+
+   If you want to wear some clothes, armor or the likes. ie: wear boots
+
+See also: REMOVE, EQUIPMENT, RESTRICTIONS, LEVELS, IDENTIFY, REIMB
+
+#
+"WIELD"
+
+   When you get tired of bashing monsters with your fists, you might
+consider wielding a weapon. ie: wield sword
+
+See also: REMOVE, EQUIPMENT, RESTRICTIONS, LEVELS, AREAAFFECT, IDENTIFY
+          REIMB
+
+#
+"SCORE"
+
+   Whenever you want to check whether you are still alive and healthy
+or simply want to see how much money you have left.
+
+See also: ATTRIBUTES, HP, MOVEMENT, MANA, AGE
+
+#
+"EMOTE" ":"
+
+Syntax: EMOTE <emotion>
+   If you consider expressing your emotions, you can express them with
+emote.  Any string following the command will be seen by others following your
+name.
+
+Example:
+  emote is happy.
+  YourName is happy.
+
+: is a shorthand for emote
+  : is sad.
+  YourName is sad
+
+#
+"KILL" "HIT"
+
+   Probably the most likely way to get someone mad and start a fight.
+
+See also: RULES
+
+#
+"KICK"
+
+Type:   warrior/knight/bard/monk
+Level:  1/2/6/2
+Move:   10
+Syntax: kick <victim>
+
+   The success of a kick depends upon how well you are learned. The
+higher level you reach the harder you kick.
+
+#
+"RESCUE"
+
+Type:   warrior/bard
+Level:  8/19
+Move:   10
+Syntax: rescue <victim>
+
+   A rescue is an attempt to make a monster hit you instead of the
+person being rescued.  You can only 'turn' one monster for each
+attempt. This is highly useful when playing in groups.
+
+#
+"PALM"
+
+Type:   Thief
+Level:  10
+Sytanx: palm <item>
+
+   This skill allows thieves to pick up an item from the ground without
+others in the room noticing.  Depending on level and wisdom, a viewer
+might catch a glimpse of the thief picking up the item.  Is the hand really
+quicker than the eye?
+
+#
+"STEALING"
+
+Type:   thief
+Level:  2
+Move:   10
+Syntax: steal gold <victim>, steal <item> <victim>
+
+   Use steal to steal gold or items from victims. The chance of not
+getting caught depends on how well you have practiced steal, and if
+the person is asleep or awake and alert.
+
+*note* Stealing from other players is strongly dissaproved of and
+       will be dealt with harshly.
+
+See also: RULES
+
+#
+"STEALTH"
+Type: To move without notice from room to room.
+Level: Immortals Only!
+Syntax: Stealth
+
+#
+"PICK"
+
+Type:   thief
+Level:  3
+Syntax: pick <object>
+
+   Picking locks enables a thief to open objects or doors without the
+necessary key.
+
+See also: KNOCK
+
+#
+"SING"
+
+   The bard does not weave magic in the conventional way of "magical" people.
+Instead the bardsings songs derived from Verbal and Emotional spells.  With 
+these songs the bard is able to use his talents and the respect others hold 
+for them to manipulate others.  In order to make his songs, the bard must hold 
+an instrument of appropriate quality in his hands.
+
+ie: sing 'sleep' <victim>
+
+*note* The name of the song must be enclosed by "'"s.
+
+#
+"DROP"
+
+   If you lose interest in a carried item, you can drop it on the
+ground.  ie: drop bottle
+
+   If you feel like getting rid of all your earthly possessions, you
+may use "drop all".  Also you can drop 9*bottle, which would drop 9
+bottles, but leave the rest in your hands.
+
+See also: GET, GIVE
+
+#
+"PURGE"
+
+  A way to make the world a little cleaner.
+
+  Syntax:
+  purge                         To empty a room of monsters and objects.
+  purge <character>             To remove a living thing. Kicks out a player.
+  purge <object>                Figure this one out yourself.
+
+#
+"STAT"
+
+Type:   Gives all statistics of a player/mob/obj
+Level:  Immortals Only!
+Syntax: stat <obj/pc/mob>
+
+   If you are interested in a person and want to find out about
+his/her/its skills, strength, mana, hitpoints etc. In addition, 'stat
+room' will give you useful information about the room you are in.
+
+#
+"ORDER"
+
+   Order allows you to command your followers to do things.
+ie: order giant hit Sisyphus
+
+   However, if the subject is not under your control (ie: your charm
+over them has worn off), they will give you an indifferent look :)
+
+   To have all your followers do something type: order followers <action>
+
+   "order <follower> guard [on|off]" tells your followers to pounce on
+   anyone and everyone attacking you.
+
+*note* Most of the followers which you are likely to aquire are not
+       equiped to see in the dark. If you give them an order at night
+       make sure they either have a light to see by or are bespelled
+       to see at night.
+
+See also: GROUP, TRUE SIGHT, INFRAVISION, DETECT INVISIBLE
+
+#
+"WEATHER"
+
+   If you are uncertain whether the sun is shining or the rain is
+pouring down.
+
+See also: CONTROL WEATHER, CALL LIGHTNING, SUNRAY
+
+#
+"READ"
+
+   When you want to read something. Mostly used at the message board.
+To read a message Look at the board and find the number of the message
+you are interested in and type read # of message.
+
+#
+"REMOVE"
+
+   If you tire of wearing some armor or wielding a weapon.
+ie: remove sword
+
+#
+"SHOPS"
+
+   Shops are places where the adventurer may purchase equipment for
+his quests, and where he may sell his treasure if he should manage to
+survive the perils with his life and sanity intact. Many shops trade
+only in a specific type of merchandise. Thus, a baker may well refuse
+to buy your armor, even if it is of high quality!
+
+   To some people, the prospect of obtaining the entire inventory of a
+shop by murdering the keeper may appear tempting - but beware: The
+shopkeepers are rugged, capable men and women; roughened by years of
+trading and, indeed, surviving in a world where the only safe prospect
+is death in the end.  (They usually have a few thousand hitpoints and
+can shoot through schools).
+
+See also: BUY, SELL, LIST, VALUE, PAWN, DM, BANK, IDENTIFY
+
+#
+"POST"
+  
+   Syntax:  Post <item> <player name>
+
+   This command, for a fee, will send an item to another player on the mud. 
+   The TWex Delivery elves are sometimes nervous carrying items that are too
+   valuable, or heavy, and may refuse their services on occasion.
+
+#
+"WIZ"
+
+   A listing of the commands for immortals (should be unavailable for
+mortals :)
+
+#
+"WARRIOR" "FIGHTER"
+
+   Warriors are known to have more strength than the average player.
+This makes them better at hand-to-hand-combat, as they possess skills
+of violence and fighting unequaled by the members of any other class.
+However, they lack the ability to use magic of any sort. You can
+improve your skills by using the practice command, in the room of the
+swordspeople's guild with the guildmaster (usually the last room)
+
+See also: BASH, KICK, DODGE, BERSERK, DUAL WIELD, RESCUE
+
+#
+"THIEF"
+
+   Thieves are known to have very special qualities, that no other
+class offers.  Many of these qualities can come in handy in many
+situations, such as picking locks.  They are not very combat oriented,
+however, so do not expect to be able to kill many things by yourself.
+The useful aspect of thieves involves their ability to scout ahead,
+avoiding monsters, detecting and removing traps and selling and buying
+items at the black market. You can improve you skills by using the
+practice command.
+
+See also: HIDE, STEAL, PICK, BACKSTAB, DODGE, TRIP, SNEAK, DUAL WIELD,
+          QUICK DRAW, SEARCH, CIRCLE
+
+#
+"SPLIT"
+
+   This command is used to split gold among the members of your group.
+ie: split 5000, if there are 2 members in the group each will recieve
+2500 coins and so on.
+
+See also: AUTOSPLIT, BANK, GROUP, RESTRICTIONS
+
+#
+"CLERIC"
+
+   This class gives you the wisdom of peace, blessing and healing,
+though it is possible to learn more violent spells.  You can improve
+your spells by using the practice command.
+
+See also: PRACTICE, DM, RESTRICTIONS, LEVELS, CAST, SPELLS, RULES,
+          ATTACKS
+
+#
+"MAGE" "MAGIC USER"
+
+   This is the class of powerful and violent magic, but the magic user
+does not control the nature, and can therefore not bless and such. You
+can improve your spells by using the practice command.
+
+See also: PRACTICE, DM, RESTRICTIONS, LEVELS, CAST, SPELLS, RULES,
+          ATTACKS
+
+#
+"PRACTICE" "PRACTISE"
+
+Syntax: prac [class abbrev] [skill/spell]
+  class abbreviation is only used at low guildmasters
+
+   Practice is the way you improve your spells and skills. You must go
+to your guildmaster to let him/her help you improve (GAIN).  If you
+type practice, you will see which skills you can improve upon, and how
+good you already are at these.  You can then use practice <skill>, to
+practice the appropriate skill.  You can only practise a certain
+amount for each level you gain, and you do not have to use this, it
+can be accumulated.
+
+*note* If you are not in the same room with your gm, you may use the
+       command in the following format "prac <class name>" to get a
+       listing of spells/skills of a particular class.
+
+See also: GAIN, WISDOM, INTELLIGENCE, ATTRIBUTES, DM
+
+#
+"EXITS"
+
+   Gives you a list of the obvious exits from your location. Of
+course, the less obvious ones will not show up here - you have to
+THINK in order to locate those.
+
+See also: AUTOEXIT
+
+#
+"LEAVE"
+
+   If you feel claustrophobic, typing 'leave' will make you use the
+nearest obvious exit to the outside.
+
+#
+"ENTER"
+
+   If you type 'enter' while you are outdoors, you will enter any
+nearby shelter.  You can also follow 'enter' with an argument.
+ie: enter window
+
+#
+"TIME"
+
+   Gives you the current 'gametime'. Your initial reaction to the
+output of this command may be one of surprise, but you will get used
+to it. you will have to, at any rate, since certain things in the game
+depend on this particular notion of time; the opening hours of the
+shops, for example.
+
+#
+"QUIT"
+
+   When you get tired of playing, you can leave the game by typing
+'quit'. Note that whatever stuff you might be carrying with you is
+simply left on the ground. If you wish to have your equipment put away
+until you are able to come back, you will have to find an inn and rent
+a room.
+
+See also: INN
+
+#
+"INNS"
+   Inns are places where the weary traveler may rest while the
+innkeeper looks after his equipment and treasure. Specifically, you
+may use inns to store your gathered equipment while you are not
+playing the game (we all have to sleep sometimes, there is no shame in
+that).
+
+See also: OFFER, RENT, CHECKIN
+
+#
+"GET" "TAKE"
+
+   If you find something interesting on the ground, you may use 'get'
+to pick it up. Example: "get greatsword". If you are in a hurry, or if
+you just feel very greedy, you may type "get all". You can also use
+'get' to extract objects from containers.
+
+ie: get dagger bag"
+    get all.bread from bag
+    get 9*bread from bag
+    get all from corpse
+    get 2.bread (will get the 2nd bread on the floor)
+
+See also: DROP, PUT
+
+#
+"PUT"
+
+   For putting stuff in containers.
+
+ie: put dagger bag
+    put all.bread in bag
+    put 9*bread in bag
+    put 2.bread in bag (will put the 2nd bread in inventory into the bag)
+
+See also: GET
+
+#
+"EXAMINE"
+
+   May give you some valuable information about an item, or a monster.
+
+See also: LOOK
+
+#
+"WRITE"
+
+   Used at message boards - the syntax is write <message name> write
+your message and when you are done use the @ to save it.  You can use
+paper and pens to write also.
+
+See also: LINEEDITOR
+
+#
+"NEWS"
+
+   This command will show you the current edition of "The Daily
+Lands Times", a publication dedicated to news and useful information about
+this world. It is a VERY good idea to check it out once in a while.
+NOT checking it out will probably get you dead.
+
+#
+"REST" "SIT" "SLEEPING" "STAND" "WAKE"
+
+   For changing your position. If you feel weary, It is probably a
+good idea to sit and rest for awhile; or maybe even take a nap.
+Caution dont sleep in open areas of town. Creatures like wombats and
+fidos like to attack sleeping players!
+
+See also: CONSTITUTION, MANA, HP, MOVEMENT
+
+#
+"POUR"
+
+   If you want to pour some liquid from one container to another.
+
+#
+"GRAB" "HOLD"
+
+   For getting a good grip on something; a torch, for example.
+
+See also: WEAR, WIELD, REMOVE, RESTRICTIONS, LEVELS, USE
+
+#
+"FOLLOW" "SHADOW"
+
+   If you happen to be going in the same direction as someone else,
+why not simply follow that person? For example: "Follow joe". If you
+are following someone and you wish to stop doing that, then all you
+have to do is follow yourself: "follow <your name>".
+
+   Shadow does the same thing, but doesn't inform the person you're following
+that you've started following them.  This can be especially useful used
+in conjuction with sneak.
+
+See also: GROUP, RESTRICTIONS, LEVELS
+
+#
+"FLEE"
+
+   If you are in a fight and things are beginning to get a little
+uncomfortable (maybe you are about to die), just type 'flee', and
+presto! you are out of harm's way - that is, IF you are still standing
+and, IF there is a suitable exit nearby, and IF that exit does not
+simply take you out of the frying pan and into the fire... but then,
+who wants to live forever?
+
+See also: HP
+
+#
+"IMPLEMENTOR"
+
+   The most powerful beings in existence.  Their function is mostly
+administrative.  Don't whine too much in their presence.
+
+See also: PAGE HELP, BUG, IDEA, TYPO, WRITE, EDIT
+
+#
+"GUILD"
+
+   The Guildhouse is the place where mortals may go to escape the
+troubles and perils of a cruel world. Each guild is heavily guarded so
+that only members may enter the building. Guilds are also the places
+where people come to learn and practice the skills of their trade. As
+your increase in powers your local guildmaster will not be able to
+help you anymore and you must search for a new guildmaster to study
+under.
+
+Guildmasters of Midgaard can train any class.
+
+See also: PRACTICE, GAIN, ATTRIBUTES, RESTRICTIONS, LEVELS, ATTACKS
+
+#
+"INFO"
+
+   Gives you some useful hints and information about the game.
+
+#
+"WHERE"
+
+   Tells you the location of a monster, a player or an object. Examples:
+
+where torch
+where dragon
+where 4.ring       (gives you the container traceback so you can find
+                    out WHO has that One Ring)
+
+   Mortals can only "where" monsters or players, and only from their
+own zone.
+
+   Immortals may type 'where' without arguments to see where everybody
+is in the game.
+
+#
+"USERS"
+
+Type: Immortals Only!
+
+   Tells you who is logged on to the game, and where they are playing from.
+
+See also: IMMWHO
+
+#
+"LEVELS"
+
+   Lists the levels of your class. 
+
+See also: RESTRICTIONS, ATTACKS
+
+#
+"REPEAT COMMAND" "!"
+
+   Repeat the last command typed at the keyboard.
+
+#
+"EXP" "EXPERIENCE" "XP"
+
+   Whenever you kill a monster, you earn experience points.  When
+enough experience points are earned, you raise a level.
+
+   We strongly discourage killing of other players.
+
+See Also: GROUP, RESTRICTIONS, LEVELS
+
+#
+"GROUP"
+
+Syntax: group <player>
+
+   A group is a collection of players that share experience for killing
+mobs.  For a group member to get experience for killing a mob, they must
+be in the same room as the mob when the killing blow is struck.  Below
+is an example of how to form a group.
+
+     Example : Quifael and Redferne wishes to group with Dragon.
+
+     Quifael : "follow dragon"
+     Redferne: "follow dragon"
+     Dragon  : "group dragon"
+     Dragon  : "group redferne"
+     Dragon  : "group quifael"
+
+   Group with no arguments will show a list of people with whom you are
+grouped.
+   Since experience is divided up among the members of a group, if at any 
+time the group leader wishes for one of the group members to not receive 
+experience from kills, they can "group <player's name>".  While that player
+will still be following the group leader, they will no longer recieve
+experience from kills.
+   If the group member no longer wishes for a member to follow them, they
+can use the "lose <player's name>" command to make that person not follow
+them any longer.
+
+See Also: EXPERIENCE, LEVELS, LOSE, GROUP SPELLS, ORDER
+
+#
+"GROUP TELL" "GTELL"
+
+   This command is to tell all the members of your group no matter
+where they are in the game a message. The message will only be heard
+by group members.  The Format for its use is tell group (message) or
+gt (message).
+
+#
+"POTIONS" "QUAFF"
+
+Syntax: quaff <potion>
+
+   Quaff is used to "drink" a (magical) potion. Use caution when using
+potions in battle there is a chance that they will break before you
+can quaff them!
+
+See also: BREATH
+
+#
+"RECITE" "SCROLLS"
+
+Syntax: recite <scroll> <target>
+
+   Is used to "read" a magical scroll. Target can be an object,
+character or nothing (which may be yourself).
+
+See also: RECALL, IDENTIFY
+
+#
+"ROD" "STAFF" "STAVES" "USE" "WANDS"
+
+Syntax: use <staff>
+        use <wand> <target>
+
+   Using staves will automatically target everybody (or everything) in
+a room, in some cases, or everyone not in your group in others.
+Therefore staves are naturally very powerful, and yet may be very
+dangerous to use around other players.
+
+   Using wands require that you point it at a target, which can be
+either a character or an object.
+
+   Both staves and wands must be HELD in the hand prior to use! (Use
+the grab or hold commands). You must still supply the name of the
+staff or wand to avoid confusion.
+
+See also: AREAAFFECT, HOLD
+
+#
+"HELP"
+
+The Following help is available:
+
+HELP help       - This text.
+HELP            - List the available commands.
+
+   Help searches for a partial match of the entered word, including
+any spaces that may follow the word.
+
+Example:
+ > 'help magic mis'
+    will find the help text for the magic missile spell.
+
+ > 'help mag '
+   will not match anything.
+
+ > 'help mag'
+   will match 'magic user' or 'magic missile' depending on first
+   occurrence in the help file.
+
+Any problem, suggestions, etc... try "idea <suggestion>"
+
+See also: BUG, IDEA, TYPO, PAGE HELP
+
+#
+"WIZHELP"
+   List the privileged commands available to you. Can only be used by
+immortals.
+
+#
+"NOSHOUT"
+
+Type:   Stops annoying people from shouting
+Level:  Immortals Only!
+Syntax: noshout <player>
+
+  Can be used with the name of a player, to prevent him/her from
+hearing shouts, as well as from shouting. Can only be used by certain
+more powerful beings.
+
+#
+"RESTORE"
+
+Type:   resets players
+Level:  Immortals Only!
+Syntax: restore <player>
+
+   If used on a mortal, this command will reset that players mana and
+hit points.  If used on an Immortal various values will be reset to
+their proper values.
+
+#
+"LINK"
+
+   A lot of players have problems with their links to the game. This
+could be very dangerous to your health in the middle of a combat. But
+we have worked out a solution. There are two cases:
+
+I.  If your link is broken, you will automatically attempt to flee
+each time someone attempts to hit you. If you manage to flee, then you
+will be saved by divine forces, and put in a safe place until you
+reconnect to the game.
+
+II. If your link jams (freezes) you got a problem. The only solution
+we can give, is that you break your link as quickly as possible. By
+breaking the link you can hope that the above procedure is initiated.
+
+#
+"DEAFEN"
+   Type deafen and all shouts and player death messages and other
+mortal channels are no longer heard.
+   Type deafen once again and shouts and player death messages can
+once again be heard.
+
+See also: CHANNELS
+
+#
+"PROMPT"
+   Your prompt will display Hitpoints, Mana and Movement (H M V) if
+you are a magic user or cleric, and just Hitpoints and Movement if you
+are a fighter or thief.  If you wish this feature turned off, complain
+to the management.
+
+SEE ALSO: DISPLAY, for a toggle prompt.
+
+#
+"WIMP MODE" "WIMPY"
+   If you are in wimp mode, you will flee after you have lost 80% of
+your hit points automatically.  type WIMP again to turn it off.
+You can also set your own cawardice/bravery level by changeing the exact 
+hps level at which you flee.  Use WIMPY <hps> to accomplish this.
+
+See also: FLAGS
+
+#
+"REDIT"
+    Edit allows you to edit rooms.  The room you are currently in is
+the one that is edited.  You can edit any room, but the changes will
+not be permanent.  However, using the rsave, and rload commands, you
+can save your changes into a file, and reload them later into the
+game, (if it crashes, for example).
+
+NOTE: If you are confused by this, and try it anyway, you may crash
+    the game.  Please be very sure that you know what you are doing.
+    Also, try to avoid making too many changes to the existent areas
+    for the moment.
+
+   Also note: You need to have an area, before you start editing it.
+want an area.  Also ask him any questions that you have about room
+editing.
+
+The fields work as follows:
+
+ edit <field> <attributes>
+
+   field is one of the following:
+
+        name     :  changes the name of the room.
+        desc     :  changes the room description.
+        exit     :  adds, deletes or modifies a room's exits
+        fs       :  changes the Flags, and Sector type.
+        exdsc    :  adds, changes or deletes an exit description
+        extra    :  adds an extra description to a room.
+        riv      :  adds special parameters for rivers.
+        tele     :  makes the room a teleport room.
+        tunn     :  makes the room a tunnel room.
+
+   attributes:
+
+        name  <name of room>
+        desc  <enter>  (it will prompt you for text)
+        exit  <dir> <door flags> <key> <to_room>
+        fs    <flags> <sector_type>
+        exdsc <dir> <enter>  (prompts you for text)
+        extra <keywords> <enter>  (prompts you for text)
+        riv   <speed> <dir>
+        tele  <time> <to_room> <look-flag>
+        tunn  <mob_lim>
+
+<dir>  0 = n, 1 = e, 2 = s, 3 = w, 4 = u, 5= d.
+<door flags> type help doorflags
+<key> item # that opens door, (if no door, use -1)
+<to_room>  The room # that the exit goes to.
+<flags>   type help roomflags.
+<sector_type>  Type help sector_type
+<time> The time interval between teleports.  Must be a multiple of 10
+       10 is very fast.  60 is much slower.  
+<look-flag> whether to do a look when the characters are teleported.
+            if this number is 0, they won't konw they've been teleported
+            unless they look on their own.  if the number is not 0, each 
+            time they are teleported, they are forced to look.
+
+<keywords> which things will trigger info.. for example if the keyword is
+        case
+        then if you type look at case, the text will be displayed.
+
+<speed>  must be a multiple of 15. if you do not want the river to flow, 
+        speed should be 0.  
+
+<mob_lim>  A number, indicating the number of mobiles that can be in the
+           room at one time.  The TUNNEL roomflag must be set, although
+           use of edit tunn X  automatically sets the flag.           
+
+See also: ROOMFLAGS, ROOMSECTOR, ROOMTELEPORT, RSAVE, RLOAD, INSTAZONE
+
+#
+"DOORFLAGS"
+Syntax: edit ex <dir> <doorflags> <key> <to_room>
+
+  Doorflags are the sum of:
+  EX_ISDOOR		1
+  EX_SECRET		8
+  EX_PICKPROOF		32
+
+  So a visible pickproof door would have flags of 33.  If door isn't
+set then the rest of the flags are meaningless.
+
+See also: REDIT
+
+#
+"ROOMFLAGS"
+Syntax: edit fs (ROOMFLAGS) (SECTORFLAGS)
+
+   This is for gods doing online editing.
+   Note that the flags are cummulative ie... if you want a room that
+is NO_MOB and INDOORS you would add the flag's together ie... edit fs
+12 0 which is NO_MOB 4 + INDOORS 8 = 12
+
+
+   DARK           1 /* sorta obvious ain't ? */
+   DEATH          2 /* Makes the room a DT */
+   NO_MOB         4 /* makes it so that wandering Mobs do not enter room */
+   INDOORS        8 /* makes a room permenantly lit */
+   PEACEFUL      16 /* No fighting */
+   NOSTEAL       32 /* No Thieving */ Does not work (yet)
+   NO_SUM        64 /* No summoning of creatures in these rooms */
+   NO_MAGIC     128 /* Does not work yet
+   TUNNEL       256 /* only X people in room (X set by edit tunn) */
+   PRIVATE      512 /*no teleport to this room, no goto when more than 2 people
+   SILENCE     1024 /* No communication possible in this room
+   NO_PUSH     2048 /* No pushing monsters in this room
+   IMM_RM      4096 /* Must be level 51 + to get in this room
+   GOD_RM      8192 /* This room is for IMPs only
+
+
+See also: REDIT, ROOMSECTOR, ROOMFLAGS, ROOMTELEPORT, RSAVE, RLOAD, INSTAZONE
+
+#
+"ECHO"
+
+Type: Immortals Only!
+
+   This command sends the text of its argument to everyone in the same
+room as the wizard.  The wizard gets no feedback and does not see the
+message.
+
+#
+"FORCE"
+
+Type:   Used test/coerce player/mobiles
+Level:  Immortals Only!
+Syntax: force <player/mobile>
+
+   Allows a high level Immortal to "force" a player/lower level
+Immortal to do something. This command is usally employed on problem
+players that will not comply to Immortal request.
+
+#
+"VALUE"
+
+   In a shop, this command will tell you what the shopkeeper is
+willing to pay for the item.
+
+See also: SELL, PAWN
+
+#
+"LIST"
+
+   In a shop this command will list what the shopkeeper has for sale,
+with prices.
+
+#
+"GOTO"
+
+Type:   Lets you go to any room/creature/player in game w/ exception
+Level:  Immortals Only!
+Syntax: go <rnum/player/mobile>
+
+   This wizard command allows you to move about without walking.  You
+can either supply a room Vnumber, a player name, a monster name
+(lamia, 34.lamia), or an object name (corpse, 5.corpse).  You will
+disappear and reappear in the target room.
+
+   If a room is flagged PRIVATE and there is more than one person in
+it, additional people will not be able to GOTO there.  Get an
+inhabitant to TRANSFER you in.
+
+See also: TRANSFER
+
+#
+"RESTAURANTS" "FOOD"
+
+   Even adventurers must eat (unless they visit the DM!) is most towns
+in the Lands you can find bakers, and various other shops to buy
+food....  Pls note that you can be poisoned my the wrong food! So
+becareful what you pick up for food!
+
+See also: BUY, TASTE
+
+#
+"GAIN"
+
+Syntax: gain [class abbrev]
+  class abbreviation is only used at low guildmasters
+
+  Whenever you have accumulated the experience points needed to get
+your next level, you must go to your guildmaster and GAIN.  This will
+advance you to your next level, give you your hit points, practices,
+and modify your abilities (such as THAC0 or backstab multiplier).
+Until you GAIN, you may not gain any more experience points than those
+needed to place you one away from the next highest level.
+  When you gain, the experience necessary for the level will be
+deducted, as if spent.
+
+See also:  GUILD, ATTRIBUTES, CONSTITUTION, WISDOM, INTELLIGENCE, LEVELS,
+           SPELLS, CAST, ATTACKS, DEATH
+
+#
+"MAKE"
+
+Type:   Create a generic item.
+Level:  Immortals Only!
+Syntax: Make <short description>
+
+  This creates a generic item with the given short description.  The
+item has no special flags or attributes.  
+
+#
+"MULTI" "MULTI-CLASS"
+ 
+   Some adventurers are so diverse that they have multiple "classes",
+enabling them to a wide range of skills and spells.  However, due to
+this diversification, they are not able to learn as quickly, and they
+are never able to become masters in any one area.  The following table
+demonstrates their limitations:
+
+  # of classes	|	exp is divided by	max level
+=================================================================
+      1		|	       1		   125
+      2         |	       3	 	   125
+      3		|      	       5		   125
+
+   Multi-class characters also learn practices at a slower rate, for each
+level they obtain, they only learn the amount of practices a normal adventurer
+would obtain divided by their number of classes.
+ 
+   Multi-class characters may chose which class they go up in first, however, 
+they earn a share of experience equivalent to the average of their levels.
+
+   Another disadvantage is that multi-class characters have slightly lower
+hit-points.
+
+   Multi-class characters may not use any of the dms.
+
+   Multi-class characters gain experience as regular charactes, in the sense
+that there is only one value that stores experience, which is reduced when
+gaining a level.  Keeping this in mind, one should read the "Experience
+Needed to Gain" field as the amount of experience needed to gain in that single
+class, not to be read as the amount of experience needed to gain in all those
+classes.  E.g.:  A Mage/Cleric needs 4000/3000.  This Mage/Cleric decides
+that he would like his next level to be mage, that would mean that he would
+need 4000 experience to gain a single level in Mage, which means the
+equivalent of 12000 exp of others (due to exp factor).  Likewise, in order
+to level in both, he would need 7000 (4000+3000) and hence the equivalent
+of 21000 exp of an equivalent single-classed character.
+
+Note: Multi-class can be very useful for those wishing to have access
+to both magic-user and cleric spells, or those wishing to have access
+to other class's skills.
+
+See also: DM, RESTRICTIONS, RULES, GAIN, LEVELS, ATTRIBUTES, CAST, SPELLS,
+          ATTACKS, DAMAGE
+
+#
+"MELEE1"
+
+CLASS      LEVEL
+Bard       16
+Cleric     25
+Druid      25
+Mage       25
+Monk       15
+Paladin    15
+Psionist   25
+Ranger     15
+Shifter    23
+Thief      15
+Warrior    11
+
+Syntax: None, it works automatically in battle.
+
+   Practicing this skill enables you to attack twice per round.
+
+See also: ATTACKS, DAMAGE, DAMAGEMESSAGE
+
+#
+"MELEE2"
+ 
+CLASS      LEVEL
+Bard       31
+Cleric     50
+Druid      40
+Monk       30
+Paladin    30
+Psionist   50
+Ranger     30
+Shifter    45
+Thief      30
+Warrior    22
+
+Syntax: None, it works automatically in battle.
+
+   Practicing this skill enables you to attack three times per round.
+
+See also: ATTACKS, DAMAGE, DAMAGEMESSAGE
+
+#
+"MELEE3"
+ 
+CLASS      LEVEL
+Bard       46
+Cleric     75
+Druid      75
+Monk       45
+Paladin    45
+Psionist   75
+Ranger     45
+Shifter    75
+Thief      45
+Warrior    34
+
+Syntax: None, it works automatically in battle.
+
+   Practicing this skill enables you to attack four times per round.
+
+See also: ATTACKS, DAMAGE, DAMAGEMESSAGE
+
+#
+"MELEE4"
+ 
+CLASS      LEVEL
+Bard       66
+Cleric     100
+Druid      100
+Monk       60
+Paladin    65
+Psionist   100
+Ranger     66
+Shifter    100
+Thief      66
+Warrior    45
+
+Syntax: None, it works automatically in battle.
+
+   Practicing this skill enables you to attack five times per round.
+
+See also: ATTACKS, DAMAGE, DAMAGEMESSAGE
+
+#
+"MELEE5"
+ 
+CLASS      LEVEL
+Bard       82
+Cleric     125
+Druid      125
+Monk       75
+Paladin    82
+Psionist   125
+Ranger     82
+Shifter    125
+Thief      82
+Warrior    63
+
+Syntax: None, it works automatically in battle.
+
+   Practicing this skill enables you to attack six times per round.
+
+See also: ATTACKS, DAMAGE, DAMAGEMESSAGE
+
+#
+"MELEE6"
+ 
+CLASS      LEVEL
+Bard       100
+Monk       90
+Paladin    100
+Ranger     100
+Thief      100
+Warrior    76
+
+Syntax: None, it works automatically in battle.
+
+   Practicing this skill enables you to attack seven times per round.
+
+See also: ATTACKS, DAMAGE, DAMAGEMESSAGE
+
+#
+"MELEE7"
+ 
+CLASS      LEVEL
+Bard       116
+Monk       125
+Paladin    116
+Ranger     116
+Thief      116
+Warrior    89
+
+Syntax: None, it works automatically in battle.
+
+   Practicing this skill enables you to attack eight times per round.
+
+See also: ATTACKS, DAMAGE, DAMAGEMESSAGE
+
+#
+"MELEE8"
+ 
+CLASS      LEVEL
+Bard       125
+Paladin    125
+Ranger     125
+Thief      125
+Warrior    102
+
+Syntax: None, it works automatically in battle.
+
+   Practicing this skill enables you to attack nine times per round.
+
+See also: ATTACKS, DAMAGE, DAMAGEMESSAGE
+
+#
+"MELEE9"
+ 
+Class:  Warrior
+Level:  115
+Syntax: None, it works automatically in battle.
+
+   Practicing this skill enables you to attack ten times per round.
+
+See also: ATTACKS, DAMAGE, DAMAGEMESSAGE
+
+#
+"MELEE10"
+ 
+Class:  Warrior
+Level:  125
+Syntax: None, it works automatically in battle.
+
+   Practicing this skill enables you to attack eleven times per round.
+
+See also: ATTACKS
+
+#
+"DODGE"
+ 
+Type:   warrior/thief/knight/ranger/monk
+Level:  4/7/8/8/12
+Syntax: None, it works automatically in battle.
+
+   Practicing this skill enables you to passively dodge blows in
+combat (ie: it's automatic).  Whether you dodge a blow or not depends
+on your dexterity.
+
+See also: ATTRIBUTES, DEXTERITY
+
+#
+"GROUP SPELLS"
+
+See also: GROUP ARMOR, GROUP SIGHT , GROUP INVISIBLE, GROUP CURE LIGHT,
+          GROUP FLY, GROUP DETECT INVISIBILITY, GROUP WATERBREATH,
+          GROUP RECALL
+
+#
+"REPORT"
+ 
+   Reports your hp, mana, movement to everyone in the room, useful in
+a variety of situations.
+
+#
+"PUSH"
+
+Type:   warrior/knight/monk
+Level:  5/7/10
+Move:   10
+Syntax: push <victim> <direction>
+
+   Through brute force, a creature or player may be forced out of
+a room in a specific direction. The success of this skill is
+dependent  on your strength, weight, level, and how well you have
+learned the skill.
+
+*note* Nobody enjoys being pushed around, and doing so risks an
+       attack by your victim.
+ 
+See also: STRSTAT
+
+#        
+"RUN"
+
+   This command will make you run in any direction as far as that
+direction will let you go.  *DANGER* Make sure you know where you are
+going, because you might run into a death trap...
+
+   You must have at least 20 movement to even start running.
+ 
+Usage: RUN <DIRECTION>
+ 
+SEE ALSO: MOVEMENT
+
+#
+"HOLD"
+
+   This command will let you hold an item that is holdable.  For
+example: stone, bag, tulip and other small items you can hold.
+
+See also: GRAB, RESTRICTIONS, LEVELS, IDENTIFY
+
+#
+"DISARM"
+
+Type:   warrior/thief/knight/ranger
+Level:  10/15/11/15
+Move:   10
+Syntax: disarm <victim>
+
+   This command will attempt to let you disarm a mobile or player's
+weapon.  Success is based on how well you have learned the skill,
+your level, and your dexterity.
+
+*note* This is an aggressive act and will result in a fight whether
+       you are succesful or not.
+
+#
+"FEINT"
+
+Type:   thief/ranger
+Level:  10/25
+Move:   15
+Syntax: feint <victim>
+
+   This command will attempt a feinting attack.  If successful the target
+will get only half his normal attacks next round.  Failure yields the 
+the opposite.  Success is based on how well you have learned the skill,
+your level, and your dexterity.
+
+*note* This is an aggressive act and will result in a fight whether
+       you are succesful or not.
+
+#
+"TRACK"
+
+Type:   ranger/bard
+Level:  5/7
+Syntax: track <target>
+
+   This will let you track down a player or mobile that is in the
+area.  Success is based on how well you have learned and level, and
+intelligence.
+
+*note* Players who are using track via the minor/major track spells,
+       minor track is zone sensitive and major track is across zones.
+
+See also: MINOR TRACK, MAJOR TRACK
+
+#
+"MINOR TRACK"
+
+Type:   mage/druid/bard
+Level:  17/18
+Syntax: cas 'minor tr' <char>
+
+   Through magical means, it is possible to enhance tracking
+abilities and seek out mobs or players.
+
+*note* Once affected by the minor track spell, use the 
+       "track <target>" command to begin seeking your target.
+
+See also: TRACK, MAJOR TRACK
+
+#
+"MAJOR TRACK"
+
+Type:   mage/druid
+Level:  37/38
+Syntax: cas 'major tr' <char>
+
+   Through magical means, it is possible to enhance tracking
+abilities and seek out mobs or players.
+
+*note* Once affected by the major track spell, use the
+       "track <target>" command to begin seeking your target.
+
+See also: TRACK, MAJOR TRACK
+
+#
+"TITLE"
+
+   This command will let you title yourself when you have reached
+level 21 or greater.  Usage: title <new title>
+
+See also: WHO
+
+#
+"MANA"
+
+   Mana is used in spell casting, knight/druid/psionist/ranger
+skills, and Warrior's berserk skill. Each skill/spell requires a
+certain amount of Mana. When your mana reaches 0 you can restore your
+mana faster by resting or sleeping. Remember to eat and drink in order
+to regain Mana faster! CONSTITUTION and AGE also plays a part in mana
+recovery.
+
+
+See also: ATTRIBUTES, CONSTITUTION, DM, SLEEP. REST, AGE
+
+    P.S.  Shouting costs 10 mana points per shout...
+
+#
+"HIT POINTS" "HP"
+
+   This is the most important of all stats.  When your hits get to 0
+or below, you most likely will die, unless you get healed by a player.
+Keep an eye on these points carefully!
+
+See also: WIMPY, FLEE, DM
+
+#
+"MOVEMENT POINTS"  
+
+   This is your movement points that keep you moving.  When your move
+points get to 0, you can't move until you rest or sleep to regain
+them.  Wait a while for a tick, which sets like a cloak on time, that
+increases your hits, mana and moves, based on your constitution stat.
+Ranger require as much movement as possible for their stun skill.
+
+See also: ATTRIBUTES, CONSTITUTION, SLEEP, REST, AGE
+
+#
+"DISPLAY" "PROMPT"
+
+   These commands will let you see your most important stats about you
+right now.  This will display your hits, mana and moves at all times.
+
+#
+"DAMAGE"
+
+   This is an extra number of damage points you get after your weapon
+hit is rolled.  Damage is given by certain items that you wear, hold
+or even wield.  The higher the damage you have the harder you hit.
+
+See also: ATTRIBUTES, DAMAGEMESSAGE, ENCHANT WEAPON, IDENTIFY, TOHIT
+
+#
+"DAMAGEMESSAGE"
+
+   When a successful hit has been made, a damage message will be
+displayed which hints at how much damage that hit did.  The following
+are the messages with the damage range that is being dealt.
+
+  nick                    1-9
+  hit/slash/pierce/claw  10-99 
+  capital letters        50
+  -                      100 
+  =                      200 
+  *                      500 
+
+  An example is ==OBLITERATE== 
+     Since there are two = and the message is in capital letters,
+     than ==OBLITERATE== did a minimum damage in the range of...
+     50+200+200=450hp damage
+  Another example is -=**DISMANTLE**=- 
+     50+100+200+500+500=1350hp damage
+
+#
+"TOHIT"
+
+   This number increases your chances to hit a monster or mobile,
+based on your to-hit to the opponents thac0 or ac(armor class)
+
+See also: ATTRIBUTES, ENCHANT WEAPON, DAMAGE, IDENTIFY
+
+#
+"FILET"
+
+   This is an item which is carved from a corpse that is edible.
+There is a maximum amount of filets for each corpse according to the
+weight of the corpse and how much meat is on it.
+
+See also: TASTE, EAT
+
+#            
+"NOTCH"
+ 
+   This command will enable you to "load" or ready an arrow or other
+missile type projection when wielding a bow, to get prepared to fire
+at a creature.
+ 
+Usage: notch <missile> after wielding the bow or other range weapon type.
+ 
+See also: ARCHERY, THROW
+
+#
+"THROW"
+
+Class:  Thief/Monk/Warrior
+Level:  9/35/50
+Syntax: throw <throw object> <target>
+ 
+   This will enable you to throw a weapon, that has a THROW flag,
+at a target in an adjacent room. Your victim will likely be enraged
+and charge, but this is useful for facing one opponent at a time
+rather than several in the same room.
+
+See also: ARCHERY
+
+#
+"FARLOOK"
+ 
+   This command will enable you to spot a target in adjacent rooms to
+see how far away the target is from you.
+ 
+Usage: FARLOOK <TARGET>
+ 
+SEE ALSO: SCAN, THROW, SHOOT, NOTCH.
+
+#
+"SCAN"
+ 
+   This command will enable you to scan the area for possible targets.
+You can scan in a particular direction, or you can just do a general
+scan.  It will show you all targets that are in a linear path from you
+that can be fired at, or thrown at.
+ 
+Usage: SCAN <DIRECTION - NOT NECESSARY>.
+ 
+SEE ALSO: THROW, SHOOT, NOTCH, FARLOOK, TRUE SIGHT
+
+#
+"NOISE"
+ 
+This command beeps your terminal.
+
+#
+"FLAGS"
+ 
+   This command will list your currently active player-selected flags.
+
+See also: BRIEF, COMPACT, NOTELL, NOSHOUT, AGGRESSIVE, COLOR, AUTOEXIT,
+          AUTOLOOT, AUTOGOLD, AUTOSPLIT
+
+#
+"NOTELL"
+ 
+   Toggling this command will cause you not to recieve ANY tells
+except from immortals.  This is a good command for you anti-social
+people out there.
+
+See also: FLAGS
+
+#
+"HELPTOPICS"
+ 
+   This command will give you a mechanical listing of all the
+available topics for the HELP command.
+
+See also: PAGE HELP
+
+#
+"NATURAL DISASTERS"
+ 
+   Natural disasters sometimes occur in the game (earthquakes, etc.)
+There is really nothing you can do about them (except be INDOORS when
+they occur)...  they are a very rare occurence, anyways.  They also
+will not damage people level 3 and under.
+
+#
+"TAG"
+ 
+   Play the game of tag!  When you are IT, you can not rent, cast
+certain spells, and you also get hitpoint, mana, and movement points
+back much slower.  All you have to do is tag someone while you are
+it...
+
+See also: MANA, HPS, MOVEMENT
+
+#
+"DRUID"
+
+   Being mysticly more in tune with nature than the rest of the
+world, the druid spends his time healing nature of the wounds the rest
+of mankind has inflicted upon it. They are very reculsive and would
+rather be out in the woods and other natural environs than creeping
+around in a dank dungeon or strange town. As the keepers of the
+wilderness the Druid is a friend of all things natural.
+
+   Druids have many skills to assist them in their pursuits, though
+limited by their beliefs they are still a formidable foe in their
+natural surroundings.  As well as their skills, the Druids can also use
+some magic.
+
+   Druids also gain mana, hitpoints and movement faster while in their
+natural environment - the wilderness.
+
+See also: PRACTICE, GAIN, RESTRICTIONS, DM, RULES, ATTRIBUTES, SPELLS,
+          CAST, ATTACKS
+
+#
+"KNIGHT"
+
+   Knights - Un/holy Warriors, skilled fighters trained to uphold all
+that they believe in. All in all they are good fighters and have some
+trained than normal warriors, have more skills and have some use of
+use of minor magic.
+
+See also: PRACTICE, GAIN, RESTRICTIONS, DM, ATTRIBUTES, RULES, LEVELS,
+          SPELLS, CAST, ATTACKS
+
+#
+"PSIONIST"
+
+   Ultimately trained in the use of the their minds, the psionists are
+generally weak hand to hand fighters. But, what they lack in physical
+prowess they almost more than make up for in their mental powers. In
+addition to their psychic powers the Psionist also has some mastery of
+minor magic.
+
+See also: PRACTICE, GAIN, DM, ATTRIBUTES, RESTRICTIONS, LEVELS, CAST,
+          SPELLS, RULES, ATTACKS
+
+#
+"SHAPESHIFTER" "SHIFTER"
+
+   Shapeshifters are shrouded in mystery. An offshoot of ancient mages,
+their craft is enigmatic and beyond comprehension. It is beleived that
+the various races of were-beasts and folk which inhabit this world are
+their evolutionary descendants.
+
+   Little is known of their secret rites, though folklore and myth say
+they may change form at will and that they also possess some magical
+abilities.
+
+See also: PRACTICE, GAIN, RESTRICTIONS, DM, RULES, ATTRIBUTES, SPELLS,
+          CAST, ATTACKS
+
+#
+"THOUGHT THROW"
+
+Class:  psionist
+Level:  10
+Mana:   15
+Syntax: thought <victim>
+Damage: levelD5
+
+   With the power of a mere thought, the psionist is able to project
+a devastating psychic force at his victim, often crushing them against
+a wall or some other obstruction in the room.
+   This ability can cause lesser opponents to be thrown to the ground in
+combat thus reducing their abilities to defend themselves.
+
+#
+"DRAIN MANA"
+
+Class:  psionist
+Level:  23
+Mana:   0
+Syntax: drain <victim>
+
+   This mental attack on your victim will drain away precious mana
+energy. The psionist will receive part of the drained mana for himself,
+based on his level and the level of the victim.
+
+#
+"HYPNOSIS"
+
+Class:  psionist
+Level:  5
+Mana:   25
+Syntax: hypno <victim>
+
+   The power of hypnosis uses the Psionists will of mind to control
+the mind of another. This skill allows the psionist to control a
+follwer for a period of time related to the strength of the psionists
+mind. A word of warning though some creatures may be of too low an
+itelligence to be hypnotized.
+
+*note* A failed attempt at hypnosis may enrage the victim!
+
+See also: FRIENDS, GROUP
+
+#
+"LEVITATE"
+
+Class:  psionist
+Level:  6
+Mana:   5+1/hr
+Syntax: levi <target>
+
+   Through the power of the mind, the psionist may defy gravity and
+levitate himself and others above the ground.
+
+See also: FLY
+
+#
+"MEDITATE" "MEDITATION"
+
+Class:  psionist
+Level:  9
+Mana:   0
+Syntax: med
+
+   Clearing of mind allows a person to get more in harmony with the
+world around him. While in this meditative state, the Psionist will
+regenerate his powers back more quickly.
+
+#
+"SCRY"
+
+Class:  psionist
+Level:  7
+Mana:   20
+Syntax: scry <victim>
+
+   The mystic art of Scrying allows the scryer to get in touch with
+the mind of a person who is far distant and look through his eyes as
+if he were there himself.  
+
+#
+"LESSER GATEWAY" "LGATE"
+
+Class:  psionist
+Level:  8
+Mana:   100
+Syntax: lgate <target>
+
+   The gateway skill is one of the psionists greatest powers. Through his
+mental prowess, the psionist can open a dimensional gateway to other
+players in the world. Once open, the gateway can be used from either the
+psionists end or the targets end. Gateways are utilized by "enter"ing
+them. You can also "look" into a gateway to see where it leads.
+
+*note* Lesser gateways collapse after their first use, or after a short
+       period of time if they are not used at all.
+
+*warning* TW is not responsbile for death or mishap due to gateways.
+          You take your life into your own hands if you step through a
+          gateway without looking at what's on the other side.
+
+See also: GREATER GATEWAY
+
+#
+"GGATE" "GREATER GATEWAY"
+
+Class:  psionist
+Level:  28
+Mana:   120
+Syntax: ggate <target>
+
+   Similar to lesser gateways, greater gateways are more stable in that
+they allow multiple usage and only collapse after a small period of time.
+This characteristic allows the psionists group members to all utilize the
+gateway.
+
+*warning* TW is not responsbile for death or mishap due to gateways.
+          You take your life into your own hands if you step through a
+          gateway without looking at what's on the other side.
+
+See also: LESSER GATEWAY
+
+#
+"INVIS" "VANISH"
+
+Class:  psionist
+Level:  1
+Mana:   5+1/hr
+Syntax: vanish
+
+   The mental skills of the Psionist are many and diverse, one of these
+skills, Vanish, sets up a mental block in the minds of those around
+him, causing the Psionist to vanish from sight.
+
+#
+"PHANTOM KILLER" "PHANTASMAL KILLER"
+
+Class:  psionist
+Level:  13
+Mana:   25
+Syntax: phant
+
+   What Evil lurks in the minds of men? Well the Psionists know, and
+are not afraid to let it loose every now and again. This skill delves
+deep into the human Psyche and brings forth an evil nightmare of an
+aparition to fight for the summoner.
+
+See also: GROUP, ORDER
+
+#
+"FARSIGHT"
+
+Class : psionist
+Level : 30
+Mana  : 30+5/hr
+Syntax: look <direction>
+
+	This skill allows the user to see to adjacent rooms.  The context for
+use is look <direction>, which will give the user the ability to see into the
+room as if he was standing in it.  If an item or mobile were present in the
+room that the character couldn't normally see, the character will NOT be able
+to see item/mobile.  
+NOT TO BE CONFUSED WITH SCRY.
+
+#
+"GREAT SIGHT"
+
+Class:  psionist
+Level:  12
+Mana:   10+5/hr
+Syntax: great
+
+   This is perhaps the most powerful vision ability in the world.
+With great sight enabled, not even hidden creatures can escape the
+Psionists watchful eyes.
+
+See also: TRUE SIGHT, DETECT INVISIBLE, SENSE LIFE, SENSE AURA,
+          INFRAVISION
+
+#
+"SPELL SHIELD"
+
+Class:  psionist
+Level:  18
+Mana:   50
+Syntax: shield
+
+   The Psionist is able to erect a shield against magic with this
+skill, deflecting fire, cold, and many other forms of attacks. The
+shield is lost if the Psionist moves.
+
+#
+"SPELL MANA"
+
+Class:  cleric/druid
+Level:  20/30
+Mana:   75
+Syntax: cas 'mana' <target>
+
+   Clerics have the ability to channel their magic power to others.  This is
+generally used to provide magical energy to those who can use it better, or
+are lacking.
+
+#
+"HEROIC" "HRESCUE"
+
+Class:  knight
+Level:  9
+Move:   10
+Syntax: hrescue
+
+   The highly trained fighting skills of the knight, combined with
+his virtue of protecting all that is good (or just his friend), has
+given rise to this most heroic skill, The Heroic Rescue. The knight
+performing the heroic rescue frees all of his friends from combat,
+while he valiantly takes on all of the foes that were fighting his
+allies.
+
+See also: RESCUE, ALIGNMENT
+
+#
+"LAY HANDS" "LAYHANDS"
+
+Class:  knight
+Level:  40
+Mana:   35
+Syntax: lay <target>
+
+   The Goodness and Holiness of the knight is evedent in this skill. The
+knight calls upon the Gods to heal a person of the knights choice. The
+power of the healing is drawn from the Purity and Power of the knight,
+and cannot be used upon creatures evil in nature.
+
+See also: ALIGNMENT
+
+#
+"WARCRY"
+
+Class:  knight
+Level:  5
+Mana:   5
+Damage: varies by level
+Syntax: war <victim>
+
+   In battle the knight is a formibable foe. His fighting prowess is
+a thing to behold. Many an evil being has cringed at the sound of a
+knights War Cry.  The War cry strikes fear into the knights enemy
+causing minor damage and in some cases death. The power behind the war
+cry is tied directly to how Powerful and Pure the knight is as well
+as the power of the enemy he is fighting.
+
+See also: ALIGNMENT
+
+#
+"RANGER"
+
+   This particular class is somewhat curious. They spend most of their
+time out in the wilderness like their often allies, the Druids. But,
+Rangers are less reclusive than druids and have more contact with
+the city dwellers but are just as likely to be found in the wilds.
+They are the warriors of the forest, friend to man and beast alike.
+
+   Rangers have a few skills that help them in the wilderness. With
+these they are capable of defending their woodland home with some
+efficiency. Along with these skills they have some minor magical
+capability.
+
+   Rangers also gain mana, hitpoints and movement faster while in
+their natural environment - the wilderness.
+
+See also: PRACTICE, GAIN, ATTRIBUTES, DM, RESTRICTIONS, RULES, LEVELS
+          CAST, SPELLS, ATTACKS
+
+#
+"RATION"
+
+Class:  ranger
+Level:  2
+Mana:   10
+Syntax: ration <corpse>
+
+   Rangers being woodland dwellers, have to catch their food. Since
+they must subsist on captured food most of the time they have
+developed into some of the best cooks in the realms. Their food is so
+good that one eating their food will be cured of minor ailments.
+
+See also: EAT, TASTE
+
+#
+"STUN" "PINCH"
+
+Class: ranger/monk
+Level: 40/56
+Syntax: stun/pinch <victim>
+
+   Stun is the result of an extraordinary battle hit, one which cause such
+devastating damage that the victim is immobilized by the trauma.  
+
+#
+"THRUST"
+
+Class:  ranger
+Level:  1
+Syntax: thrust <victim>
+
+   Even though Rangers often fight in a manner which knights and
+sophisticated fighters call barbaric, they can fight with finesse and
+can get in a lunge at their oponent. This is a risky maneuver since if
+the ranger fails he is open to an extra attack from his oponent.
+Perhaps this is why the other fighters haven't adopted this method of
+attack.
+
+#
+"REAGENTS"
+
+   Throughout the mud world there abound many unusual and exotic plants,
+berries, and herbs. Knowledge of their medicinal value has grown over
+the years, and some beings have developed the skills to create many forms
+of healing potions from their almost magical properties. The secret of 
+the ingredients required for such a magical potion is kept very safe by
+druids. The knowledge of reagents can make a druid very powerful.
+
+See also: BREW
+
+#
+"TAN"
+
+Class:  druid/ranger
+Level:  21/5
+Mana:   15
+Syntax: tan <article of armor desired>
+
+   An age old tradition of making skins of dead things into clothing
+that can be worn. Tanning allows you to make armor out of corpses. The
+more skilled the tanner, the more powerful armor they can make.
+
+   Remember: The armor needs to be made out of the skin of the
+animal/creature.  Things like Undead have no skin and canot be made
+into armor.
+
+#
+"RECALL"
+
+   Recall allows a person to either transport oneself back to the
+place he/she rented (See also: WORD OF RECALL, SUCCOR) or to send
+SOMEONE else to the place of the caster's place of rent. (See also:
+SUCCOR) Note that you cannot recall polymorph players or tree players.
+Zifnab carries an extensive suppy of recall scrolls for those who can
+not acquire them through arance means.
+
+See also: SUCCOR, WORD OF RECALL, POLY, TREE
+
+#
+"WISDOM"
+
+   Wisdom is the attribute of the player that mainly deals with how
+many chances he/she may learn new skills/spells.
+
+See also: GAIN, ATTRIBUTES, INTELLIGENCE
+
+#
+"INTELLIGENCE"
+
+   Intellgence is the attribute of the player that mainly deals with
+how well and how quickly he/she may learn a skill/spell. Intelligence
+also is used in certain spells and skills such as track.
+
+See also: ATTRIBUTES, WISDOM, TRACK
+
+#
+"DEXTERITY"
+
+   Dexterity is the attribute of the player that works with AC and
+DODGE.  The higher your Dexterity the more effective dodge is.
+
+See also: ATTTRIBUTES, DODGE, AC
+
+#
+"STRSTAT"
+
+   Strength is the attribute of the player that determines several
+abilities: how heavy a weapon you can wield, how much equipment you
+can carry, and with great strength a damage bonus in battles.
+
+See also: ATTRIBUTES, WIELD
+
+#
+"RESISTANCES"
+
+   Players can develop resitances to forms of attacks through spells
+and equipment. A player who is resitance to a form of attack will only
+recieve HALF the damage normally done back that attack,
+   NOTE - some creatures are naturally resistant to certain attacks
+it's up to you to find out which!
+
+See also: ATTRIBUTES, IMMUNITIES, STONE SKIN, SAVING THROWS
+
+#
+"IMMUNITIES"
+
+   Players with immunities to certain attacks are impervious to all
+damage that would normally be done by that attack. Certain equipment
+can provide immunities. Unfortunately, many creatures are naturally
+immune to certain attacks!
+
+See also: ATTRIBUTES, RESISTANCES, SAVING THROWS, IDENTIFY
+
+#
+"SAVING THROWS"
+
+   Saving throws for both players and creatures determine the
+subject's chance of avoiding magical attacks and breath weapons. The
+LOWER the saving throws the better! Equipment and certain spells can
+improve saving throws.
+
+See also: ATTRIBUTES, BLESS, IDENTIFY
+
+#
+"PAWN"
+
+   Slick Willy's shop which is located on Penny Lane in Migaard will
+BUY anything which you wish to sell. Just type sell <object>.
+
+See also: SHOP, SELL, VALUE, BANK
+
+#
+"ZRESET"
+
+Type:   Used to restart and existing zone with all of its mobs/objs
+Level:  Immortals Only!
+Syntax: zreset <zone number>
+
+   This command is used in conjunction with the Show Zones command.
+Type show zones and to the left hand side of the zone name is a number
+that number obviously is the number of that particular zone.  Type
+zreset <zone number> to restart that zone.
+
+#
+"EXP"
+
+Type:   Used in reimbursing players experience points
+Level:  Immortals Only!
+Syntax: exp <player> [amt of exps]
+
+        A god can ADD to a person's exp total by typing:
+                        exp <player name> <exp amt>
+
+Note the max. exps (normally) that can be added each time is 100,000.
+
+#
+"REPAIR"
+
+   Equipment in the course of battles get damaged and thus loses its
+protective benefits. As long as the equipment is not utterly scrapped
+you can take your equip to your local Repair or Super Repair Guy to
+fix your armor and weapons for a fee. be warned that the Repair is not
+as reliable as the Super Repair Guy!
+
+#
+"RSAVE"
+
+Type:    Saves a block of rooms you are editing
+Level:   Immortals Only!
+Syntax:  rsave <beginning room number of block> <end room number of block>
+
+   Please note to get permission from an IMP before just editing rooms!
+
+   AND PLEASE RSAVE REGULARLY!!!!!!!
+
+See also: INSTAZONE, REDIT, RLOAD, ROOMFLAGS, ROOMSECTOR, ROOMTELEPORT
+
+#
+"RLOAD"
+
+Type:   Loads a block rooms you have RSAVED
+Level:  Immortals Only!
+Syntax: rload <beginning room number of block> <end room number of block>
+
+   Please note that blocks of rooms that have not been put into the
+game ie...a zone you are currently working on will not be in the game
+after crash/reboots and must rload them to access them.
+
+   PLEASE RSAVE REGULARLY!!!!!!!!!!!
+
+See also: INSTAZONE, REDIT, RLOAD, ROOMFLAGS, ROOMSECTOR, ROOMTELEPORT, RSAVE
+
+#
+"INSTAZONE"
+
+Type:   Used to create the actual zone file for the area your are working on.
+Level:  Immortals Only!
+Syntax: instazone <begin room number> <end room number>
+
+   This is done after your area is entirely done. You load your
+mobiles and objects and configure them the way you want them ie... you
+want Groz the barbarian to be at the Entrance of the Guilders Room
+wielding a great broadsword. You place your mobs/objs accordingly and
+then instazone. NOTE that this can only be done once! You can not
+continually instazone if you screw up an IMP must delete your old zone
+file before you can instazone again!
+
+See also: REDIT, RLOAD, ROOMFLAGS, ROOMSECOTR, ROOMTELEPORT, RSAVE
+
+#
+"DOORBASH"
+
+Type:   warrior/knight
+Level:  8/12
+Move:   10
+Syntax: doorb <direction | door name>
+
+   This skill allows you to use brute force in opening a locked exit.
+Be warned that a failed attempt will temporarily stun the player.
+
+See also: STRSTAT
+
+#
+"FREEZE"
+
+Type:   holds a problem player in place!
+Level:  Immortals Only!
+Syntax: freeze <player>
+
+#
+"RESTRICTIONS"
+
+There is 1 type of restriction in the mud currently (this may change):
+1) There are alignment, class and level restrictions on items.  You may have 
+   to have a certain range of alignment, be a certain class and/or level to 
+   be able to use an item.
+
+   These restrictions are subject to change so see the latest NEWS for
+current info.
+
+See also: DM, EQUIPMENT, GROUP, IDENTIFY, LEVELS, MULTI-CLASS, WEAR, WIELD
+
+#
+"DM"
+
+  Wandering the realms of these Lands are several individuals
+known as DM's.  These helpful men and women can raise your statistics
+and give you other marvelous powers.  Of course, their services don't
+come cheaply...
+
+See also: RESTRICTIONS, ATTRIBUTES, GAIN, PRACTICE
+
+#
+"IDENTIFY"
+
+   Identify, specifically identify scrolly are extremely useful by
+typeing recite identify <object> you can find out all the information
+on the item in question. Including damage, tohit, rent cost, ac,
+etc.....Zifnab of the Migaard Magic Shop sells these scrolls or
+
+See also: KNOWLEDGE, RECITE, SCROLLS, SHOPS, INVENTORY
+
+#
+"REIMB"
+
+   From now on, do not expect to get back game items, when you need a
+reimb.  We have gone to alot of trouble to create special items called
+reimb items!!  These items are balanced for character level.  So, a
+lvl 3 player wont get as many items as a lvl 45 player.  Also, these
+items are designed to give the appropriate bonuses at the proper
+levels.  These items are to help the naked character get a good start
+on recovering his equipment.  When you need a reimb ask a god and they
+will create items and put them in your inventory immediately.  BEWARE,
+these items have NO take flag.  This means when you drop these items
+or put them in something, you will not be able to get at them again.
+The reason for this: we dont want players just using reimb items as
+regular armor. The rent on these items is fairly cheap.  These items
+are not designed as regular game items!!!  So, dont ask a god to reimb
+a lost reimb item.  Once you start aquiring regular game items, you
+should get rid of the reimb items, after all, you dont need them
+anymore.  HINT: it is best to keep these item equipped until you are
+ready to replace the item with a regular piece of armor :) This is the
+std policy on reimb for this posting forward.  SO DONT WHINE, just
+accept it.  These items are very fair! I will listen to comments on
+how to alter the various items.  Positive feedback is always
+appreciated.
+
+   If you die with any reimb items, you wont be able to get them from
+your corpse.There are 2 solutions 1) DONT DIE until you have replaced
+most of the reimb armor. 2) Ask a god for a new set of reimb armor
+after you die.  This way the gods can keep an eye out for suicide
+characters.
+
+#
+"SHOW"
+
+  Type:   used to display the vnums of mobs, objs, and zones
+  Level:  Immortals Only!
+  Syntax: show m <mob keyword>, show o <obj keyword>, show zones
+          show o <zone number to see all the objs for a certain zone>
+          show m <zone number to see all the mobs for a certain zone>
+
+#
+"NAME"
+Syntax:  name [<new name>]
+
+   Allows a player to set their short, or action name.  The general
+effect of this is that rather than seeing Dork does such and such,
+everybody will can see The big Dork does such and such.  It's
+primarily intended to prefix a title to your name.
+
+   However, you can use "~N" as a place holder for your short name if you 
+would like to append something to the end of your name.  If it isn't 
+present, it will be appended to whatever you did specify.  You can also use 
+"~N" by itself to remove all appendages to your short name.
+
+   Typing "name" with no arguments displays your current short name.
+
+   Examples:
+    Command:                    Output:
+     name                        Dork
+     name ~N                     Dork
+     name The big                The big Dork
+     name The big ~N             The big Dork
+     name ~N of Earl             Dork of Earl
+     name The big ~N of Earl     The big Dork of Earl
+
+#
+"FIRE WIND"
+
+Type:   mage
+Level:  20
+Mana:   15
+Syntax: cas 'fire wind' <victim>
+Damage: levelD9 (Pure Class: levelD11)
+Spell Melee: 1-5
+Saving: Spell
+Saving Affect: Unaffected
+
+   The caster conjures up a blast of flames to viciously engulf the
+victim in searing fire.
+
+See also: BURNING HANDS, FLAMESTRIKE, FIREBALL, LAVA STORM
+
+#
+"FLAMESTRIKE"
+
+Type:   mage
+Level:  30
+Mana:   15
+Syntax: cas 'flame' <victim>
+Damage: levelD12 (Pure Class: levelD14)
+Spell Melee: 1-5
+Saving: Spell
+Save Affect: Unaffected
+
+   Flamestrike envelops the victim in a controlled column of searing
+flames. 
+
+See also: BURNING HANDS, FIRE WIND, FIREBALL, LAVA STORM
+
+#
+"FIREBALL"
+
+Type:   mage
+Level:  40
+Mana:   15
+Syntax: cas 'fireb' <victim>
+Damage: levelD15 (Pure Class: levelD18)
+Spell Melee: 1-4
+Saving: Spell
+Save Affect: Unaffected
+
+   Fireball is the most powerful controlled spell in the mages arsenal,
+creating a great mass of flames to be hurled at the victim.
+
+See also: BURNING HANDS, FIRE WIND, FLAMESTRIKE, LAVA STORM
+
+#
+"LAVA STORM"
+
+Type:   mage
+Level:  50
+Mana:   60
+Syntax: cas 'lava'
+Damage: levelD15 (Pure Class: levelD18)
+Saving: Breath
+Save Affect: 1/2 Damage
+
+   Lava storm creates a downpour of molten rock, hitting everyone in the
+room not grouped with the caster.
+
+See also: AREA AFFECT, BURNING HANDS, FIRE WIND, FLAMESTRIKE, FIREBALL
+
+#
+"SHOCKING GRASP"
+
+Type:   mage
+Level:  2
+Mana:   15
+Syntax: cas 'shock' <victim>
+Damage: levelD3 (Pure Class: levelD5)
+Spell Melee: 1-7
+Saving: Spell
+Save Affect: Unaffected
+
+   Shocking grasp is an attack where by the caster attempts to deliver an
+electrical shock to the victim.
+
+See also: ELECTROCUTE, ELECTRIC FIRE, CHAIN ELECTROCUTION
+
+#
+"ELECTROCUTE"
+
+Type:   mage
+Level:  13
+Mana:   15
+Syntax: cas 'electro' <victim>
+Damage: levelD6 (Pure Class: levelD8)
+Spell Melee: 1-6
+Saving: Spell
+Save Affect: Unaffected
+
+   The caster attempts to deliver a powerful electric charge to the
+victim, electrocuting them.
+
+See also: SHOCKING GRASP, ELECTRIC FIRE, CHAIN ELECTROCUTION
+
+#
+"ELECTRIC FIRE"
+
+Type:   mage
+Level:  21
+Mana:   15
+Syntax: cas 'electri' <victim>
+Damage: levelD9 (Pure Class: levelD11)
+Spell Melee: 1-5
+Saving: Spell
+Save Affect: Unaffected
+
+   Electric fire surrounds the victim with a crackling mass of electrical
+fire, shocking and burning them. 
+
+See also: SHOCKING GRASP, ELECTROCUTE, CHAIN ELECTROCUTION
+
+#
+"FROST CLOUD"
+
+Type:   mage
+Level:  9
+Mana:   15
+Syntax: cas 'frost' <victim>
+Damage: levelD6 (Pure Class: levelD8)
+Spell Melee: 1-6
+Saving: Spell
+Save Affect: Unaffected
+
+   Frost cloud surrounds the victim with a cloud of incredibly cold
+air and frost.
+
+*note* All cold spells have a chance of weakening the victim due to the
+       freezing affects of the spell.
+
+See also: CHILL TOUCH, ICE STORM, WEAKNESS
+
+#
+"ICE STORM"
+
+Type:   mage
+Level:  19
+Mana:   30
+Syntax: cas 'ice'
+Damage: levelD8 (Pure Class: levelD10)
+Saving: Breath
+Save Affect: 1/2 Damage
+
+   Ice storm unleashes an extremely cold storm of flying ice, hitting
+everyone in the room not grouped with the caster.
+
+*note* All cold spells have a chance of weakening the victim due to the
+       freezing affects of the spell.
+
+See also: AREA AFFECT, CHILL TOUCH, FROST CLOUD, WEAKNESS
+
+#
+"ENERGY DRAIN"
+
+Type:   mage
+Level:  15
+Mana:   15
+Syntax: cas 'energy' <victim>
+Damage: levelD8 (Pure Class: levelD10)
+Spell Melee: 1-5
+Saving: Spell
+Save Affect: Special
+
+   Energy drain directly attacks the life force of the victim, literally
+draining their energy away.
+
+*note* There is a greater chance of scrapping the equipment of a victim
+       with this spell.
+
+See also: VAMPYRIC TOUCH
+
+#
+"VAMPYRIC TOUCH"
+
+Type:   mage
+Level:  45
+Mana:   15
+Syntax: cas 'vamp' victim
+Damage: levelD10 (Pure Class: levelD14)
+Spell Melee: 1-4
+Saving: Spell
+Save Affect: 1/2 Damage
+
+   Vampyric touch directly attacks the life force of the victim, draining
+their energy away and transferring a portion of it to the caster.
+
+*note* Due to the particularly dark nature of this spell, the alignment
+       of the caster drops with each success.
+
+See also: ENERGY DRAIN, ALIGNMENT
+
+#
+"POISON"
+
+Type:     cleric
+Level:    40
+Mana:     15
+Syntax:   cas 'poison' <victim | object>
+Duration: level hours (permanent on food or drink items)
+Saving:   Paralysis/Poison/Death Magic
+Save Affect: Unaffected
+
+   A victim who is poisoned suffers from very slow hp recovery, and
+in some cases my lose hp every hour. Poison spells are cummulative,
+so repeated poisonings can be deadly.
+
+*note* All poison spells have a chance of paralyzing the victim as the
+       poison courses through their veins. Poison also affects the
+       strength of the victim, reducing it with each poisoning.
+
+See also: POISON GAS, DETECT POISON, REMOVE POISON, PARALYZE, STRSTAT
+
+#
+"POISON GAS"
+
+Type:     cleric
+Level:    45
+Mana:     30
+Syntax:   cas 'poison g'
+Duration: level hours
+Saving:   Breath
+Save Affect: 1/2 Damage
+
+   This spell releases a cloud of poisonous gases, hitting everyone in
+the room who is not grouped with the caster. 
+
+*note* All poison spells have a chance of paralyzing the victim as the
+       poison courses through their veins. Poison also affects the
+       strength of the victim, reducing it with each poisoning.
+
+See also: AREA AFFECT, POISON, DETECT POISON, REMOVE POISON, PARALYZE,
+          STRSTAT
+
+#
+"HARMFUL TOUCH"
+
+Type:   cleric
+Level:  5
+Mana:   15
+Syntax: cas 'harm' <victim>
+Damage: levelD3 (Pure Class: levelD5)
+Saving: Spell
+Save Affect: 1/2 Damage
+
+   Harmful touch is a direct attack on the physical health of the
+victim, having dire consequences on it.
+
+See also: WITHER, RUPTURE, IMPLODE, DISINTEGRATE
+
+#
+"WITHER"
+
+Type:   cleric
+Level:  15
+Mana:   20
+Syntax: cas 'wither' <victim>
+Damage: levelD5 (Pure Class: levelD7)
+Saving: Spell
+Save Affect: 1/2 Damage
+
+   This spell causes rapid aging and decay of certain areas of the
+victims body, which can result in an agonizing death.
+
+See also: HARMFUL TOUCH, RUPTURE, IMPLODE, DISINTEGRATE
+
+#
+"RUPTURE"
+
+Type:   cleric
+Level:  25
+Mana:   30
+Syntax: cas 'rupt' <victim>
+Damage: levelD7 (Pure Class: levelD9)
+Saving: Spell
+Save Affect: 1/2 Damage
+
+   This spell directly attacks the vital organs of a victim causing them
+to literally explode. 
+
+See also: HARMFUL TOUCH, WITHER, IMPLODE, DISINTEGRATE
+
+#
+"IMPLODE"
+
+Type:   cleric
+Level:  35
+Mana:   40
+Syntax: cas 'imp' <victim>
+Damage: levelD9 (Pure Class: levelD11)
+Saving: Spell
+Save Affect: 1/2 Damage
+
+   This spell attacks the entire body, using divine forces to literally
+crush the life out of the victim.
+
+See also: HARMFUL TOUCH, WITHER, RUPTURE, DISINTEGRATE
+
+#
+"DISINTEGRATE"
+
+Type:   cleric
+Level:  45
+Mana:   50
+Syntax: cas 'disint' <victim>
+Damage: levelD16 (Pure Class: levelD20)
+Saving: Spell
+Save Affect: 1/4 Damage
+
+   The most powerful damage spell in the clerics arsenal, ripping the
+victims molecules apart.
+
+See also: HARMFUL TOUCH, WITHER, RUPTURE, IMPLODE
+
+#
+"WIND STORM"
+
+Type:   druid
+Level:  10
+Mana:   15
+Syntax: cas 'wind st'
+Damage: levelD3
+Saving: Breath
+Save Affect: 1/2 Damage
+
+   Being intimate friends of nature, druids are able to call upon the
+winds to unleash their fury against the enemies of the druid.
+
+*note* This spell may only be performed outdoors.
+
+See also: AREA AFFECT, GEYSER, EARTHQUAKE, CREEPING DOOM, CALL LIGHTNING
+
+#
+"GEYSER"
+
+Type:   druid
+Level:  20
+Mana:   25
+Syntax: cas 'gey'
+Damage: levelD12
+Spell Melee: 1-2
+Saving: Breath
+Save Affect: 1/2 Damage
+
+   Geyser creates columns of searing steam and water erupting from the
+ground. The affects hit everyone everyone in the room who is not grouped
+with the caster
+
+*note* This spell may only be performed outdoors.
+
+See also: AREA AFFECT, WIND STORM, EARTHQUAKE, CREEPING DOOM, CALL LIGHTNING
+
+#
+"EARTHQUAKE"
+
+Type:   druid
+Level:  30
+Mana:   30
+Syntax: cas 'earth'
+Damage: levelD15
+Saving: Breath
+Save Affect: 1/2 Damage
+
+   Earthquake creates violent localized tremors, often resulting in
+the destruction of nearby structures. The affects hit everyone in the
+room who is not grouped with the caster.
+
+*note* This spell may only be performed outdoors.
+
+See also: AREA AFFECT, WIND STORM, GEYSER, CREEPING DOOM, CALL LIGHTNING
+
+#
+"SPELL ARMOR"
+
+Type:     cleric/knight
+Level:    2/4
+Mana:     2+2/hr
+Syntax:   cast 'armor' <target>
+Duration: level hours (min of 10)
+
+   The armor spell will improve your armor class (AC) by an amount
+proportional to the level of the caster.
+
+See Also: AC, GROUP ARMOR
+
+#
+"GROUP ARMOR"
+
+Type:     cleric
+Level:    47
+Mana:     50
+Syntax:   cast 'group armor'
+Duration: level (min 10 hours)
+
+   The armor spell will improve your armor class (AC) by an amount
+proportional to the level of the caster. Affects everyone who is
+grouped with the caster.
+
+See also: AC, ARMOR, SPELL ARMOR
+
+#
+"TELEPORT"
+Type:        mage
+Level:       14
+Mana:        15
+Syntax:      cast 'teleport' <target>
+
+   Teleport will instantly transfer you to another location in the
+world. This location is random, and thus there will always be a risk
+of landing in a fatal location.  It can also be used as a combat spell
+to teleport your attacker or yourself away.
+
+#
+"GOUGE"
+
+Type:   Thief
+Level:  70
+Syntax: gouge <victim>
+
+   Gouge is a skill used by the less 'conventional' fighters, where in the user
+attempts to gouge the opponent's eyes using his or her weapon(or natural
+weaponry if need be).  Succesful attacks will result in PERMANENT blinding of
+the opponent as well as some damage.  Only magical cures will restore the
+victim's site.  
+
+***NOTE: The victim must have eyes to be affected by this skill.
+
+#
+"GROUP CURE LIGHT"
+
+Type:   cleric
+Level:  46
+Mana:   30
+Syntax: cas 'group cure li'
+
+   This spell heals 3D4 hitpoints of damage from the target. The spell
+affects everyone in the room who is grouped with the caster.
+
+See Also: CURE LIGHT, CURE SERIOUS, CURE CRITIC, HEAL, EMPATHIC HEAL,
+          LAY HANDS, HP
+
+#
+"REMOVE CURSE"
+
+Type:   cleric/knight
+Level:  14/47
+Mana:   10
+Syntax: cas 'remove cur' <target | object>
+
+   Will remove the curse on objects in the casters inventory or lying
+in the room. Can also be used to remove the curse from a persons in the
+room.
+
+See also: CURSE, BLESS
+
+#
+"DETECT INVISIBILITY"
+
+Type:     mage/shapeshifter
+Level:    6/6
+Mana:     3+1/hr
+Syntax:   cas 'detect inv' <target>
+
+   This spell enables the target to see invisible items and players.
+
+See also: INFRAVISION, TRUE SIGHT, GROUP DETECT INVISIBILITY,
+          GROUP SIGHT, SENSE LIFE, SENSE AURA
+
+#
+"GROUP DETECT INVISIBILITY"
+
+Type:     mage
+Level:    48
+Mana:     50
+Syntax:   cas 'group detect inv'
+Duration: 4*level hours (max of 100)
+
+   This spell enables the target to see invisible items and players.
+The spell affects everyone in the room who is grouped with the caster.
+
+See also: INFRAVISION, DETECT INVISIBILITY, TRUE SIGHT, GROUP SIGHT
+          SENSE LIFE, SENSE AURA
+
+#
+"DETECT POISON"
+
+Type:   cleric
+Level:  9
+Mana:   10
+Syntax: cas 'detect po' <target | object>
+
+   Cast on food or drink containers, you will be able to sense if it
+is poisoned.
+
+   Cast on a person you will be able to see if that person is affected
+by poison.
+
+See also: POISON, REMOVE POISON, TASTE, SIP
+
+#
+"ENCHANT WEAPON"
+
+Type:     mage
+Level:    16
+Mana:     100
+Syntax:   cas 'enchant weapon' <object>
+Duration: Permanent
+
+   This spell will invest any weapon that does not have the MAGIC flag
+set. A non-magical weapon which is enchanted will be given hit&dam roll
+modifiers. ie: the weapon will give you a better chance of hitting and
+hitting harder than normally.
+
+The enchantment will modify the weapon as:
+
+	Level   Hit Roll  Damage
+
+	< 21      +1        +1
+	< 41      +2        +2
+	< 51      +3        +3
+	< 125     +4        +4
+	> 125     +5        +5
+	Immort    +6        +6
+
+*note* Enchant Weapon also alters the alignment inclination by that of
+       the caster. ie: if the caster is evil-aligned (-350) then the
+       weapon will become ANTI-GOOD, neutral casters (-349 to +349 align)
+       are the best alternative so that the weapon is wieldable by both
+       good and evil aligned players.
+
+See also: TOHIT, DAMAGE, IDENTIFY
+
+#
+"PAGE"
+
+A paging system of sorts has been established to allow mortals to contact the 
+gods if none are available at the moment. Pages are answered in the order they
+were received and are subject to deletion without a response.
+
+Commands:
+  page help - get this message
+  page any <message> - send a message to any god
+  page <god> <message> - send a message to a specific god
+  page cancel <to> - cancel a message you sent
+  
+  Note: omitting <to> or <from> will cancel the oldest page
+
+#
+"HEAL"
+
+Type:   cleric
+Level:  30
+Mana:   50
+Syntax: cas 'heal' <target>
+
+      This powerful heal spell will repair damages up to LevelD4.
+      The magnitude of this heal also has the bonus affects of 
+      removing poison and blindness from the target.
+    
+      Healing the undead is found to have a painful affect on the
+      'healed' victim.
+
+See Also: CURE LIGHT, CURE SERIOUS, CURE CRITIC, EMPATHIC HEAL,
+          LAY HANDS, HP, GROUP CURE LIGHT, POISON, BLINDNESS
+
+#
+"REGENERATE"
+
+Type:   cleric/knight
+Level:  25/32
+Mana:   5+5/hr
+Syntax: cas 'regen' <target>
+
+   This spells envelops the target with regenerative forces. These
+forces benefit the target by doubling their hp regeneration rate,
+so they will heal more during a tic.
+
+See also: CURE LIGHT, CURE SERIOUS, CURE CRITIC, EMPATHIC HEAL,
+          LAY HANDS, HP, GROUP CURE LIGHT
+
+#
+"EMPATHIC HEAL"
+
+Type:   cleric
+Level:  40
+Mana:   50
+Syntax: cas 'empath' <target>
+
+   This spell heals as many hitpoints as possible of damage from the
+target. The cleric absorbs the damage into himself, thereby restoring
+the target. This heal also has the bonus affects of removing poison
+and blindness from the target.
+
+*note* There is a chance the cleric will be left stunned if a great
+       deal of physical healing was required.
+
+See Also: CURE LIGHT, CURE SERIOUS, CURE CRITIC, HEAL, LAY HANDS, HP,
+          GROUP CURE LIGHT, POISON, BLINDNESS
+
+#
+"INVISIBILITY"
+
+Type:     mage
+Level:    6
+Mana:     3+1/hr
+Syntax:   cas 'inv' <target | object>
+
+   Invisibility allows the target to escape notice of those creatures
+who are unable to detect invisibility.
+
+*note* Attacking while invisible will remove the invisibility affect.
+
+See Also: DETECT INVISIBILITY, GROUP INVISIBLE
+
+#
+"GROUP INVISIBILITY"
+
+Type:     mage
+Level:    48
+Mana:     50
+Syntax:   cast 'group inv'
+Duration: 2*level hours (min of 10)
+
+   Invisibility allows the target to escape notice of those creatures
+who are unable to detect invisibility. This spell affects everyone
+in the room who is grouped with the caster.
+
+*note* Attacking while invisible will remove the invisibility affect.
+
+See Also: DETECT INVISIBILITY, INVISIBLE
+
+#
+"LOCATE OBJECT"
+
+Type:   cleric
+Level:  36
+Mana:   20
+Syntax: cas 'locate' <object>
+
+   If possible you will know exactly where an object is, or the name
+of the creature using it. If more than one object by the same name
+exists, you will get a listing of several objects.  The maximum number
+of objects you can simultaneously locate is proportional to your level.
+This spell is only likely to locate items nearby or those near other
+players.
+
+*note* Items may exist in the game but you may be unable to "see"
+       them and thus they will not show up with locate.
+
+See also: INFRAVISION, DETECT INVISIBILITY, TRUE SIGHT
+
+#
+"SANCTUARY"
+
+Type:     cleric
+Level:    41
+Mana:     30+10/hr
+Syntax:   cas 'sanc' <target>
+Duration: 3 hours
+
+   When protected by this powerful spell, the target only takes 1/2
+damage from all attacks. It will also save some wear and tear on
+equipment.
+
+See Also: DAMAGE, FIRESHIELD, EQUIPMENT, REPAIR
+
+#
+"FIRESHIELD"
+
+Class:    mage/bard
+Level:    35/95
+Mana:     20+10/hr
+Syntax:   cas 'firesh'
+
+
+   When protected by this powerful spell, the benefactor inflicts
+damage on an attacker as his fireshield burns the attacker during
+combat.
+
+See Also: POISONSHIELD, COLDSHIELD, ACIDSHIELD, VAMPSHIELD,
+          ELECTRICSHIELD, MANASHIELD, ENERGYSHIELD
+#
+"SLEEP"
+
+Type:     mage/psionist
+Level:    4/4
+Mana:     15
+Syntax:   cas 'sleep' <victim>
+Duration: 5 hours
+Saving:   Spell
+Save Affect: Unaffected
+
+   If failing saving throw versus spell, the victim will fall asleep.
+A person who is affected by sleep can only be awakened if attacked.
+
+See also: SAVING THROWS
+
+#
+"STRENGTH"
+
+Type:     cleric
+Level:    18
+Mana:     2+1/hr
+Syntax:   cas 'str' <target>
+
+   The benefactor of this spell will gain strength points in proportion
+to the level of the caster.
+
+See also: WEAKNESS, STRSTAT
+
+#
+"SUMMON"
+
+Type:     Mage
+Level:    60
+Mana:     20
+Syntax:   cas 'summ' <victim>
+
+   The victim of this spell will be transported from their location to
+the location of the caster. Failure may result for several reasons,
+ranging from powerful magic reflecting the summon attempt, to the target
+being too powerful.
+
+*note* A successful summon will result in the temporary stunning of
+       the caster. Be wary of summoning aggressive creatures.
+
+*note* You can not summon someone who does not wish to be summoned.
+
+See also: RULES
+
+#
+"WORD OF RECALL"
+
+Type:   cleric/knight
+Level:  17/34
+Mana:   20
+Syntax: cas 'word'
+
+   The caster will be transferred back to the last place where they last
+rented or quit from the game.
+
+See Also: RECALL, GROUP RECALL, SUCCOR
+
+#
+"GROUP RECALL"
+
+Type:   cleric/knight
+Level:  49/55
+Mana:   50
+Syntax: cas 'group recall'
+
+   The caster will be transferred back to the last place where they last
+rented or quit from the game, along with everyone in the same room who
+is grouped with the caster.
+
+See Also: RECALL, WORD OF RECALL, SUCCOR
+
+#
+"REMOVE POISON"
+
+Type:   cleric/knight
+Level:  9/19
+Mana    10
+Syntax: cas 'remove poi' <target | object>
+
+   Will remove poison from the specified object in the casters inventory
+or in the room. Will also remove the poison from a specified player in
+the room. 
+
+See Also: POISON, DETECT POISON
+
+#
+"SENSE LIFE"
+
+Type:     cleric
+Level:    12
+Mana:     3+1/hr
+Syntax:   cas 'sense life'
+
+   This spell will enable you to sense hidden life forms in a room.
+Invisible persons are also considered to be hidden.
+
+See Also: HIDE, DETECT INVISIBILITY, TRUE SIGHT, FAERIE FOG
+
+#
+"IDENTIFY"
+
+   Identify scrolls are extremely useful for discovering the properties
+of an object by typing "recite identify <object>". You can find out all
+the information on the item in question, including damage, tohit, value,
+ac, etc... The Migaard magic shop sells these scrolls or you may seek
+out a mage to aid you.
+
+See also: KNOWLEDGE, RECITE, SCROLLS, SHOPS, INVENTORY
+
+#
+"INFRAVISION"
+
+Type:     mage/druid/ranger/shapeshifter
+Level:    1/1/1/1
+Mana:     3+1/hr
+Syntax:   cas 'infra' <target>
+
+   Infravision allows the benefactor to see creatures in otherwise dark
+conditions. In addition, usage of spells which create large amounts
+of heat may cause temporary blindness in infravision affected creatures.
+
+See also: DETECT INVISIBILITY, TRUE SIGHT, SENSE LIFE
+
+#
+"WEAKNESS"
+
+Type:     cleric
+Level:    18
+Mana:     10+1/hr
+Syntax:   cas 'weak' <victim>
+Duration: level hours
+Saving:   Spell
+Save Affect: Unaffected
+ 
+   Casting this on a creature weakens them, causing them to hit for
+slightly less and taking away strength points in proportion to the
+level of the caster.
+
+See also: STRSTAT, STRENGTH, DAMAGE
+
+#
+"DISPEL MAGIC"
+
+Type:   mage
+Level:  26
+Mana:   20
+Syntax: cas 'dispel' <victim>
+Saving: Spell
+Save Affect: Each spell must be saved to last through the spell
+ 
+   Casting this spell on a creature will take away any affecting spells
+such as sanctuary, fireshield, etc. It can also be cast upon players for
+the same affects.
+
+*note* This is considered an aggressive action when used on creatures,
+       and will likely result in a fight.
+
+#
+"KNOCK"
+ 
+Type:   mage
+Level:  22
+Mana:   10
+Syntax: cas 'knock' <object>
+
+   Casting this spell on some locked objects (doors, etc.) causes the
+object to become unlocked.
+
+See also: PICK
+
+#
+"SENSE AURA"
+ 
+Type:   cleric/psionist/knight
+Level:  1/3/18
+Mana:   3+1/hr
+Syntax: cas 'sense aura' <target>
+
+  The affects of this spell allow the benefactor to sense the alignment
+of the creatures around them, as well as noticing magical properties of
+objects.
+
+See also: ALIGNMENT, ENCHANT WEAPON
+
+#
+"POSSESSION"
+
+Type:   cleric
+Level:  31
+Mana:   40
+Syntax: cas 'possess' <corpse name>
+
+  Some clerics bent on exacting revenge against their enemies. Found that along
+with the powers to exercise evil from the land, they could just as easily 
+channel the evil into the dead bodies of the slaughtered. Such an evil and 
+selfish act does not go unnoticed by the gods... nor does it go unnoticed by
+the demons of this world.
+
+*note* The zombie is animated by the summoning of an extra planar
+       spirit to inhabit the corpse. The nature of these spirits is
+       very violent, and they will refuse to share their existance
+       in our world with other undead.
+
+See also: GROUP, ORDER, ANIMATE DEAD
+
+#
+"PARALYZE" "PARALYSIS"
+
+Type:     cleric
+Level:    16
+Mana:     15
+Syntax:   cast 'para' <victim>
+Duration: 1 hour
+Saving:   Paralysis/Poison/Death Magic
+Saving Affect: Unaffected
+ 
+   Casting this spell on a monster or player will paralyze them,
+making them unable to move or fight back effectively making them
+stunned until either it is killed, or remove paralysis is cast on the
+paralyzed subject.
+
+See also: REMOVE PARALYSIS
+
+#
+"REMOVE PARALYSIS"
+
+Type:   cleric/knight
+Level:  16/22
+Mana:   10
+Syntax: cas 'remove para' <target>
+
+  Will remove the effects which cause a victim to be immobile aside from being
+near death, such as paralysis from undead and stunning.
+
+See Also: PARALYSIS
+
+#
+"FEAR"
+ 
+Type:   mage/psionist
+Level:  5/2
+Mana:   15
+Syntax: cas 'fear' <victim>
+Saving: Petrification
+Saving Affect: Unaffected
+
+   Casting this spell on a creature has a chance of causing it to be
+afraid of you and fleeing from the area.
+
+*note* This spell has no affect on the undead.
+
+See Also: TURN
+
+#
+"TURN"
+
+Type:   cleric
+Level:  11
+Mana:   15
+Syntax: cas 'turn' <victim>
+Saving: Petrification
+Saving Affect: Unaffected
+
+   By attempting to 'turn' an undead being, the player calls upon his deity to
+aid him.  However, since the attitudes of the different gods vary so much, many
+differences in how the spell performs will be apparent.
+
+*note* This spell functions best against undead when the caster is devout
+       to his principles(or lack of).
+*note* This spell has no affect on the living.
+
+#
+"WATERBREATH"
+ 
+Type:     mage/druid
+Level:    23/23
+Mana:     3+1/hr
+Syntax:   cas 'water' <target>
+
+   This spell enables the target to breathe under water like a fish
+for a limited amount of time.
+
+See Also: GROUP WATERBREATH
+
+#
+"GROUP WATERBREATH"
+ 
+Type:     mage/druid
+Level:    49/50
+Mana:     50
+Syntax:   cas 'group water'
+Duration: level hours
+
+   This spell enables the target to breathe under water like a fish
+for a limited amount of time. The spell will affect everyone in the
+room who is grouped with the caster.
+
+See Also: WATERBREATH
+
+#
+"FLY"
+
+Type:     mage/bard
+Level:    7/10
+Mana:     3+2/hr
+Syntax:   cas 'fly' <target>
+ 
+   This spell enables the benefactor to hover above water or in mid-air.
+It also reduces movement costs.
+
+See also: GROUP FLY, MOVEMENT
+
+#
+"GROUP FLY"
+ 
+Type:     mage
+Level:    47
+Mana:     50
+Syntax:   cas 'group fly'
+Duration: level hours (min of 10) 
+
+   This spell enables the benefactor to hover above water or in mid-air.
+It also reduces movement costs. The spell will affect everyone in the
+room who is grouped with the caster.
+
+See also: FLY, GROUP SPELLS
+
+#
+"SHIELD"
+
+Type:     mage
+Level:    3
+Mana:     3+1/hr
+Syntax:   cas 'shield' <target>
+
+   This spell creates a magical shield of protection around the target,
+resulting in armor class benefits proportional to the level of the caster.
+
+See also: AC, ATTRIBUTES
+
+#
+"MONSUM"
+
+Type:     mage
+Level:    5
+Mana:     20
+Syntax:   cas 'monsum' <optional name>
+
+   This spell creates monsters of the appropriate level to serve as
+followers. The type of follower summoned is determined by the level
+of the caster. The follower will remain loyal for as long as the caster
+maintains the spell's mana consumption (see LEECH).
+
+*note* If an optional name is specified, the caster will summon that
+       named servant rather than one proportinal to his level.
+
+       servants available are (by level): goblin(5), orc(10),
+       kobold(15), bugbear(20), cockatrice(25), griffin(30), behir(50)
+
+*note* The caster exerts great mental effort to keep his servants
+       loyal, this is reflected in the mana they consume while
+       following the caster.
+
+See also: GROUP, ORDER
+
+#
+"REFRESH"
+
+Type:   cleric
+Level:  19
+Mana:   10
+Syntax: cas 'refresh' <victim>
+
+   This spell acts to return stamina to a fatigued target.  Refresh
+restores a targets movement by an amount proportional to the level of
+the caster.
+
+See also: MOVEMENT
+
+#
+"SUCCOR"
+
+Type:   cleric
+Level:  29
+Mana:   20   
+Syntax: cas 'succor'
+
+   This prayer creates a scroll of recall. This scroll can be used to
+return to the users home room.
+
+See also: RECALL, WORD OF RECALL, GROUP RECALL
+
+#
+"STONE SKIN"
+
+Type:     mage
+Level:    25
+Mana:     10+4/hr
+Syntax:   cas 'stone' <target>
+Duration: level hours (min of 10)
+
+   Stone skin transforms the targets skin into rock like substance,
+improving the armor class as well as making the target resistant to
+pierce attacks.
+
+When a character raise above level 75 he or she will have mastered
+the art of stone skin, thus the players skin will be so tough that he 
+becomes immune to piercing attacks.
+
+See also: AC, RESISTANCES, PETRIFY
+
+#
+"PETRIFY"
+
+Type:     druid/ranger
+Level:    26/31
+Mana:     10+4/hr
+Syntax:   cas 'petrify'
+Duration: level (min 10 hours)
+
+Petrify gives the casters skin hard and rock like properties.
+Moderately better than stone skin, petrify improves the armor class
+as well as giving resistance to pierce attacks.
+
+When a character raise above level 75 he or she will have mastered
+the art of petrification, thus the players skin will be so tough that 
+he becomes immune to piercing attacks.
+
+See also: AC, RESISTANCES, STONE SKIN
+
+#
+"TRUE SIGHT"
+
+Type:     cleric/knight/druid
+Level:    24/27/24
+Mana:     5+2/hr
+Syntax:   cas 'true' <target>
+
+  True sight allows you to see in the dark, as well as invisible
+creatures. While true sight allows you to see invisible creatures
+it will not allow you to see invisible objects, the detect invisible
+spell is needed for this.
+
+See also: INFRAVISION, DETECT INVISIBILITY, SENSE LIFE, SENSE AURA,
+          GROUP SIGHT, GROUP DETECT INVISIBILITY
+
+#
+"GROUP SIGHT"
+
+Type:     cleric
+Level:    48
+Mana:     50
+Syntax:   cas 'group sight'
+Duration: 2*level (max 100 hours)      
+
+  True sight allows you to see in the dark, as well as invisible
+creatures. While true sight allows you to see invisible creatures
+it will not allow you to see invisible objects, the detect invisible
+spell is needed for this. The spell will affect everyone in the
+room who is grouped with the caster.
+
+See also: INFRAVISION, DETECT INVISIBILITY, TRUE SIGHT, SENSE LIFE,
+          SENSE AURA, GROUP DETECT INVISIBILITY
+
+#
+"MINOR CREATION"
+
+Type:   mage
+Level:  18
+Mana:   20
+Syntax: cas 'minor c' <item name>
+
+   Allows the caster to bring a basic piece of equipment into existance.
+Objects available for creation are sword, shield, bag, barrel, food.
+
+See Also: CREATE LIGHT, CREATE FOOD, CREATE WATER, GOODBERRY, MOONBEAM
+
+#
+"FAERIE FIRE"
+
+Type:     druid/ranger
+Level:    14/19
+Mana:     15
+Syntax:   cas 'faerie fire' <victim>
+Duration: level (min 10 hours)
+Saving:   Spel
+Save Affect: Unaffected
+
+   Calling upon the tiny magical folk known as faeries, the victim of
+this spell has its armor class reduced by faerie magic. The amount is
+proportional to the level of the caster.
+
+See also: AC, ATTRIBUTES
+
+#
+"FAERIE FOG"
+
+Type:   druid/ranger
+Level:  16/21
+Mana:   30
+Syntax: cas 'faerie fog'
+
+   Calling upon the tiny magical folk known as faeries, the fog they
+create seeks out hidden and sneaking life forms in a room to reveal
+them. Invisible creatures are also considered hidden.
+
+*note* This spell is not aggressive and thus a safe way to bring
+       hidden creatures into view.
+
+See also: AREAAFFECT
+
+#
+"POLYMORPH"
+
+Type:     mage
+Level:    8
+Mana:     30
+Syntax:   cas 'poly' <poly name>
+Duration: type "return" to unpolymorph
+
+  There is a rather long, and involved list of monsters that you can
+poly into, and the list expands as you get higher in level.  Humanoid
+polymorphs (*), may cast cleric or mage spells and use thief skills.
+If they are of the appropriate classes Also when you poly all your
+equip you are wearing will be put into your inventory and you have to
+"wear all"... the same is true when you return from poly shape.
+
+*note* Some poly forms auto-cast WITHOUT player control, specifically
+       in battles! Autocasting can cause the poly to cast a spell against
+       another player or creature in the room with predictable results.
+
+*note* If no poly name is specified, the caster will auto-poly into the
+       highest level polymorph available to his level.
+
+A listing of all the possible shapes to poly into follows below!
+
+NAME                  LEVEL                NAME                   LEVEL
+
+Giant Rat               1                  Kobold Peon              2
+Rock Toad               3                  Pixie Guard              4
+Fire Beetle             5                  Goblin Worker            6
+Moccasin Snake          7                  Brownie Knight           8
+Cougar                  9                  Orc Raider               10
+Wolf                    11                 Ogre Henchman            12
+Lion                    13                 Lizardman Warrior        14
+Warg                    15                 Troll Berserker          16
+Crystal Spider          17                 Hill Giant Smasher       18
+Shadow Beast            19                 Quickling Raider         20
+Gorgon                  21                 Githyanki Soldier        22
+Otyugh                  23                 Shadow Warrior           24
+Green Dragon            25                 Troglodyte Battlemaster  26
+Lesser Xorn             27                 Great Cyclops            28
+Frost Salamander        29                 Draconian Sentry         30
+Slatherer               32                 Storm Giant              34
+Tiger Shark             36                 Minotaur Scout           38
+Centaur Shaman          40                 Tytan Hero               42
+Black Dragon            44                 Vampire                  46
+Vicious Roc             48                 Shadowen                 50
+Phoenix                 52                 Master Mindflayer        54
+Beholder                56                 Githezai Healer          58
+Elfeater                60                 Orc Hero                 62
+Towering Treant         64                 Beysib Fighter           66
+Efreet Lord             68                 Ethereal Knight          70
+Wyvern                  72                 Drow SpellSword          74
+Kraken                  76                 Demon Magi               78
+Tangle Tree             80                 Skaven General           82
+Gorgimera               84                 Succubus                 86
+Hydra                   88                 Planetar Defender        90
+Silver Unicorn          92                 Sahuagin Witch           94
+Behemoth                96                 Solar Lawgiver           98
+Leviathan              100                 Avatar                  225
+
+See also: AREAAFFECT, TREE
+
+#
+"TREE"
+
+Type:     druid
+Level:    8
+Mana:     30
+Syntax:   cas 'tree'
+Duration: type "return" to untree
+
+   Druids can become one with nature and transform into a tree. The
+many boughs of the tree allow for multiple attacks, and the size of the
+tree is determined by the hit points and level of the druid.
+
+*note* You must be in the wilds to attempt a transformation into a
+       tree.
+
+See also: POLYMORPH
+
+#
+"NATURE WALK"
+
+Type:   druid
+Level:  28
+Mana:   100
+Syntax: cas 'nature' <target>
+ 
+   This spell enables you to walk to any monster or player in the
+game, if you are successful.  Failures can be because you are trying
+to nature walk to a monster or player in a private room, or simply
+because you just failed and need to try again.
+
+*note* Both the caster and the target must be in wilderness areas
+       force this spell to succeed. At higher levels, the druid has
+       a chance of penetrating private rooms as well.
+
+*note* No one is responsible if you nature to a destination and
+       then subsquently killed... whether it was a pkill in an area
+       affect that you unfortunately walked into does not make a
+       difference.
+
+See also: RULES
+
+#
+"RESURRECTION"
+
+Type:   cleric
+Level:  21
+Mana;   30
+Syntax: cas 'res' <corpse name>
+
+   This spell may be used on a player or monster. When the recipient
+of the spell drops to a CON of 3 they may be resurrected no more.
+
+   The resurrection of players after level 50 requires the help of
+a god.  This help can be received by going to one of the four Temples
+Of The Dead.  
+
+Players:  The spell costs 150,000 gold coins and 1 CON point is
+          subtracted from the resurrected character for characters
+          under level 50.  Then the cost is 15,000 per level.  Because
+          the gods are involved in the resurrections of the higher level
+          players, there is a chance no damamge will be done to the
+          characters body(so, possibly no loss of con).
+          
+
+Monsters: The spell costs 2,000 gold coins per level of monster.  The monster
+	  will follow the caster for as long as the caster can mantain the 
+	  spell's mana consumption (See LEECH). There is no guarantee the 
+	  resurrected monster will follow you, it may just thank you.
+
+Temple Information:
+          Temple of Shima:               Level 75 and below
+          Temple of Siveni Gray-Eyes:    Level 100 and below
+          Temple of Ils:                 Level 120 and below
+          Temple of Rita Blue-Eyes:      Level 120 and Above
+          Temple of Mother Bey:          Still Lost to the World
+          Temple of Novak:               Still Lost to the World
+
+
+See also: CONSTITUTION, GROUP, LEECH, ORDER
+
+#
+"HEROES FEAST"
+Type:   cleric
+Level:  39
+Mana:   40
+Syntax: cas 'hero'
+ 
+   Casting this spell gives you and everyone in your group a
+satisfying meal of food and drink to relieve your hunger and thirst.
+There are also the benefits of refreshment and curing of light
+wounds.
+
+See also: REFRESH, CURE LIGHT
+
+#
+"WEB"
+
+Type:     druid/ranger
+Level:    11/16
+Mana:     15
+Syntax:   cas 'web' <victim>
+Duration: level hours  
+Saving:   Paralysis/Poison/Death Magic
+Save Affect: Unaffected
+
+   Casting this on a victim reduces their movement points for the
+duration of the spell. Affects are cummulative if the victim is
+hit several times with web, so there is a possibility of completely
+immobilizing the victim.
+
+See also: MOVEMENT
+
+#
+"KNOWLEDGE"
+
+Type:   mage
+Level:  38
+Mana:   40
+Syntax: cas 'know'
+
+   This spell creates a scroll of identify for the use of identifying
+properties of objects.
+
+See also: IDENTIFY
+
+#
+"GOLEM"
+
+Type:   druid
+Level:  17
+Mana:   30
+Syntax: cas 'golem'
+
+   This spell is wreathed in mystery, but it is said that a druid can
+drop 6 pieces of armor on the ground, and create a golem from them.
+These 6 pieces represent the different body sections and include items
+that can be worn on the legs, feet, arms, hands, head, and chest.  The
+strength of the armor is said to correlate with the strength of the
+armor golem that mystically pieces itself together.  This spell can
+only be cast in the wilderness, for all of Mother Nature's power of
+creation must be called upon and used.
+
+See also: GROUP, ORDER, EQUIPMENT
+
+#
+"RIDE"
+
+Type:   mage/cleric/warrior/thief/knight/druid/psionist/ranger/shapeshifter
+Level:  22/22/17/17/17/7/22/12/22
+Syntax: mount <steed name> or dismount <steed name>
+
+   You can ride any creature which is a herbivor. There are several
+advantages to this skill, among them is that your mount can sense death
+traps.
+
+*note* A failed attempt at riding a beast may cause them to attack.
+
+See also: MOUNT
+
+#
+"MOUNT"
+
+Type:   druid/ranger
+Level:  9/14
+Mana:   25
+Syntax: cas 'mount'
+
+The mount spell creates a mount dependent on your level.
+You will automatically be saddled in. If you want to dismount
+type "dismount".
+
+LEVEL    MOUNT
+1-20     Pony
+21-40    Small Horse
+41-60    Large Horse
+61-80    War Horse
+81-100   Pegasus
+101-124  Nightmare Horse
+125      Fire Horse
+
+See also: RIDE
+
+#
+"SUNRAY"
+
+Type:   druid
+Level:  4
+Mana:   15
+Syntax: cas "sun" <victim>
+
+   With their knowledge of nature and closeness to it druids can call
+upon the power of the sun to assist you in battle and blind their
+enemies.
+
+*note* This spell may only be performed outdoors and when the weather
+       is agreeable.
+
+See also: BLINDNESS, CONTROL WEATHER
+
+#
+"WINDWALK"
+
+Type:   druid
+Level:  7
+Mana:   10
+Syntax: cas "windwalk"
+
+   Allows the Druid to call upon the power of the wind to fly for a
+certain time.
+
+*note* This spell may only be performed outdoors.
+
+See also: FLY
+
+#
+"MOONBEAM"
+
+Type:   druid
+Level:  6
+Mana:   5
+Syntax: cast "moon"
+
+   Being one with nature druids can weave the light of the moon into a
+lantern.  Since it requires moonlight, this can only be done at night.
+
+*note* This spell may only be performed outdoors.
+
+See also: CREATE LIGHT
+
+#
+"GOODBERRY"
+
+Type:   druid
+Level:  5
+Mana:   5
+Syntax: cas "good"
+
+   Druids have special knowledge of all fruit bearing plant life and this
+spell reflects their ability to persuade the surrounding foliage to offer
+their best berries.
+
+*note* This spell may only be performed in wilderness areas.
+
+See also: CREATE FOOD
+
+#
+"THORN"
+
+Type:   druid
+Level:  1
+Mana:   15
+Syntax: cas "thorn" <victim>
+Damage: levelD6
+Saving: Spell
+Save Affect: 1/2 Damage
+
+   Call upon the thorny plants to aid you in battle. Since plant life
+is needed for this skill to be used and no indoor place can hold the
+amount of plant life needed to produce the thorns, this can only be
+used outside.
+
+*note* This spell may only be performed in wilderness areas.
+
+See also: VINE, CREEPING DOOM
+
+#
+"VINE"
+
+Type:   druid
+Level:  8
+Mana:   15
+Syntax: cas 'vine' <victim>
+Damage: levelD9
+Saving: Spell
+Save Affect: 1/2 Damage
+
+ 
+   Casting this spell will call upon great vines to erupt from the
+ground and bind and crush the victim.
+
+*note* This spell may only be performed in wilderness areas.
+
+See also: THORN, CREEPING DOOM
+
+#
+"DISPEL"
+
+Type:   spell casters
+Level:  1
+Syntax: dispel <char | char spell>
+
+  Dispel can be used to stop paying mana for long term spells with
+ongoing mana.  If <spell> is omitted it will default to all spells on
+the indicated character.  Omitting <char> will default to the
+character using dispel.
+
+See also:  LEECH, ONGOING MANA
+
+#
+"LEECH"
+
+Type:   Casters
+Level:  1
+Syntax: leech
+
+  Leech will display a list of the spells with ongoing mana you are
+currently maintaining, as well as totalling the mana you are spending.
+
+See also:  ONGOING MANA, DISPEL
+
+#
+"ONGOING MANA"
+
+  Many spells here  have an ongoing mana cost.  What this
+means is that you pay a smaller amount of mana up front to cast the
+spell and then every hour you pay another, smaller, amount of mana to
+maintain the spell.
+  Spells may only be maintained on characters within the same zone.
+"dispel" can be used to stop paying the ongoing mana charges and
+"leech" can be used to determine what your current charges are.
+
+See also:  LEECHES, DISPEL
+
+#
+"DUAL WIELD"
+
+Type:   warrior/thief
+Level:  10/15
+Syntax: hold <weapon>
+
+  It is possible for thieves and warriors to wield two weapons at the
+same time, thus doubling the number of attacks the get.  Only certain
+weapons may be held in the off-hand and you may not equip both a
+second weapon and a shield.  To use a second weapon, just hold or grab
+it. Dexterity is a key factor in being able to pull off this tricky
+maneuver.
+
+  4 attacks/round = 2 dual wield attacks at dual wield skill percentage
+  3 attacks/round = 2 dual wield attacks, 1@dual wield skill percentage
+                                          1@dual wield skill percentage/2
+  2 attacks/round = 1 dual wield attack at dual wield skill percentage
+  1 attack/round  = 1 dual wield attack at dual wield skill percentage/2
+
+Note that pure warriors, having specialized in this type of close combat, can
+go even higher than these numbers, rendering a major series of hits per round.
+
+***Note: You may punch occasionally if your dual wield hand is free.
+
+See also: ATTRIBUTES, DEXTERITY
+
+#
+"TRIP"
+
+Type:   thief/monk
+Level:  9/25
+Move:   10
+Syntax: trip <victim>
+Saving: Paralysis/Poison/Death Magic
+Save Affect: Unaffected
+
+  Using this skill a thief may force an opponent to the ground.
+The victim will be unable to cast or perform any other skills 
+until they stand up. Missing the attempt will result in you suffering
+similar consequences.
+
+See also: BASH
+
+#
+"QUICK DRAW"
+
+Type:   thief
+Level:  18
+Syntax: quick <weapon>
+
+  Using this skill a character is able to change his primary weapon
+without losing any time.  If the attempt is successful the character
+quickly changes his primary weapon to his new choice.  If they are
+unsuccessful, the character will be left weaponless for 2 rounds of
+combat.
+
+#
+"SEARCH"
+
+Type:   thief
+Level:  22
+Mana:   10
+Syntax: search <direction | object>
+
+  Search can be used to search the immediate vicinity for traps,
+secret doors, death rooms, or teleports.  If no direction or object is
+specified all exits and objects in the room will be searched.  Your
+chances of success are much better if you search a specific direction
+or object than if you just search the whole room.
+
+#
+"DONATE"
+
+Syntax: donate <item name>
+
+   Use this command to generously donate any items you wish. The items
+will be taken automatically from your inventory and dropped off in the
+donation room of Midgaard regardless of your current location.
+
+#
+"MORE"
+
+Syntax: more
+
+  Use this command to turn the built-in pager on or off.  Quite useful
+if you have a scrolling terminal emulator or other localized paging.
+
+#
+"RETREAT"
+
+Type:   warrior/monk
+Level:  3/20
+Move:   0
+Syntax: retreat <direction>
+
+   The warrior, being the most proficient and knowledgable in the ways of
+fighting, has the ability to make a strategic withdrawal from a potentially
+lethal situation.
+
+See also: FLEE
+
+#
+"ILLUSIONARY SHROUD"
+
+Class:  psionist
+Level:  15
+Mana:   5+10/hr
+Syntax: illusion 
+
+   With power of mind and hand, the psionist is able to envelop himself
+in a shroud of illusion. This has the effect of making the psionist
+appear to be in several places at once, confusing any attackers.
+
+*note* The strength of the illusion is proportional to the level of
+       the psionist. 
+
+#
+"JUDGE"
+
+Level:  54
+Syntax: judge <who> <guilty|notguilty|loser|noloser|thief|nothief|innocent>
+
+  Using this command a god can change the pkill flags on a character.
+guilty and notguilty change the PKILL flag.  Loser and noloser affect
+the open season flag.  Thief and nothief change the thief flag.
+Innocent will clear all the p-agression flags.
+
+#
+"TERRAIN"
+
+Syntax: terrain
+
+   The terrain command provides information on whether the room you are in
+is indoors or outdoors, as well as the terrain type. Terrain types include
+mountains, desert, underwater, etc. This information is useful for determining
+if certain spells will work in the room (ie: druid wilderness spells).
+
+#
+"FIRE WARD"
+
+Class:  mage
+Level:  50
+Mana:   10+10/hr
+Syntax: cas 'fire wa' <target>
+
+   The mage is able to generate wards of protection from various types
+of spells. The fire ward offers resistance to such fire based spells as
+'burning hands' and 'lava storm'.
+
+*note* By casting the ward spell again on a target, you will increase the
+       resistance of the spell to immunity, but at an expensive cost.
+
+See also: RESISTANCES, COLD WARD, ELECTRIC WARD, ENERGY WARD, ACID WARD
+
+#
+"ELECTRIC WARD"
+
+Class:  mage
+Level:  31
+Mana:   10+10/hr
+Syntax: cas 'electric wa' <target>
+
+   The mage is able to generate wards of protection from various types
+of spells. The electric ward offers resistance to such electric based spells
+as 'shocking grasp' and 'chain electrocution'.
+
+*note* By casting the ward spell again on a target, you will increase the
+       resistance of the spell to immunity, but at an expensive cost.
+
+See also: RESISTANCES, FIRE WARD, COLD WARD, ENERGY WARD, ACID WARD
+
+#
+"ENERGY WARD"
+
+Class:  mage
+Level:  11
+Mana:   10+10/hr
+Syntax: cas 'energy wa' <target>
+
+   The mage is able to generate wards of protection from various types
+of spells. The energy ward offers resistance to such energy based spells
+as 'harmful touch' and 'disintegrate'.
+
+*note* By casting the ward spell again on a target, you will increase the
+       resistance of the spell to immunity, but at an expensive cost.
+
+See also: RESISTANCES, FIRE WARD, COLD WARD, ELECTRIC WARD, ACID WARD
+
+#
+"STONE FIST"
+
+Class:  mage
+Level:  20
+Mana:   10+10/hr
+Syntax: cas 'stone f' <target>
+
+   The mage is able to magically transform bare hands into lethal fists
+of stone, capable of causing great wounds. The strength of the spell is
+proportional to the level of the mage casting it.
+
+See also: ATTRIBUTES
+
+#
+"FORM"
+
+Class:    shapeshifter
+Level:    3
+Mana:     5+5/hr
+Syntax:   form <hammers | blades | lances | claws>
+Duration: type "form" with no arguments to unform
+
+   Shapeshifters have the unique ability to alter their physical being
+into any form they desire. The form skill allows shapeshifters to change
+their arms and hands into deadly weapons. The damage capability of these
+formed weapons is based on the level of the shapeshifter and is shown as
+bare hand damage.
+
+*note* While the shapeshifters arms and hands are formed into weapons,
+       arm and hand items cannot be used.
+
+See also: ATTRIBUTES
+
+#
+"MELT"
+
+Class:    shapeshifter
+Level:    1
+Mana:     10
+Syntax:   melt
+Duration: type "return" to return to normal state
+
+   Shapeshifters can liquify and become formless pools. By assuming a 
+liquid form, any creatures currently fighting the shifter will cease.
+This liquid state is also used to seep between the cracks and crevices
+of doors and emerge on the other side.
+
+*note* While in this form, shifters cannot carry anything, nor can 
+       they perform many commands other than to move about and look.
+       Movement is also very expensive in this state.
+
+#
+"SHIFT"
+
+Class:    shapeshifter
+Level:    8
+Mana:     20+10/hr
+Syntax:   shift <corpse name>
+Duration: type "return" to return to normal state
+
+   This is the main skill of the shapeshifter. Given a corpse, the
+shifter can assume the form of the dead creature by absorbing and
+thereby genetically sampling the corpse. The shifter inherits the
+physical properties of the creature such as attribues, number of
+attacks, and any special affects.  Also, the shifter is able to call upon
+the host body's special abilities.  This can be turned off using the spec
+command.
+
+*note* The shifter retains his normal hp/mana/move while shifted,
+       and does not benefit from accelerated regen rates which mage
+       polymorphs and druid trees enjoy.
+
+See also: ATTRIBUTES SPEC
+
+#
+"EXPLODE"
+
+Class:	Shapeshifter
+Level:	65
+Mana:		50
+Syntax:	explode
+Damage:	lvld3
+	This skill allows shifters to explode and send bits of their body throughout
+the room cause harm to whomever in the room besides the players of your group.
+
+*Note* This skill also causes some harm to the caster simply because your body is
+	 exploding and detaching body parts.
+
+See Also: AREA AFFECT
+
+#
+"SPEC"
+
+  This command allows shifters and other such 'mobile' players to toggle the
+use of 'special' abilities.
+
+#
+"DEATH"
+
+  According to the christians, death is when you meet your maker and
+find out whether you spend eternity comfortable or hot.  The vikings
+say that it's when you get to go to valhalla and an eternity of
+fighting glorious battles.
+
+  Enough of philosophy, however.  Here in these lands, you lose 1
+level and some experience when you die.  Exactly how much you lose
+depends on whether or not you had enough to gain when you died.  If
+you did, you will be 1 exp short of gaining after you die.  If you did
+not, you will have 0 exp after you die.
+
+  The morgue keepers servants will generally retrieve your corpse 
+and relinquish it unto you for a small fee.  Any money they found on
+your corpse will be automatically deposited into your bank account.
+
+The morgue is located just south of the entrance to the cleric guild.
+
+  In either case, a "resurrection" will undo the effects of dying.
+
+NOTE: Corpses are non-rentable.  This means get your stuff immediately
+out of the corpse.  Don't carry equipment around inside your corpse.
+Don't rent at reception when equipment in your corpse.  Any of these
+can and will cause you to lose equipment.
+
+See also: GAIN, RESURRECTION
+
+#
+"PLATE"
+
+Class:    shapeshifter
+Level:    5
+Mana:     5+5/hr
+Syntax:   plate
+Duration: type "plate" again to return to normal
+
+   Shapeshifters can alter their skin and form defensive armor
+plating all over. The strength of this armor is proportional to
+the level of the shifter.
+
+*note* While the shifter is utilizing armor plating,  he will
+       be unable to wear certain armor equipment.
+
+See also: AC
+
+#
+"HEROLIST"
+  
+   Lists the top twenty Panceans based on accumulated experience.
+Members of this list are praised far and wide.  This is the stuff
+of which legends are made.
+
+#
+"RAY OF PURIFICATION"
+
+Type:   Cleric
+Level:  50
+Mana:   10
+Syntax: cas 'ray' <target>
+
+   This spell remove any curses from all objects carried by the target char.
+
+See also: CURSE, REMOVE CURSE
+
+#
+"TEMPLE"
+   Allows you to choose your place of worship (and place of recall)
+   
+SYNTAX:
+
+    Just type TEMPLE in an approved room.  So far approved rooms are:
+    
+    The Portal of Creation
+    The Altar in New Thalos (NW corner)
+    The Priest Caravan Master in Gypsies
+    Village Square (Protector) in Orun
+    Aucan Elders Meeting Room
+    Small Hut opposite Viking Healer
+    Town Square in Souk
+    Cloud Giant Shamans Altar
+    
+    These are the only magical places you may worship at.
+    
+    Worshipping elswhere might bring the wrath of the gods.
+
+#
+"FLAIL"
+Class:  warrior
+Level:  75
+Cost:   50 Movement
+Syntax: flail
+
+    This skill allows a warrior to do an extreme amount of damage to all
+ungrouped players or creatures in the room.  The warrior flails his/her
+arms about doing massive damage.  Damage is dependant on weapon, hnd
+bonus, level of skill, and level of warrior.
+
+#
+"SHIELD PUNCH"
+Class:  warrior/paladin
+Level:  40/50
+Cost:   20 Movement
+Syntax: spunch
+
+    This allows the fighter to hit his/her target extremely hard with
+his/her shield doing a fair amount of damage.  Damage is dependant on
+shield weight, player weight, player level, and mob weight. Player must
+be using a shield.
+
+#
+"SHIELD BLOCK"
+Class:  warrior/paladin/ranger
+Level:  40/50/50
+Syntax: Automatic
+
+    This allows a player to use his/her shield to effectivly deflect an
+attack resulting in no damage.  The player must be using a shield for
+this skill to operate.
+
+#
+"UNWEAVE"
+Class:  bard
+Level:  90
+Mana:   50
+Syntax: sing 'unweave'
+Saving: Spell
+Save Affect: Each spell has a chance to save, if saved - spell is not unwoven.
+
+    A very powerful skill that allows a bard to dispel magic all players
+and all mobs grouped and ungrouped alike.  Be very careful or it could
+end up working against you.
+
+#
+"TOLERANCE"
+Class:  psionist
+Level:  55
+Mana:   15/hour
+Syntax: tolerance
+
+    A user creates a partical shield around his/her body that absorbs
+1/2 the damage done to them.
+
+#
+"EGO" "EGO_WHIP"
+Class:  psionist
+Level:  60
+Mana:   5+8/hour
+Syntax: ego <target>
+
+    Using his/her mind a psionist will manipulate his opponents ego
+so that they are in a state of depression,  lowering the mob/players
+hnd.
+
+See Also:   DEPRESSION
+
+#
+"DIVERT"
+Class:  thief
+Level:  73
+Cost:   15 Movement
+Syntax: div <target>
+Note:   <target> is the mob you want your opponent to attack
+
+  Using their slyness and dexterity a thief may divert the attention of an 
+attacking opponent to another mob.
+
+*note* This only works while in battle.
+
+#
+"ELECTRICSHIELD"
+
+Class:    mage/cleric
+Level:    63/93
+Mana:     20+10/hr
+Syntax:   cas 'elecsh'
+
+   When protected by this powerful spell, the benefactor inflicts
+damage on an attacker as his/her electrical shield electrocutes
+the attacker during combat.
+
+See Also: POISONSHIELD, COLDSHIELD, ACIDSHIELD, VAMPSHIELD,
+          FIRESHIELD, MANASHIELD, ENERGYSHIELD
+
+#
+"ENERGYSHIELD"
+
+Class:    knight
+Level:    93
+Mana:     20+10/hr
+Syntax:   cas 'energysh'
+
+   When protected by this powerful spell, the benefactor inflicts
+damage on an attacker as his/her energy shield does energy based
+damage to the attacker during combat.
+
+See Also: POISONSHIELD, COLDSHIELD, ACIDSHIELD, VAMPSHIELD,
+          ELECTRICSHIELD, MANASHIELD, FIRESHIELD
+
+#
+"VAMPSHIELD"
+
+Class:    mage/psionist
+Level:    107/106
+Mana:     20+10/hr
+Syntax:   cas 'vampsh'
+
+   When protected by this powerful spell, the benefactor inflicts
+damage on an attacker and drains this damage to replenish his own
+hp.
+
+See Also: POISONSHIELD, COLDSHIELD, ACIDSHIELD, FIRESHIELD,
+          ELECTRICSHIELD, MANASHIELD, ENERGYSHIELD
+
+#
+"MANASHIELD"
+
+Class:    psionist
+Level:    92
+Mana:     20+10/hr
+Syntax:   cas 'manash'
+
+   When protected by this powerful spell, the benefactor inflicts
+mana damage on an attacker which drains some of this mana and
+restores some of his own mana.
+
+See Also: POISONSHIELD, COLDSHIELD, ACIDSHIELD, VAMPSHIELD,
+          ELECTRICSHIELD, FIRESHIELD, ENERGYSHIELD
+
+#
+"POISONSHIELD"
+
+Class:    cleric/druid/ranger/bard
+Level:    63/91/105/108
+Mana:     20+10/hr
+Syntax:   cas 'poisonsh'
+
+   When protected by this powerful spell, the benefactor inflicts
+damage on an attacker Which also has the chance of rendering an
+opponent incapacitated from venom.  When casting this spell it may
+also affect the caster.
+
+See Also: FIRESHIELD, COLDSHIELD, ACIDSHIELD, VAMPSHIELD,
+          ELECTRICSHIELD, MANASHIELD, ENERGYSHIELD
+
+#
+"HARDEN" "HARDEN WEAPON"
+
+Class:    Ranger
+Level:    40
+Mana:     100
+Syntax:   cas 'harden'
+
+   With the knowledge of the woods and the small magiks that the
+Ranger controls, a ranger has the ability to strengthen their bows.
+However, if a bow is made too hard, they become useless and are very
+prone to shattering.  
+
+#
+"TWSTORY" "STORY"
+
+Each week a new chapter is written about the lives of those in the
+World of Thieves.  Check back weekly for an update on what will
+happen next.  Who knows, maybe someday you will be the main
+character of the story.  
+
+For previous chapters and the web version of the story:
+(COMING SOON)
+
+#
+"HASTE"
+
+Class: Bard
+Level: 52
+Mana:  
+Syntax:   sing 'haste'
+
+   A bard of great talen has the ability to increase the movements
+of those around with the tone of the music.  The affects are most
+noticable in the swinging of a sword.
+
+#
+"DUPLICATE"
+
+Type:	To make multiple copies of a mob
+Level: Immortals Only!!!
+Syntax: duplicate <mob> <number of copies>
+
+	This skill allows immortals to make exact duplicates of a mob.
+
+See Also: LOAD
+
+*Note* A maximum of 50 mobs maybe duplicated at one time.
+
+#
+"QUESTUP"
+
+Type: To alter the level and stats of a mob
+Level: Immortals Only!!!
+Syntax: questup <mob> <level>
+
+	This skill allows an immortal to load a mob and set the level
+while at the same time altering the stats to equally match the level.
+
+See Also: DUPLICATE
+
+#
+"REINCARNATE"
+
+Type: Adds a class to a player(remorting)
+Level: Immortals Only!!!
+Syntax: reinc <player> <class>
+
+	This skill allows immortals to remort a player to a class which
+has been paid for. This skill will set the players levels to 1 and stats 
+will be changed.
+
+#
+"SETLOG"
+
+Type: Allows immortals to get rid of unwanted logs
+Level: Immortals Only
+Syntax:
+	setlog mprog: toggles MOBprog logs
+	setlog player: toggles Player logs
+	setlog immort: toggles Immortal logs
+	setlog error: toggles Error logs
+	setlog all: makes all logs active
+	setlog none: makes all logs inactive
+	setlog show: shows all active logs
+
+
+See Also: LOG
+
+#
+"PKILL" "PLAYER KILL"
+
+Type: Allows player -vs- player battle
+Level: 20-125
+Syntax: pkill on
+
+	This command allows players to toggle on their pkill function. Once 
+you have typed pkill on you can not reverse unless an admin is asked to change 
+it. Pkill has a point system and different types of pkill. Arena Pkill is a 
+mode where the entire mud has basically been transformed into a huge arena. 
+Normal player kill you may be pkilled lose a level and be lotted by 2 items. 
+Once in normal pkill mode you can only kill or be killed by persons 20 levels 
+higher or lower than your currrent level. Pkill points are awarded everytime a
+player has killed another player. Pkill points can gain rewards of some sorts, 
+these rewards will be anounced soon.
+
+#
+"PULSE"
+
+Class: Psionist
+Type: Area Effect
+Level: 75
+Mana: 120
+Syntax: cast 'pulse'
+
+        Recently, the high psionist guildmaster, along with a few elite
+veterens of Thieves World, has conducted numerous secretive experiments in
+neuro-kinetics. Although many of these experiments proved to be unsuccesful,
+one has recently been exposed to the public. Through immense concentration,
+the psionist is able to weaken the entire fabric of the room's reality. Thus,
+many waves of immensely powerful energy are created over a few seconds. Due to
+the immensely disproportionate energy distributions caused by this, all of the
+nearby energy is brought back together, and explodes in a huge fireball to
+neutralize the energy equalibrium. Some details are as follows:
+             First wave of energy:   Lvld10
+	     Second wave:            Lvld5
+	     Neutralizing explosion: Lvld20
+
+#
+"ENFOREST"
+
+Class:     Druid
+Casters:   2
+Duration:  10*(5+(avg_level-32)/2) seconds [50-515]
+Min Level: 32
+Syntax:    cas 'enforest'
+
+By utilizing the efforts of 2 druids, the call of nature can now be invoked
+anywhere needed. This wonderous ability was discovered while the high druid
+guildmaster, Artemis, was at study with the local druid veteran Krynn. They
+found that when they sequentially cast this spell, even the deepest caverns
+can be pierced by the atmosphere, and can grow foliage. It has been also
+found that with increased experience, the area can stay in the wilderness-like
+conditions for longer.
+
+*After much additional research, the abilities of druids has been much
+increased. Now, when the two druids have cast enforest, what happens, is
+that both of the druids will become a veritable walking greenhouse. What
+will happen, is that every single room they walk in will become a forest for
+the allotted spell duration. Once the spell is done, every room that they've
+entered during the duration of the spell will revert back to it's original
+state.
+
+#
+"PROBE"
+
+Class:     Psionist
+Casters:   2
+Min Level: 15
+Syntax:    probe <creature>
+
+Previously, knowing detailed information about creatures was only availible
+to the realm of the immortals. But now, thanks to the un-dying efforts of
+some notable psionist legends of Thieves World, psionists have unlocked the
+mysteries of the spirits of creatures. Now, through the efforts of 2
+psionists at once, they can view all information about any creature that
+they come across. However, as this is an extremely complex field, how much
+information they see is dependant upon how experienced they are.
+
+#
+"GATTACK" "GROUP ATTACK"
+
+Class:     Monk
+Min Level: 10
+Syntax:    gattack (prepares a group for attacking)
+Use:       gattack <creature>
+
+The abilility to work closely together without interferring in ones
+way makes a group attack very powerful. The larger the group, all
+prepared for a group attack, the greater the affect and the more
+devastating the attack is on the chosen target.
+
+#
+"TAUNT"
+
+Class:   monk
+Level:  18
+Mana:   20
+Syntax: taunt <victim>
+
+Using your ability to taunt someone, you can protect someone
+by drawing the attack away from them and onto yourself. 
+
+#
+"MKICK" "MONK KICK"
+
+Class:   monk
+Level:  20
+Mana:   5
+Syntax: mkick <target>
+Damage: ~LevelD15
+
+Having trained for years, the monks have mastered a way of
+kicking that produces leathal forces in a single kick. As their
+proficiency and training continue, their kick provides the
+avenue for captured elemental spells to be released.
+
+#
+"GUST"
+
+Class:  monk
+Level:  5
+Mana:   15
+Syntax: cast 'gust' <target>
+Damage: ~LevelD20
+
+Raising the winds into a torent of activity, the monk causes
+a great deal of damage to the specified target. As the monk
+increases in skill, the affect of his gust increases, damaging
+others within the room.
+
+#
+"DIRECTIONS" "DOWN" "EAST" "NORTH" "SOUTH" "WEST" "UP"
+
+To move in a given direction, type the direction you want to move.
+
+Directions are displayed in the following order:
+  North, South, East, West, Up, Down
+
+#
+"FURY"
+
+Class:   monk
+Level:  44
+Move:   55 + (100)
+Syntax: fury <target>
+Duration: 1 combat round
+
+Having trained for years, the monks have finally found a way to channel
+their physical energy and temporary increase the speed of their attack.
+For one round, the monk receives 1 additional attack for 12 levels of 
+experience. These bonus attacks are cumulative with melee levels and
+spells affecting the speed (Haste, Slow etc.).
+
+But be warned - sometimes the monk fails to properly channel his energy and,
+while still receiving additional attacks, he loses even more stamina.
+Observation shows that more experienced, wise and agile monks have lesser 
+chances of losing additional stamina.
+
+*note* This is an aggressive act and will result in a fight whether
+       you are successful or not.
+
+#

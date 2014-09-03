@@ -1,0 +1,22 @@
+------------------------------------------------------------------------------
+MOVEMENT: n,s,e,w,u,d, run, enter, leave, follow, look, open, close, (un)lock,
+  stand, sit, rest, sleep, wake, follow, scan, farlook.
+------------------------------------------------------------------------------
+OBJECTS/COINS: get, put, drop, inventory, junk, wield, wear, grab, use, taste,
+  equip, remove, eat, drink, quaff, examine, split, pour, post, recieve, fill,
+  give, check, recite.
+------------------------------------------------------------------------------
+COMMUNICATION: say('), shout, tell, emote(:), whisper, ask, report.
+------------------------------------------------------------------------------
+COMBAT: kill, flee, assist, push, notch, fire, throw, hit. See help files.
+------------------------------------------------------------------------------
+INFORMATION: score, attribute, who, whozone, where, time, weather, news, help,
+  consider, commands, allspells, info, wizlist, credits, world.
+------------------------------------------------------------------------------
+UTILITIES/ENV'MENT: aggressive, wimpy, dea, (un)alias, brief, compact, idea,
+  bug, idea, typo, display, title, noise, cls
+------------------------------------------------------------------------------
+Additional HELP is obtained using HELP <keyword>.  HELP is available for most
+of the above commands, most spells, and each class for example.  You will also
+find useful information for these keywords: SOCIAL, SHOPS, INNS, BANKS, RULES.
+    For a complete listing of all available help topics, type HELPTOPICS.

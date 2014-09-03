@@ -1,0 +1,117 @@
+Ix: Give thieves a skill like retreat, but allowing them to 'escape' from battle...
+Ix: Steal should be able to steal from any body part, depending on stand/rest/sleep of victim
+Ix: ambendextrous (sp)  Thief/Warrior skill.  Changes which weapon you wield to the weapon you hold, and vice versa, reqs: dual wield 2 weapons no shield 
+Ilduras: make rumor cost 5 mana
+Matal: gust should make all mobs it hits agreessive towards the caster
+Malkier: one more thing about the urchins, it's really bad ettiquette to have aggressive mobs in the place where new players start out
+Feenat: In score it shows how much til next level. How about also how much til maxx? like two levels away?
+Feenat: make it so you can sell or auction druid potions. I don't know what to do with the ones I have
+Sol: until there are no more aggressive fucking mobs in sanctuary I'm not coming back again. I have been flee killed by them for the last fucking time
+Magius: settable prompt - obtainable from circle ftp
+Magius: alphabetized command list
+Magius: apply aedit patch to move socials from the command list into a list of thier own
+Magius: set all player commands at level 1 or higher, set mob commands at level 0, hide level 0 command from players
+Magius: use seperate colors for room title and room description
+Magius: command shortening...add code so player can type k serp and the mud can detect that they want to kill serpent
+Magius: organized score display, create tabulated score display to show stats in a more readable manner.
+Magius: add tnl display to prompt (tnl = to next level)
+Magius: corpse sacrificing, great way to appease the gods, as well as clean some clutter
+Magius: tabulated shop listings
+Magius: kiss should not come before kill in the command listings
+Magius: all doors should also accept direction, ie. open east should open the east door.
+Magius: wearing an item should remove an item that alread equipped
+Magius: use coloring in room descriptions to highlight nearby locations
+Magius: worth command, allows the player to quickly check how much money he has both with them an in the bank, as well as how much experience is need to the next
+Magius: easy commands in note editor, the @ for ending the note isn't enough, add commands for deleting lines, appending lines, and insertine lines
+Magius: idealist, buglist, typolist handy commands to paginate the contents of the idea,bug, and typo files to the player
+Magius: exit descriptions - short oneline descriptions shown with each exit automatically, to give a player a little more info on whats in a direction
+Magius: currently, if there is a closed door to the east, it doesn't show east as an exit, all viable exits should be displayed unless they are flagged as hidden
+Magius: Add a book object that is given to all new players that gives general directions from fountain square to places of interest, like inns where they can ren
+Magius: redo the general help screen to offer more info with better organization
+Magius: helptopics is great, but add functionality to display only a topics starting with a certain letter, (helptopics a)
+Magius: add a search string to helptopics, so that 'helptopics rip' will show all topics that have 'rip' in the word
+Magius: to prior search string for helptopics, have it more like 'helptopics %rip%', the % sign means any letter here.
+Magius: Newbies tend to get lost easily, allow newbies up to level 5 to use a free recall command, after level 5 the command should say they can't.
+Magius: newbies are going to die fast, perhaps newbies level 5 and below should be able to buy thier corpses for free
+Magius: command should check to see if a player has access to use a command/skill before showing it in the list
+Magius: mudschool or some similiar command to return a player level 1 to 5 to the mud training area
+Magius: player settable flag to enable alias's to be echoed back to player when used
+Magius: show bank balance in score command
+Magius: show current alignment in score display
+Magius: add bank support for desposit all and withdraw all
+Magius: maybe invisible players shouldn't show up on the who list
+Toric: There should be a help file here on on the site that explains how damage is dealt and how various enhancements affect it.
+Toric: the examine command should work on one's own items while resting.
+Toric: perhaps newbies should get access to the rumor channel before they are able to learn area affect spells. lvl 12, for instance. (Ice storm is at lvl 19)
+Toric: warriors should get track, but at higher levels. would make sense.
+Toric: mage's tome. hold tome. identify an item. id is saved in tome. never forget an items stats again.
+Toric: fix prayer beads to be both neck and wrist gear. some people put them there.
+Toric: the group command should show an xp indicator. current needed vs max needed. would help group leaders.
+Fenrir: traditionally, create water can be cast on a container to fill it with water. this would be handy for smaller, lighter, containers.
+Toric: report should show current and max valued for hp, move, and mana
+Toric: sorry about that last. GROUP should show current and max. like report does.
+Fenrir: perhaps warriors could learn throw earlier, but only for heavy, inacurate items like axes.
+Toric: if the shopkeeper is going to pay you little or nothing for a damaged item, they should at least repair it, then re sell it.
+Toric: give the create water command an optional target. traditionally, the spell can fill any container it is aimed at. And cups or flasks are lighter than bar
+Toric: auction channel for just speaking about items for sale or that are wanted. perhaps by using " " to seperate speech from bids.
+Toric: when a person tries to rent with a no-rent item, the receptionist keeps the item and puts it on a priority list to be re-spawned.
+Ilario: cancle that last. sorry.... command "auc post sale|want" to put up classified adds on auc channel. "auc" with no auction on lists the adds.
+Ilario: for mages and clerics, "consume" spell. destroys a wand, staff, or potion and converts it into mana equal to the cast cost of the spells. higher level ge
+Ilario: continued... gets higher percent of that mana.
+Ilario: better con command for thief, mage, psi, and paladin. must be practiced, adds info to regular con. mainly how resistant they are to your skills.
+Ilario: Durwin should be able (and sometimes willing) to cast mana and restore ones energies.
+Solaar: at piers, better show a boats destination
+Tuatha: globe
+Tuatha: globe
+Samsa: command
+Kalim: Hill Giant's Fort doesn't have a key because the zone isn't populated in the zon file
+Kalim: Remove the chance to load on Eagle King's gear
+Sicilian: stamina
+Kalim: shard
+Tal: balrog
+Radjabov: helmet
+Radjabov: elfeater
+Kalim: gloves
+Kalim: paws
+Nerim: girth
+Solaar: Blaise has suggested increasing hp gains based off CON
+Ilario: distance atack for a psi. mental assasin. basically a mind blast over distance, and proportionally weaker.
+Fenrir: command wire. for a fee, send money straight to someone else wo auction. posting money.
+Toric: bring back charm for mages. 
+Ilario: Mage's Encyclopedia. captures identify info. based on your int, a percent of the data fields will be filled each time.
+Akira: red
+Akira: red
+Bioc: shield
+Rexor: rhino
+Lucifer: ring
+Ix: put in a help paladin
+Solaar: when i don't, i don't want to go to the Welcome to Thieves World menu
+Eldar: sword
+Hoyt: fur
+Chrono: scptre
+Smoosh: photon
+Neddy: rod
+Smoosh: ring
+Ix: Does the bard song lullabye do anything more than the bard suggestion to sleep?
+Cobain: mud
+Omen: sword
+Dor: the 'deranged policeman' in Cthulhu does not respond to 'policeman', only 'deranged'
+Novak: rival
+Bioc: shard
+Bioc: shard
+Bioc: shard
+Elian: A skill/Spell for recharging wands and staffs would be nice, If it's possible to be implimented :)
+Rozen: I think there needs to be more tannible slots. Such as maybe a cloak/jacket for about, Belts, And possibly wrists
+Rozen: Restore the reagents list back to the old way !
+Lucifer: comb
+Seifer: garb
+Lucifer: axe
+Gorum: seashell
+ix: sword
+Bioc: dagger
+Sylvist: spectacles
+Gragnuk: twig
+Dashed: lol?
+Bioc: tyrant
+Bungle: yellow
+Bungle: plate

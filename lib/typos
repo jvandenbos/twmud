@@ -1,0 +1,12 @@
+Toric[11004]: the titles for high level mage need to be tweaked. see lvls 20, 21, 89-92, 117-120, and 125
+Maria[30342]: this zone is madding.  it's WAY repetitive without any apparent purpose. 
+Kalim[1186]: look into disarm and steal if item is cursed
+Bioc[6882]: Look at gouge, the chances are slim to none
+Solaar[18215]: magic.c in void spell_energy_drain.last 10 lines of code aren't needed.
+Solaar[1000]: Ignore the above. A } is in the wrong place to complete the for loop.  Look at spell_frost_cloud
+Silak[25543]: giant we
+Esper[3040]: the Sanctuaryn Herald says 'But boy are those gods greedy.  Pack your walets to the brim.' wallets
+Garath[21004]: 'deserted cottage is missing parts of the description for the painting grate and fireplace'
+
+Elian[10319]: Help Recall needs an extensive updating. You'll see what I mean when it says Zifab and "No recalling tree/poly'd" people :)
+Dashed[3005]: lol

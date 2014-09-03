@@ -1,0 +1,48 @@
+Welcome to the mud that shall not be named....
+
+  ############
+  ############  ##
+       ##       ##
+       @@       @@      @@
+       @@       @@
+       @@       @!!!!!  @@   #####  ##     ##  #####  #####
+       !@       !!!!!!  !!   @@      @@   @@   @@     @@
+       !!       !!  !!  !!   !!!!!    !! !!    !!!!!  !!!!! 
+       !!       !!  !!  !!   !!        !!!     !!        !!
+        !       !   !    !   !!!!!      !      !!!!!  !!!!!
+            
+                 ##               ##
+                 ##               ##      
+                  @@             @@
+                   @@           @@                
+                   @@           @@ 
+                    !!    !    !!   #####  #####  ##     ####
+                     !!  !!!  !!    @@ @@  @@ @@  @@     @@  @
+                     !! !! !! !!    !! !!  @@@@@  !!     @@  @
+                      !!!   !!!     !! !!  !!!!   !!     !!  !
+                       !     !      !!!!!  !! !!  !!!!!  !!!!.com            
+                                                                                  
+Please read the CREDITS to see all the people involved with TW.
+    ------------------------------------------------------- 
+    First Visit? Greetings 
+     Second Visit? Welcome Back
+      Third Visit? Congratulations!! You ARE addicted to TW!!
+    --------------------------------------------------------
+
+[Updated 08/09/2014]
+Copyright
+I am waiting on Lynn Abbey to reapprove our use of the name TW MUD.
+I will update when we can start making community sites again.
+
+Looking for Work
+Anyone want to help me map out TW? I have split the zones into
+individual WLD files. I need to identify which zones are split up
+about the world like Huon exists in four different places, and none
+are connected. I will break these zones into their own zones, so
+Huon will be 1 location, and I'll create 3 other zones w/different
+names with the other pieces. I need to identify and remap the zones
+that use lazy maze building such as the fog leading to MahnTor. This
+is also an opportunity to defrag the VNUMS. So zones that have claimed
+1000 rooms, but only use 100 of them, can be remapped/defragged so that
+we can free the unused rooms for other places.
+Email thievesworldmud@gmail.com if you want to help

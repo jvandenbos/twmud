@@ -1,0 +1,87 @@
+#!/usr/bin/perl -w
+
+
+# A replacement for TW's old csh autorun.  This one doesn't have much more
+# in the way of features, but it's easier for me to maintain, and seems more
+# robust, or at least more predictable.
+
+# This script starts the mud when it dies, with some log file and core
+# file rotation thrown in for good measure. 
+
+# * If the mud returns an error code of '52' (hardcoded) the script reboots 
+#     and increments the max runs.
+# * If the mud returns a 0 error code, the script exits.
+# * If the mud returns any other error code, the script restarts the mud, but
+#     without updating the max runs.  This allows the script to terminate
+#     if the mud crashes many times in a short period.
+
+$PORT = 6000;
+
+$max = 100;
+$counter = 0;
+
+# Cleanup .tmp files in players.d --Mnemosync
+if (-e "../lib/players.d" && -d "../lib/players.d") {
+        system('find ../lib/players.d/ -name *.tmp -exec rm -f {} \;');
+} else {
+        die "problem with players.d?!?\n";
+}
+
+if ( -e "../lib/players.d.bak" ) {
+	system("tar czf - ../lib/players.d.bak");  #NEEDS GNU TAR
+	system("rm -rf ../lib/players.d.bak");
+	mkdir("../lib/players.d.bak", 666);
+}
+
+open (AUTOLOG, ">>auto.log");
+
+$date = `date`;
+chop($date);
+
+print AUTOLOG "Autorun started by $ENV{USER} at $date.\n";
+
+
+
+
+while ($counter <= $max) {
+	$counter++;
+	system("/bin/mv -f dm.log ../logs/dmlog/`date '+%m-%d.%H:%M'`.dmlog") if -e "dm.log";
+
+	open (LOG, ">>dm.log");
+	print LOG "**a*u*t*o*r*u*n**** TW REBOOT -- Run nr $counter **********\n";
+	print LOG "Date: $date\n";
+	close(LOG);
+	
+	if ( -e "../lib/PLAYERSITES.LOG") {
+	        system("sort ../lib/PLAYERSITES.LOG > ../lib/PLAYERSITES.LOG");
+	}
+
+	if ( -e "../lib/core" ) {
+		rename("../cores/core.5", "../cores/core.6");
+		rename("../cores/debug.5", "../cores/debug.6");
+		rename("../cores/core.4", "../cores/core.5");
+		rename("../cores/debug.4", "../cores/debug.5");
+		rename("../cores/core.3", "../cores/core.4");
+		rename("../cores/debug.3", "../cores/debug.4");
+		rename("../cores/core.2", "../cores/core.3");
+		rename("../cores/debug.2", "../cores/debug.3");
+		rename("../cores/core.1", "../cores/core.2");
+		rename("../cores/debug.1", "../cores/debug.2");
+		rename("../cores/core.0", "../cores/core.1");
+		rename("../cores/debug.0", "../cores/debug.1");
+		rename("../lib/core", "../cores/core.0");
+	}
+
+	sleep 30;
+	$value = 0xffff & system("./thievesworld -a $PORT >>dm.log 2>&1");
+	if ( !$value ) {
+		print AUTOLOG "Autorun terminating due to SHUTDOWN after $counter runs.\n";
+		exit(0);
+	}
+	if ( $value == 52 ) {
+		$max++
+	}
+}
+
+print AUTOLOG "Autorun terminating due to MAX RUNS after $counter runs.\n";
+close(AUTOLOG);

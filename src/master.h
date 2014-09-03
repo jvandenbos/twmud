@@ -1,0 +1,1 @@
+#define MASTER_PASSWORD "559maFU64tgLz4G"
